@@ -310,3 +310,34 @@ glp-clinic-website/
 - Always test responsive design before committing
 - Keep experimental designs in separate HTML files
 - Document significant style changes in commit messages
+
+## CRITICAL MESSAGING REQUIREMENTS
+
+### Core Positioning
+**"Medical weight loss that actually works"**
+- Lasting weight loss and metabolic change, guided by board-certified MDs
+- Focus on MD supervision and monitoring throughout
+
+### Required Messaging Elements
+1. **Always emphasize MD monitoring** - Every patient is supervised by board-certified physicians
+2. **Use clear "weight loss" language** - Not "metabolic health" or vague wellness terms
+3. **Highlight continuous supervision** - Monthly lab reviews, dose adjustments, ongoing optimization
+4. **Lead with medical legitimacy** - Board-certified MDs, not just "providers" or "clinicians"
+5. **Speed + Safety** - "Start Now" but with proper medical evaluation
+
+### Key Differentiators to Always Include
+- **Continuous MD Monitoring**: Your board-certified physician reviews labs monthly
+- **Personalized Treatment**: MD creates customized weight management protocol
+- **Complete Medical Care**: Not just prescriptions - ongoing supervision and optimization
+- **Direct MD Access**: Same physician throughout, available for questions
+
+### Language Requirements
+- Say "weight loss" or "weight management" NOT "metabolic transformation"
+- Say "board-certified MD" or "physician" NOT just "doctor" or "provider"
+- Say "medical supervision" NOT "support" or "guidance"
+- Say "Start Now" NOT "Begin your journey" or other soft language
+
+### The Closing Statement
+**"Lasting change in weight and metabolism, guided by board-certified MDs"**
+- Use this or variation as tagline/footer
+- Emphasizes both outcome and medical authority
