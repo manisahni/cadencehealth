@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - GLP Clinic Medical Weight Management</title>
+    <meta name="description" content="Transparent pricing for GLP-1 weight management therapy. No hidden fees, clear costs for medical consultations and ongoing care.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/glp-minimalist.css">
+    
+    <style>
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: var(--space-xl);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(44, 95, 65, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, var(--surface) 0%, white 100%);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 20px;
+            font-size: var(--text-xs);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .price {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--primary);
+            margin: var(--space-md) 0;
+            line-height: 1;
+        }
+        
+        .price-period {
+            font-size: var(--text-base);
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: var(--space-xl) 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: var(--space-sm) 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+            font-size: var(--text-lg);
+        }
+        
+        .pricing-note {
+            background: var(--cream);
+            border: 1px solid var(--warning);
+            border-radius: 8px;
+            padding: var(--space-md);
+            margin: var(--space-xl) 0;
+            font-size: var(--text-sm);
+            color: var(--text);
+        }
+        
+        .medication-pricing {
+            background: var(--medical-blue);
+            color: white;
+            padding: var(--space-md);
+            border-radius: 12px;
+            margin: var(--space-lg) 0;
+        }
+        
+        .medication-pricing h4 {
+            color: white;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .insurance-info {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+        
+        .comparison-table {
+            overflow-x: auto;
+            margin: var(--space-xl) 0;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tbody tr:hover {
+            background: var(--surface);
+        }
+        
+        .savings-highlight {
+            background: var(--success);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 20px;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: var(--space-sm);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none;">
+                        <span class="logo-text">GLP Clinic</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="screening.html" class="btn btn-primary">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="medical-badge">Transparent Pricing</div>
+                <h1>Clear, upfront pricing for your weight loss journey.</h1>
+                <p class="subtitle">
+                    No hidden fees or surprises. Everything you need for successful 
+                    GLP-1 weight management therapy at transparent prices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Pricing Plans -->
+    <section>
+        <div class="container">
+            <h2>Choose Your Plan</h2>
+            <div class="grid-3">
+                <!-- Initial Consultation -->
+                <div class="pricing-card">
+                    <h3>Initial Consultation</h3>
+                    <div class="price">$149</div>
+                    <p style="color: var(--text-light); margin-bottom: var(--space-lg);">One-time comprehensive evaluation</p>
+                    
+                    <ul class="pricing-features">
+                        <li>90-minute medical evaluation</li>
+                        <li>Complete health history review</li>
+                        <li>Personalized treatment plan</li>
+                        <li>Medication recommendations</li>
+                        <li>Lifestyle guidance</li>
+                        <li>Lab order recommendations</li>
+                    </ul>
+                    
+                    <a href="screening.html" class="btn btn-secondary" style="width: 100%;">Book Consultation</a>
+                </div>
+
+                <!-- Monthly Program - Featured -->
+                <div class="pricing-card featured">
+                    <h3>Medical Program</h3>
+                    <div class="price">$149<span class="price-period">/month</span></div>
+                    <div class="savings-highlight" style="margin-bottom: var(--space-md);">Most Popular Choice</div>
+                    <p style="color: var(--text-light); margin-bottom: var(--space-lg);">Comprehensive medical supervision</p>
+                    
+                    <ul class="pricing-features">
+                        <li>Monthly physician consultations</li>
+                        <li>Prescription management</li>
+                        <li>Dosage monitoring & adjustments</li>
+                        <li>24/7 medical support</li>
+                        <li>Lab monitoring coordination</li>
+                        <li>Lifestyle coaching support</li>
+                        <li>Progress tracking tools</li>
+                    </ul>
+                    
+                    <a href="screening.html" class="btn btn-primary" style="width: 100%;">Start Program</a>
+                    <p style="font-size: var(--text-xs); color: var(--text-light); margin-top: var(--space-sm);">*Medication purchased separately at pharmacy</p>
+                </div>
+
+                <!-- Follow-up Only -->
+                <div class="pricing-card">
+                    <h3>Follow-up Visits</h3>
+                    <div class="price">$89<span class="price-period">/visit</span></div>
+                    <p style="color: var(--text-light); margin-bottom: var(--space-lg);">For existing patients</p>
+                    
+                    <ul class="pricing-features">
+                        <li>30-minute physician consultation</li>
+                        <li>Progress review & assessment</li>
+                        <li>Medication adjustments</li>
+                        <li>Side effect management</li>
+                        <li>Lab result review</li>
+                        <li>Treatment plan updates</li>
+                    </ul>
+                    
+                    <a href="screening.html" class="btn btn-secondary" style="width: 100%;">Schedule Visit</a>
+                    <p style="font-size: var(--text-xs); color: var(--text-light); margin-top: var(--space-sm);">
+                        *Requires active treatment plan
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medication Pricing -->
+    <section class="section-light">
+        <div class="container">
+            <h2>Medication Costs</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--space-xl);">
+                Medication costs vary based on your prescribed dose and chosen medication. 
+                Our monthly program includes medication costs for maximum convenience.
+            </p>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Medication</th>
+                            <th>Typical Monthly Cost</th>
+                            <th>Included in Program</th>
+                            <th>Insurance Coverage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Semaglutide (Ozempic/Wegovy)</strong></td>
+                            <td>$180-$250</td>
+                            <td>✓ Yes</td>
+                            <td>Varies by plan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tirzepatide (Mounjaro/Zepbound)</strong></td>
+                            <td>$200-$280</td>
+                            <td>✓ Yes</td>
+                            <td>Limited coverage</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Liraglutide (Saxenda)</strong></td>
+                            <td>$150-$200</td>
+                            <td>✓ Yes</td>
+                            <td>Some plans</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="medication-pricing">
+                <h4>Monthly Program Advantage</h4>
+                <p style="margin: 0;">Your monthly program fee includes medication costs, saving you $50-100+ per month compared to separate pharmacy pricing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance & Payment Options -->
+    <section>
+        <div class="container">
+            <h2>Insurance & Payment Options</h2>
+            
+            <div class="grid-2">
+                <div class="insurance-info">
+                    <h3>Insurance Coverage</h3>
+                    <p>While we don't currently accept insurance directly, many patients successfully use their HSA/FSA accounts for our services.</p>
+                    <ul style="color: var(--text-light); margin-top: var(--space-md);">
+                        <li><strong>HSA/FSA Eligible:</strong> All consultation fees</li>
+                        <li><strong>Insurance Rx:</strong> Medications may be covered by your prescription plan</li>
+                        <li><strong>Superbills:</strong> Detailed receipts for insurance reimbursement</li>
+                        <li><strong>Tax Deductible:</strong> Medical expenses may be deductible</li>
+                    </ul>
+                </div>
+                
+                <div class="insurance-info">
+                    <h3>Payment Methods</h3>
+                    <p>We offer flexible payment options to make treatment accessible.</p>
+                    <ul style="color: var(--text-light); margin-top: var(--space-md);">
+                        <li><strong>Credit/Debit Cards:</strong> All major cards accepted</li>
+                        <li><strong>HSA/FSA Cards:</strong> Direct payment from health accounts</li>
+                        <li><strong>Monthly Billing:</strong> Automatic recurring payments</li>
+                        <li><strong>Flexible Scheduling:</strong> Pause treatment when needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitor Comparison -->
+    <section class="section-light">
+        <div class="container">
+            <h2>How We Compare to Competitors</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto var(--space-xl);">
+                See how GLP Clinic compares to other popular GLP-1 weight management services.
+            </p>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Monthly Cost</th>
+                            <th>Medication Cost</th>
+                            <th>Total/Month</th>
+                            <th>MD Supervision</th>
+                            <th>24/7 Support</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: var(--surface);">
+                            <td><strong>GLP Clinic</strong></td>
+                            <td><strong>$149</strong></td>
+                            <td>$200-250</td>
+                            <td><strong>$349-399</strong></td>
+                            <td>✓ Board-certified</td>
+                            <td>✓ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Ro/Roman</td>
+                            <td>$99</td>
+                            <td>$399</td>
+                            <td>$498</td>
+                            <td>✓ Licensed MD</td>
+                            <td>✗ Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Found</td>
+                            <td>$99</td>
+                            <td>$247-297</td>
+                            <td>$346-396</td>
+                            <td>✓ Nurse practitioner</td>
+                            <td>✗ Email only</td>
+                        </tr>
+                        <tr>
+                            <td>Sequence</td>
+                            <td>$99</td>
+                            <td>$279</td>
+                            <td>$378</td>
+                            <td>✓ Licensed provider</td>
+                            <td>✗ Business hours</td>
+                        </tr>
+                        <tr>
+                            <td>Noom Med</td>
+                            <td>$149</td>
+                            <td>$300-400</td>
+                            <td>$449-549</td>
+                            <td>✓ Licensed provider</td>
+                            <td>✗ Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Calibrate</td>
+                            <td>$137</td>
+                            <td>$250-350</td>
+                            <td>$387-487</td>
+                            <td>✓ Medical team</td>
+                            <td>✗ App-based</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align: center; margin-top: var(--space-xl);">
+                <div class="card" style="max-width: 600px; margin: 0 auto; background: var(--success); color: white;">
+                    <h3 style="color: white;">Why Choose GLP Clinic?</h3>
+                    <ul style="text-align: left; color: white; margin: var(--space-md) 0;">
+                        <li><strong>Competitive pricing</strong> - Lower total cost than most competitors</li>
+                        <li><strong>Board-certified MDs</strong> - Not just nurse practitioners</li>
+                        <li><strong>True 24/7 support</strong> - Medical hotline available anytime</li>
+                        <li><strong>Comprehensive care</strong> - Not just medication management</li>
+                        <li><strong>Transparent pricing</strong> - No hidden fees or surprise charges</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section>
+        <div class="container">
+            <h2>Additional Services</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Lab Work Coordination</h3>
+                    <p style="font-size: var(--text-lg); color: var(--primary); font-weight: 600; margin: var(--space-sm) 0;">$25</p>
+                    <p>Coordination with local labs for required blood work and result interpretation.</p>
+                </div>
+                <div class="card">
+                    <h3>Nutrition Consultation</h3>
+                    <p style="font-size: var(--text-lg); color: var(--primary); font-weight: 600; margin: var(--space-sm) 0;">$75</p>
+                    <p>One-on-one session with registered dietitian for meal planning and nutrition guidance.</p>
+                </div>
+                <div class="card">
+                    <h3>Emergency Consultation</h3>
+                    <p style="font-size: var(--text-lg); color: var(--primary); font-weight: 600; margin: var(--space-sm) 0;">$99</p>
+                    <p>Same-day physician consultation for urgent side effects or medication concerns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Notes -->
+    <section class="section-light">
+        <div class="container">
+            <div class="pricing-note">
+                <h4 style="margin-bottom: var(--space-sm);">Important Pricing Information</h4>
+                <ul style="margin: 0; color: var(--text);">
+                    <li>All prices are subject to change with 30 days notice</li>
+                    <li>Monthly program requires 3-month minimum commitment</li>
+                    <li>Medication costs included in monthly program pricing</li>
+                    <li>Lab work costs not included (varies by location)</li>
+                    <li>No refunds for completed consultations</li>
+                    <li>Payment is due at time of service</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Money-Back Guarantee -->
+    <section>
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h2>Our Commitment to Your Success</h2>
+                <div class="card" style="background: linear-gradient(135deg, var(--success) 0%, var(--primary) 100%); color: white;">
+                    <h3 style="color: white;">Satisfaction Guarantee</h3>
+                    <p style="color: white; margin: 0;">
+                        If you don't see meaningful weight loss after 3 months of following your prescribed treatment plan, 
+                        we'll work with you to adjust your approach or provide a partial refund of your program fees.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to invest in your health?</h2>
+            <p>Start with our comprehensive medical assessment to determine the best treatment plan for your goals and budget.</p>
+            <a href="screening.html" class="btn btn-primary">Begin Your Assessment</a>
+            <p style="font-size: var(--text-sm); margin-top: var(--space-md); color: var(--text-light);">
+                Initial consultation fee applies toward your first month if you join our program
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="resources.html">Resources</a>
+                <a href="screening.html">Get Started</a>
+            </div>
+            <p>&copy; 2024 GLP Clinic. Licensed Medical Practice • HIPAA Compliant</p>
+            <p style="margin-top: var(--space-xs); font-size: var(--text-xs);">
+                FDA-approved medications • Not for emergency use • Consult your physician
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

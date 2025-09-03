@@ -1,0 +1,230 @@
+/* Ultra Minimal - 3 Colors Only */
+
+:root {
+    --text: #374151;
+    --light: #9ca3af;
+    --bg: #ffffff;
+    
+    --space: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+}
+
+h1, h2, h3 {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+h1 { font-size: 2rem; margin-bottom: var(--space-lg); }
+h2 { font-size: 1.5rem; margin-bottom: var(--space-xl); text-align: center; }
+h3 { font-size: 1.25rem; margin-bottom: var(--space); }
+
+p {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--light);
+    margin-bottom: var(--space);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Navigation */
+.navbar {
+    background: var(--bg);
+    padding: var(--space) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.nav-menu a {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--light);
+    text-decoration: none;
+}
+
+.nav-menu a:hover {
+    color: var(--text);
+}
+
+/* Hero */
+.hero {
+    padding: calc(var(--space-2xl) + 60px) 0 var(--space-2xl);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.75rem 1.5rem;
+    background: var(--text);
+    color: var(--bg);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Sections */
+section {
+    padding: var(--space-2xl) 0;
+}
+
+.section-light {
+    background: #f9fafb;
+}
+
+/* Grid */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+/* Card */
+.card {
+    padding: var(--space-lg);
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+/* Feature */
+.feature-section {
+    text-align: center;
+    padding: var(--space-2xl) 0;
+}
+
+.feature-card {
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+.feature-card h3 {
+    margin-bottom: var(--space);
+}
+
+.feature-card p {
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+/* CTA */
+.cta-section {
+    text-align: center;
+    padding: var(--space-2xl) 0;
+    background: #f9fafb;
+}
+
+.cta-section p {
+    margin-bottom: var(--space-xl);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+footer {
+    padding: var(--space-xl) 0 var(--space-lg);
+    background: var(--text);
+    color: var(--bg);
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: var(--space-lg);
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: 0 var(--space);
+    font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+    color: var(--bg);
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container { padding: 0 var(--space); }
+    .hero { padding: calc(var(--space-xl) + 60px) 0 var(--space-xl); }
+    section { padding: var(--space-xl) 0; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; gap: var(--space); }
+    .nav-menu { display: none; }
+    h1 { font-size: 1.75rem; }
+}

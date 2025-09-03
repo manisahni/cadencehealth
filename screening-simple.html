@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assessment - GLP Clinic</title>
+    <meta name="description" content="Complete your medical assessment to determine if GLP-1 therapy is right for you.">
+    <link rel="stylesheet" href="css/mellow.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index-simple.html" style="text-decoration: none;">
+                        <span class="logo-text">GLP Clinic</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="screening-simple.html" class="btn btn-primary">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Assessment Form -->
+    <section style="padding-top: calc(var(--space-3xl) + 60px); padding-bottom: var(--space-3xl);">
+        <div class="container">
+            <div class="form-container">
+                <div class="medical-badge">Medical Assessment</div>
+                <h1>Let's see if GLP-1 therapy is right for you</h1>
+                <p style="text-align: center; margin-bottom: var(--space-xl); color: var(--text-light);">
+                    This assessment helps our physicians determine if you're a good candidate.
+                </p>
+                
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <form id="glpAssessment">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <select id="age" name="age" required>
+                                    <option value="">Select age range</option>
+                                    <option value="18-25">18-25</option>
+                                    <option value="26-35">26-35</option>
+                                    <option value="36-45">36-45</option>
+                                    <option value="46-55">46-55</option>
+                                    <option value="56-65">56-65</option>
+                                    <option value="66+">66+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weight & Goals -->
+                    <div class="form-section">
+                        <h3>Current Weight & Goals</h3>
+                        <div class="weight-bmi-grid">
+                            <div class="form-group">
+                                <label for="currentWeight">Current Weight (lbs)</label>
+                                <input type="number" id="currentWeight" name="currentWeight" min="100" max="500" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="height">Height (inches)</label>
+                                <input type="number" id="height" name="height" min="48" max="96" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Current BMI</label>
+                                <div class="calculated-bmi" id="calculatedBmi">--</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="goalWeight">Goal Weight (lbs)</label>
+                            <input type="number" id="goalWeight" name="goalWeight" min="100" max="400" required>
+                        </div>
+                    </div>
+
+                    <!-- Medical History -->
+                    <div class="form-section">
+                        <h3>Medical History</h3>
+                        <div class="form-group">
+                            <label>Do you have any of these conditions?</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalConditions" value="diabetes-type2">
+                                    <span>Type 2 Diabetes</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalConditions" value="high-blood-pressure">
+                                    <span>High Blood Pressure</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalConditions" value="high-cholesterol">
+                                    <span>High Cholesterol</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalConditions" value="none">
+                                    <span>None of the above</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="currentMedications">Current Medications (optional)</label>
+                            <textarea id="currentMedications" name="currentMedications" rows="3" placeholder="List any medications you're taking..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Commitment -->
+                    <div class="form-section">
+                        <h3>Treatment Commitment</h3>
+                        <div class="form-group">
+                            <label>Are you ready to commit to lifestyle changes alongside medication?</label>
+                            <div class="radio-group">
+                                <label class="radio-item">
+                                    <input type="radio" name="lifestyleCommitment" value="very-ready" required>
+                                    <span>Yes, I'm ready to make changes</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="lifestyleCommitment" value="somewhat-ready" required>
+                                    <span>Yes, with guidance and support</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="lifestyleCommitment" value="unsure" required>
+                                    <span>I'm unsure about lifestyle changes</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div style="text-align: center; padding-top: var(--space-lg);">
+                        <button type="submit" class="btn btn-primary" style="padding: var(--space) var(--space-xl);">
+                            Submit Assessment
+                        </button>
+                        <p style="font-size: var(--text-sm); color: var(--text-muted); margin-top: var(--space);">
+                            A physician will review your information within 24 hours.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="screening-simple.html">Get Started</a>
+            </div>
+            <p>&copy; 2024 GLP Clinic. Licensed Medical Practice</p>
+        </div>
+    </footer>
+
+    <script>
+        // BMI Calculator
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('currentWeight').value);
+            const heightInches = parseFloat(document.getElementById('height').value);
+            
+            if (weight && heightInches) {
+                const heightMeters = heightInches * 0.0254;
+                const weightKg = weight * 0.453592;
+                const bmi = weightKg / (heightMeters * heightMeters);
+                document.getElementById('calculatedBmi').textContent = bmi.toFixed(1);
+            } else {
+                document.getElementById('calculatedBmi').textContent = '--';
+            }
+        }
+
+        // Progress Bar
+        function updateProgress() {
+            const formSections = document.querySelectorAll('.form-section');
+            let completedSections = 0;
+            
+            formSections.forEach(section => {
+                const requiredInputs = section.querySelectorAll('input[required], select[required]');
+                let sectionComplete = true;
+                
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        sectionComplete = false;
+                    }
+                });
+                
+                // Check radio groups
+                const radioGroups = {};
+                const radios = section.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    if (!radioGroups[radio.name]) radioGroups[radio.name] = false;
+                    if (radio.checked) radioGroups[radio.name] = true;
+                });
+                
+                Object.values(radioGroups).forEach(groupComplete => {
+                    if (!groupComplete) sectionComplete = false;
+                });
+                
+                if (sectionComplete) completedSections++;
+            });
+            
+            const progress = (completedSections / formSections.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // Radio selection styling
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'radio') {
+                const groupName = e.target.name;
+                const radioItems = document.querySelectorAll(`input[name="${groupName}"]`);
+                radioItems.forEach(radio => {
+                    radio.closest('.radio-item').classList.remove('selected');
+                });
+                e.target.closest('.radio-item').classList.add('selected');
+            }
+            updateProgress();
+        });
+
+        // Event listeners
+        document.getElementById('currentWeight').addEventListener('input', calculateBMI);
+        document.getElementById('height').addEventListener('input', calculateBMI);
+        document.addEventListener('input', updateProgress);
+        
+        // Form submission
+        document.getElementById('glpAssessment').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Assessment submitted successfully! A physician will review your information within 24 hours.');
+        });
+        
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLP Clinic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
+            background: #fefefe;
+            color: #1a1a1a;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 400;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .signup-btn {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .signup-btn:hover {
+            background: #5855eb;
+            transform: translateY(-1px);
+        }
+
+        /* Navigation Tabs */
+        nav {
+            margin-top: 88px;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+            background: #fefefe;
+        }
+
+        .tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 32px;
+        }
+
+        .tab {
+            background: none;
+            border: none;
+            padding: 20px 0;
+            margin-right: 48px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            color: #1a1a1a;
+            border-bottom-color: #6366f1;
+            font-weight: 400;
+        }
+
+        .tab:hover {
+            color: #1a1a1a;
+        }
+
+        /* Content Sections */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 32px 120px;
+        }
+
+        .section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 64px;
+            max-width: 600px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 64px;
+            margin: 80px 0;
+        }
+
+        .feature {
+            text-align: left;
+        }
+
+        .feature h3 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .feature p {
+            color: #666;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Form Styling */
+        .form-container {
+            max-width: 500px;
+            margin-top: 64px;
+        }
+
+        .form-group {
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            padding: 16px 0 12px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-bottom-color: #6366f1;
+        }
+
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label {
+            transform: translateY(-24px);
+            font-size: 13px;
+            color: #6366f1;
+        }
+
+        .form-label {
+            position: absolute;
+            top: 16px;
+            left: 0;
+            color: #999;
+            font-size: 16px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-submit {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 300;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            margin-top: 24px;
+        }
+
+        .form-submit:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 48px;
+            margin-top: 64px;
+        }
+
+        .price-card {
+            padding: 48px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .price-label {
+            color: #666;
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        .price-description {
+            color: #666;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-content,
+            .tabs,
+            main {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .tab {
+                margin-right: 24px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">GLP Clinic</div>
+            <button class="signup-btn" onclick="showSection('assessment')">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('home')">Home</button>
+            <button class="tab" onclick="showSection('treatment')">Treatment</button>
+            <button class="tab" onclick="showSection('pricing')">Pricing</button>
+            <button class="tab" onclick="showSection('assessment')">Assessment</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h1>Medical weight management</h1>
+            <p class="subtitle">Board-certified physicians providing personalized GLP-1 therapy for sustainable weight loss.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Expert Care</h3>
+                    <p>Board-certified physicians with specialized training in weight management and metabolic health.</p>
+                </div>
+                <div class="feature">
+                    <h3>Proven Results</h3>
+                    <p>Clinical studies show 15-22% average weight loss with GLP-1 therapy when combined with lifestyle modifications.</p>
+                </div>
+                <div class="feature">
+                    <h3>Ongoing Support</h3>
+                    <p>Continuous monitoring and adjustment of your treatment plan with 24/7 medical support.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Section -->
+        <section id="treatment" class="section">
+            <h2>Treatment Approach</h2>
+            <p class="subtitle">Comprehensive care combining FDA-approved medications with lifestyle support.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Medical Evaluation</h3>
+                    <p>Thorough assessment to determine candidacy for GLP-1 therapy based on your health profile and weight loss goals.</p>
+                </div>
+                <div class="feature">
+                    <h3>Personalized Plan</h3>
+                    <p>Customized treatment protocol including medication selection, dosing, and lifestyle recommendations.</p>
+                </div>
+                <div class="feature">
+                    <h3>Regular Monitoring</h3>
+                    <p>Monthly check-ins with your physician to track progress and adjust treatment as needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section">
+            <h2>Transparent Pricing</h2>
+            <p class="subtitle">Clear, upfront pricing with no hidden fees or long-term contracts.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Initial Consultation</div>
+                    <p class="price-description">Comprehensive medical evaluation and personalized treatment plan development.</p>
+                </div>
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Monthly Program</div>
+                    <p class="price-description">Ongoing physician monitoring, support, and prescription management.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment Section -->
+        <section id="assessment" class="section">
+            <h2>Medical Assessment</h2>
+            <p class="subtitle">Complete this assessment to determine if GLP-1 therapy is appropriate for you.</p>
+            
+            <form class="form-container">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" class="form-input" placeholder=" " required>
+                    <label class="form-label">Phone Number</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="date" class="form-input" required>
+                    <label class="form-label">Date of Birth</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Current Weight (lbs)</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">Height (ft/in)</label>
+                </div>
+                
+                <button type="submit" class="form-submit">Continue Assessment</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            const tabs = document.querySelectorAll('.tab');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.add('active');
+            
+            // Activate corresponding tab
+            const activeTab = Array.from(tabs).find(tab => 
+                tab.onclick.toString().includes(sectionName)
+            );
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+        }
+
+        // Form label animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.form-input');
+            inputs.forEach(input => {
+                if (input.value) {
+                    input.nextElementSibling.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

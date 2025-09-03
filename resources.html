@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - GLP Clinic Weight Management</title>
+    <meta name="description" content="Educational resources, FAQs, and support materials for GLP-1 weight management therapy and healthy lifestyle guidance.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/glp-minimalist.css">
+    
+    <style>
+        .resource-card {
+            background: white;
+            border-radius: 16px;
+            padding: var(--space-xl);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xl);
+            color: white;
+            margin-bottom: var(--space-md);
+        }
+        
+        .faq-section {
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: var(--space-lg);
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--surface);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            color: var(--text-light);
+            line-height: 1.7;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-toggle {
+            font-size: var(--text-lg);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        
+        .download-link:hover {
+            color: var(--success);
+        }
+        
+        .medication-guide {
+            background: linear-gradient(135deg, var(--medical-blue) 0%, var(--primary) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+        
+        .medication-guide h3,
+        .medication-guide h4 {
+            color: white;
+        }
+        
+        .side-effect-alert {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+        
+        .side-effect-alert h4 {
+            color: #dc2626;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .emergency-info {
+            background: var(--warning);
+            color: #1a1a1a;
+            padding: var(--space-lg);
+            border-radius: 12px;
+            margin: var(--space-xl) 0;
+            text-align: center;
+        }
+        
+        .emergency-info h3 {
+            color: #1a1a1a;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .contact-card {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: var(--space-xl);
+            border-radius: 16px;
+        }
+        
+        .contact-card h3,
+        .contact-card h4 {
+            color: white;
+        }
+        
+        .lifestyle-tip {
+            border-left: 4px solid var(--success);
+            padding: var(--space-md);
+            background: var(--surface);
+            margin: var(--space-md) 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none;">
+                        <span class="logo-text">GLP Clinic</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="screening.html" class="btn btn-primary">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="medical-badge">Patient Education & Support</div>
+                <h1>Everything you need to know about GLP-1 therapy.</h1>
+                <p class="subtitle">
+                    Comprehensive resources, guides, and support materials to help you 
+                    succeed on your weight management journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Categories -->
+    <section>
+        <div class="container">
+            <h2>Patient Resources</h2>
+            <div class="grid-3">
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>Educational Guides</h3>
+                    <p>Comprehensive information about GLP-1 medications, how they work, and what to expect during treatment.</p>
+                    <a href="#education" class="download-link">
+                        <span>Learn More</span> →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">💊</div>
+                    <h3>Medication Information</h3>
+                    <p>Detailed guides for Semaglutide, Tirzepatide, and other GLP-1 medications including dosing and side effects.</p>
+                    <a href="#medications" class="download-link">
+                        <span>View Medications</span> →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">🍎</div>
+                    <h3>Lifestyle Support</h3>
+                    <p>Nutrition guidance, exercise recommendations, and lifestyle modifications to maximize your results.</p>
+                    <a href="#lifestyle" class="download-link">
+                        <span>Get Support</span> →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">❓</div>
+                    <h3>Frequently Asked Questions</h3>
+                    <p>Answers to common questions about treatment, side effects, insurance, and what to expect.</p>
+                    <a href="#faq" class="download-link">
+                        <span>View FAQs</span> →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">📞</div>
+                    <h3>Patient Support</h3>
+                    <p>Contact information for medical support, emergency situations, and general questions about your care.</p>
+                    <a href="#support" class="download-link">
+                        <span>Get Support</span> →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Tools and templates to track your weight loss progress, side effects, and treatment milestones.</p>
+                    <a href="#tracking" class="download-link">
+                        <span>Download Tools</span> →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="section-light" id="education">
+        <div class="container">
+            <h2>Understanding GLP-1 Therapy</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>What is GLP-1?</h3>
+                    <p>GLP-1 (Glucagon-like peptide-1) is a hormone naturally produced in your intestine that helps regulate blood sugar and appetite. GLP-1 receptor agonist medications mimic this hormone to:</p>
+                    <ul style="color: var(--text-light); line-height: 1.8;">
+                        <li>Slow gastric emptying, helping you feel full longer</li>
+                        <li>Reduce appetite and food cravings</li>
+                        <li>Regulate blood sugar levels</li>
+                        <li>Improve insulin sensitivity</li>
+                        <li>Promote weight loss</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>How Effective is GLP-1 Therapy?</h3>
+                    <p>Clinical studies have shown remarkable results:</p>
+                    <ul style="color: var(--text-light); line-height: 1.8;">
+                        <li><strong>Semaglutide:</strong> Average 15% weight loss</li>
+                        <li><strong>Tirzepatide:</strong> Average 22% weight loss</li>
+                        <li><strong>68% of patients</strong> lose 10% or more of body weight</li>
+                        <li><strong>Sustained results</strong> with continued treatment</li>
+                        <li><strong>Additional benefits:</strong> Improved blood pressure, cholesterol, and diabetes control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medication Information -->
+    <section id="medications">
+        <div class="container">
+            <h2>GLP-1 Medications</h2>
+            
+            <div class="medication-guide">
+                <h3>Semaglutide (Ozempic/Wegovy)</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>How it works:</h4>
+                        <ul style="color: rgba(255, 255, 255, 0.9);">
+                            <li>Weekly injection</li>
+                            <li>Reduces appetite and slows digestion</li>
+                            <li>Regulates blood sugar</li>
+                            <li>FDA-approved for weight management</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Typical dosing schedule:</h4>
+                        <ul style="color: rgba(255, 255, 255, 0.9);">
+                            <li>Week 1-4: 0.25mg weekly</li>
+                            <li>Week 5-8: 0.5mg weekly</li>
+                            <li>Week 9-12: 1.0mg weekly</li>
+                            <li>Maintenance: 1.7-2.4mg weekly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="medication-guide">
+                <h3>Tirzepatide (Mounjaro/Zepbound)</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>How it works:</h4>
+                        <ul style="color: rgba(255, 255, 255, 0.9);">
+                            <li>Weekly injection</li>
+                            <li>Dual GIP/GLP-1 receptor agonist</li>
+                            <li>Enhanced weight loss compared to semaglutide</li>
+                            <li>Improved glycemic control</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Typical dosing schedule:</h4>
+                        <ul style="color: rgba(255, 255, 255, 0.9);">
+                            <li>Week 1-4: 2.5mg weekly</li>
+                            <li>Week 5-8: 5mg weekly</li>
+                            <li>Week 9-12: 7.5mg weekly</li>
+                            <li>Maintenance: 10-15mg weekly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="side-effect-alert">
+                <h4>Common Side Effects</h4>
+                <p>Most side effects are mild and decrease over time as your body adjusts:</p>
+                <ul style="color: var(--text-light);">
+                    <li><strong>Gastrointestinal:</strong> Nausea, vomiting, diarrhea, constipation</li>
+                    <li><strong>Other:</strong> Fatigue, headache, dizziness</li>
+                    <li><strong>Injection site:</strong> Mild irritation or redness</li>
+                </ul>
+                <p><strong>Management tips:</strong> Start with smaller meals, avoid fatty foods, stay hydrated, and take medication as prescribed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Support -->
+    <section class="section-light" id="lifestyle">
+        <div class="container">
+            <h2>Lifestyle Guidelines for Success</h2>
+            
+            <div class="grid-2">
+                <div>
+                    <h3>Nutrition Recommendations</h3>
+                    <div class="lifestyle-tip">
+                        <h4>Eat smaller, more frequent meals</h4>
+                        <p>GLP-1 medications slow gastric emptying, so smaller portions will help reduce nausea and optimize digestion.</p>
+                    </div>
+                    <div class="lifestyle-tip">
+                        <h4>Focus on protein</h4>
+                        <p>Aim for 25-30g protein per meal to maintain muscle mass during weight loss and enhance satiety.</p>
+                    </div>
+                    <div class="lifestyle-tip">
+                        <h4>Stay hydrated</h4>
+                        <p>Drink 8-10 glasses of water daily. Proper hydration helps manage side effects and supports metabolism.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Exercise Guidelines</h3>
+                    <div class="lifestyle-tip">
+                        <h4>Start gradually</h4>
+                        <p>Begin with 150 minutes of moderate exercise per week. Walking, swimming, and cycling are excellent options.</p>
+                    </div>
+                    <div class="lifestyle-tip">
+                        <h4>Include strength training</h4>
+                        <p>2-3 resistance training sessions per week help maintain muscle mass during weight loss.</p>
+                    </div>
+                    <div class="lifestyle-tip">
+                        <h4>Listen to your body</h4>
+                        <p>Adjust intensity based on how you feel. Some fatigue is normal as your body adapts to the medication.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly will I see results with GLP-1 therapy?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most patients begin to see weight loss within the first 4-8 weeks of treatment. However, significant results typically become apparent after 12-16 weeks as your dose is gradually increased. The medication works progressively, with continued improvement over 6-12 months.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What should I do if I experience nausea?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nausea is common but usually improves within 2-4 weeks. To manage nausea: eat smaller meals, avoid fatty or spicy foods, stay hydrated, and take your medication at bedtime. If nausea persists or is severe, contact your physician about adjusting your dose.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I stop taking the medication once I reach my goal weight?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>GLP-1 medications are typically used as long-term therapy. Studies show that weight regain commonly occurs when the medication is discontinued. Most patients continue on a maintenance dose to sustain their weight loss results. Your physician will work with you to determine the best long-term plan.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will my insurance cover GLP-1 medications?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Insurance coverage varies significantly by plan and indication. Coverage is more likely if you have diabetes or meet specific BMI criteria. We provide detailed documentation and can assist with prior authorization requests. Many patients use HSA/FSA funds for our services even if insurance doesn't cover the medication directly.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are there any foods I should avoid while on GLP-1 therapy?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While there are no strictly forbidden foods, you may find that high-fat, greasy, or very sweet foods worsen nausea and other side effects. Many patients naturally gravitate toward healthier options as their appetite and cravings change. Focus on lean proteins, vegetables, and whole grains for optimal results.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I store and inject my medication?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Store your medication in the refrigerator (36-46°F). Most GLP-1 medications come in pre-filled pens for easy injection. Inject subcutaneously (under the skin) in your thigh, abdomen, or upper arm. Rotate injection sites to prevent irritation. Your medication will come with detailed injection instructions and video tutorials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Information -->
+    <section class="section-light">
+        <div class="container">
+            <div class="emergency-info">
+                <h3>When to Seek Emergency Care</h3>
+                <p><strong>Call 911 immediately if you experience:</strong></p>
+                <ul style="text-align: left; max-width: 600px; margin: var(--space-md) auto 0;">
+                    <li>Severe abdominal pain that doesn't improve</li>
+                    <li>Signs of pancreatitis (severe stomach pain, nausea, vomiting)</li>
+                    <li>Signs of severe dehydration</li>
+                    <li>Allergic reaction symptoms (rash, difficulty breathing, swelling)</li>
+                    <li>Persistent vomiting preventing fluid intake</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Support -->
+    <section id="support">
+        <div class="container">
+            <h2>Patient Support</h2>
+            <div class="grid-2">
+                <div class="contact-card">
+                    <h3>Medical Support</h3>
+                    <h4>24/7 Medical Hotline</h4>
+                    <p style="font-size: var(--text-xl); font-weight: 700; color: white;">(555) 123-4567</p>
+                    <p>For urgent medical questions, side effects, or emergencies</p>
+                </div>
+                
+                <div class="contact-card" style="background: var(--success);">
+                    <h3>General Support</h3>
+                    <h4>Patient Care Team</h4>
+                    <p style="font-size: var(--text-xl); font-weight: 700; color: white;">support@glpclinic.com</p>
+                    <p>For scheduling, billing, and general questions<br>Response within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracking -->
+    <section class="section-light" id="tracking">
+        <div class="container">
+            <h2>Track Your Progress</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Weight Loss Journal</h3>
+                    <p>Download our comprehensive tracking template to monitor your weight, measurements, and how you feel each week.</p>
+                    <a href="#" class="download-link">
+                        <span>Download PDF</span> ↓
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <h3>Side Effect Log</h3>
+                    <p>Track any side effects you experience to help your physician adjust your treatment plan for optimal comfort.</p>
+                    <a href="#" class="download-link">
+                        <span>Download Template</span> ↓
+                    </a>
+                </div>
+                
+                <div class="card">
+                    <h3>Nutrition Diary</h3>
+                    <p>Monitor your eating patterns, portion sizes, and how different foods make you feel while on GLP-1 therapy.</p>
+                    <a href="#" class="download-link">
+                        <span>Get Template</span> ↓
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to start your journey?</h2>
+            <p>Use these resources to prepare for your consultation and maximize your success with GLP-1 therapy.</p>
+            <a href="screening.html" class="btn btn-primary">Begin Your Assessment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="resources.html">Resources</a>
+                <a href="screening.html">Get Started</a>
+            </div>
+            <p>&copy; 2024 GLP Clinic. Licensed Medical Practice • HIPAA Compliant</p>
+            <p style="margin-top: var(--space-xs); font-size: var(--text-xs);">
+                FDA-approved medications • Not for emergency use • Consult your physician
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const toggle = item.querySelector('.faq-toggle');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').classList.remove('active');
+                        otherItem.querySelector('.faq-toggle').textContent = '+';
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.classList.add('active');
+                        toggle.textContent = '×';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 120; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
