@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLP Clinic - Design Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+            color: #2d2d2d;
+            margin-bottom: 20px;
+        }
+
+        .switcher {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .switch-btn {
+            padding: 12px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .switch-btn.black {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .switch-btn.blue {
+            background: #2d5aa0;
+            color: white;
+        }
+
+        .switch-btn:not(.active) {
+            opacity: 0.4;
+        }
+
+        .switch-btn:hover {
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+
+        .iframe-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1600px;
+            margin: 40px auto;
+        }
+
+        .design-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .design-header {
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .design-header.black {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .design-header.blue {
+            background: #2d5aa0;
+            color: white;
+        }
+
+        .design-preview {
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .design-preview iframe {
+            width: 100%;
+            height: 1200px;
+            transform: scale(0.5);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+
+        .features-comparison {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .features-table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .features-table th {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #e0e0e0;
+            font-weight: 500;
+        }
+
+        .features-table td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .tag.black {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .tag.blue {
+            background: #2d5aa0;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison-header">
+        <h1>GLP Clinic Design Comparison</h1>
+        <p style="color: #666; margin-bottom: 20px;">Compare both design approaches to determine the best fit for your brand positioning</p>
+        
+        <div class="switcher">
+            <button class="switch-btn black active" onclick="showDesign('modern')">
+                Minimalist Black (Premium)
+            </button>
+            <button class="switch-btn blue" onclick="showDesign('medical')">
+                Medical Blue (Authority)
+            </button>
+        </div>
+    </div>
+
+    <div class="iframe-container">
+        <iframe id="preview" src="modern.html"></iframe>
+    </div>
+
+    <div class="comparison-grid">
+        <div class="design-card">
+            <div class="design-header black">Minimalist Black Design</div>
+            <div class="design-preview">
+                <iframe src="modern.html"></iframe>
+            </div>
+        </div>
+        <div class="design-card">
+            <div class="design-header blue">Medical Authority Design</div>
+            <div class="design-preview">
+                <iframe src="medical.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-comparison">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Feature Comparison</h2>
+        <table class="features-table">
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Minimalist Black</th>
+                    <th>Medical Blue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Primary Color</strong></td>
+                    <td><span class="tag black">#1a1a1a</span></td>
+                    <td><span class="tag blue">#2d5aa0</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Brand Feeling</strong></td>
+                    <td>Premium, Exclusive, Boutique</td>
+                    <td>Medical, Scientific, Trustworthy</td>
+                </tr>
+                <tr>
+                    <td><strong>Target Audience</strong></td>
+                    <td>Design-conscious urban professionals</td>
+                    <td>Medical credibility seekers</td>
+                </tr>
+                <tr>
+                    <td><strong>Visual Style</strong></td>
+                    <td>Ultra-minimal, no decorations</td>
+                    <td>Clean medical with subtle elements</td>
+                </tr>
+                <tr>
+                    <td><strong>Typography</strong></td>
+                    <td>Light weights, high contrast</td>
+                    <td>Balanced weights, professional</td>
+                </tr>
+                <tr>
+                    <td><strong>Messaging</strong></td>
+                    <td>Transformation-focused</td>
+                    <td>Evidence-based, clinical</td>
+                </tr>
+                <tr>
+                    <td><strong>Best For</strong></td>
+                    <td>High-end wellness positioning</td>
+                    <td>Medical practice credibility</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showDesign(type) {
+            const iframe = document.getElementById('preview');
+            const blackBtn = document.querySelector('.switch-btn.black');
+            const blueBtn = document.querySelector('.switch-btn.blue');
+            
+            if (type === 'modern') {
+                iframe.src = 'modern.html';
+                blackBtn.classList.add('active');
+                blueBtn.classList.remove('active');
+            } else {
+                iframe.src = 'medical.html';
+                blackBtn.classList.remove('active');
+                blueBtn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -41,10 +41,54 @@
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: #1a1a1a;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-mark {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 300;
             color: #2d2d2d;
             letter-spacing: -0.02em;
+        }
+
+        .logo-accent {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .tagline {
+            font-size: 11px;
+            color: #777;
+            letter-spacing: 0.3px;
+            margin-top: 2px;
+            font-weight: 400;
         }
 
         .signup-btn {
@@ -298,8 +342,14 @@
     <!-- Fixed Header -->
     <header>
         <div class="header-content">
-            <div class="logo">GLP Clinic</div>
-            <button class="signup-btn" onclick="showSection('assessment')">Sign Up</button>
+            <div class="logo">
+                <div class="logo-mark">GC</div>
+                <div>
+                    <div class="logo-text">GLP <span class="logo-accent">Clinic</span></div>
+                    <div class="tagline">Medical weight loss, monitored by MDs</div>
+                </div>
+            </div>
+            <button class="signup-btn" onclick="showSection('assessment')">Start Now</button>
         </div>
     </header>
 
@@ -307,7 +357,7 @@
     <nav>
         <div class="tabs">
             <button class="tab active" onclick="showSection('home')">Home</button>
-            <button class="tab" onclick="showSection('treatment')">Treatment</button>
+            <button class="tab" onclick="showSection('treatment')">Complete Care</button>
             <button class="tab" onclick="showSection('pricing')">Pricing</button>
             <button class="tab" onclick="showSection('assessment')">Assessment</button>
         </div>
@@ -317,69 +367,69 @@
     <main>
         <!-- Home Section -->
         <section id="home" class="section active">
-            <h1>Medical weight management</h1>
-            <p class="subtitle">Board-certified physicians providing personalized GLP-1 therapy for sustainable weight loss.</p>
+            <h1>Medical weight loss that actually works</h1>
+            <p class="subtitle">Lasting weight loss and metabolic change, guided by board-certified MDs.</p>
             
             <div class="features">
                 <div class="feature">
-                    <h3>Expert Care</h3>
-                    <p>Board-certified physicians with specialized training in weight management and metabolic health.</p>
+                    <h3>Continuous MD Monitoring</h3>
+                    <p>Your board-certified physician reviews labs monthly and adjusts treatment personally. Real medical supervision, not algorithms.</p>
                 </div>
                 <div class="feature">
-                    <h3>Proven Results</h3>
-                    <p>Clinical studies show 15-22% average weight loss with GLP-1 therapy when combined with lifestyle modifications.</p>
+                    <h3>Sustainable Weight Loss</h3>
+                    <p>Average 15-20% weight loss that lasts. We optimize your metabolism while you lose weight safely.</p>
                 </div>
                 <div class="feature">
-                    <h3>Ongoing Support</h3>
-                    <p>Continuous monitoring and adjustment of your treatment plan with 24/7 medical support.</p>
+                    <h3>Real Medical Partnership</h3>
+                    <p>Same physician throughout, available for questions, invested in your success. This is how medicine should be.</p>
                 </div>
             </div>
         </section>
 
         <!-- Treatment Section -->
         <section id="treatment" class="section">
-            <h2>Treatment Approach</h2>
-            <p class="subtitle">Comprehensive care combining FDA-approved medications with lifestyle support.</p>
+            <h2>Complete Care Approach</h2>
+            <p class="subtitle">Comprehensive medical supervision from evaluation through success.</p>
             
             <div class="features">
                 <div class="feature">
-                    <h3>Medical Evaluation</h3>
-                    <p>Thorough assessment to determine candidacy for GLP-1 therapy based on your health profile and weight loss goals.</p>
+                    <h3>Thorough Medical Evaluation</h3>
+                    <p>Comprehensive assessment including labs, medical history, and metabolic markers. Your MD reviews everything personally.</p>
                 </div>
                 <div class="feature">
-                    <h3>Personalized Plan</h3>
-                    <p>Customized treatment protocol including medication selection, dosing, and lifestyle recommendations.</p>
+                    <h3>Personalized Weight Loss Plan</h3>
+                    <p>Your board-certified MD creates a customized weight management protocol based on your health profile and labs.</p>
                 </div>
                 <div class="feature">
-                    <h3>Regular Monitoring</h3>
-                    <p>Monthly check-ins with your physician to track progress and adjust treatment as needed.</p>
+                    <h3>Ongoing MD Optimization</h3>
+                    <p>Monthly monitoring with lab-based adjustments by your physician. Continuous refinement for optimal results.</p>
                 </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
         <section id="pricing" class="section">
-            <h2>Transparent Pricing</h2>
-            <p class="subtitle">Clear, upfront pricing with no hidden fees or long-term contracts.</p>
+            <h2>Medical Weight Loss Pricing</h2>
+            <p class="subtitle">Transparent pricing for physician-supervised weight management, not just prescriptions.</p>
             
             <div class="pricing-grid">
                 <div class="price-card">
                     <div class="price">$149</div>
-                    <div class="price-label">Initial Consultation</div>
-                    <p class="price-description">Comprehensive medical evaluation and personalized treatment plan development.</p>
+                    <div class="price-label">Initial Medical Evaluation</div>
+                    <p class="price-description">Comprehensive assessment by board-certified MD, including lab review and personalized treatment plan.</p>
                 </div>
                 <div class="price-card">
                     <div class="price">$149</div>
-                    <div class="price-label">Monthly Program</div>
-                    <p class="price-description">Ongoing physician monitoring, support, and prescription management.</p>
+                    <div class="price-label">Monthly MD Supervision</div>
+                    <p class="price-description">Continuous physician monitoring, lab reviews, dose adjustments, and direct MD access for questions.</p>
                 </div>
             </div>
         </section>
 
         <!-- Assessment Section -->
         <section id="assessment" class="section">
-            <h2>Medical Assessment</h2>
-            <p class="subtitle">Complete this assessment to determine if GLP-1 therapy is appropriate for you.</p>
+            <h2>Begin Your Medical Evaluation</h2>
+            <p class="subtitle">Start your weight loss journey with board-certified MD supervision.</p>
             
             <form class="form-container">
                 <div class="form-group">
