@@ -18,152 +18,6 @@
             line-height: 1.6;
             font-weight: 400;
         }
-        
-        /* Service Tier Comparison Styles */
-        .service-tiers {
-            margin-top: 80px;
-            padding-top: 64px;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .service-tiers h2 {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 300;
-            margin-bottom: 16px;
-        }
-        
-        .tiers-intro {
-            text-align: center;
-            color: #666;
-            font-size: 18px;
-            margin-bottom: 48px;
-        }
-        
-        .tier-comparison {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        @media (max-width: 768px) {
-            .tier-comparison {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .tier-card {
-            background: white;
-            border-radius: 8px;
-            padding: 36px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 6px rgba(0, 0, 0, 0.02);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .tier-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 15px rgba(0, 0, 0, 0.04);
-        }
-        
-        .tier-card.premium {
-            border: 2px solid #1a1a1a;
-        }
-        
-        .premium-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1a1a1a;
-            color: white;
-            padding: 4px 16px;
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-        
-        .tier-card h3 {
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-        
-        .tier-price {
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        }
-        
-        .price-main {
-            font-size: 42px;
-            font-weight: 300;
-            color: #1a1a1a;
-            display: block;
-        }
-        
-        .price-label {
-            font-size: 14px;
-            color: #666;
-            display: block;
-            margin-top: 4px;
-        }
-        
-        .tier-features {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 32px 0;
-        }
-        
-        .tier-features li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-            font-size: 15px;
-            color: #666;
-            line-height: 1.5;
-        }
-        
-        .tier-features li:last-child {
-            border-bottom: none;
-        }
-        
-        .tier-features li strong {
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .tier-btn {
-            width: 100%;
-            padding: 14px;
-            background: white;
-            color: #1a1a1a;
-            border: 2px solid #1a1a1a;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .tier-btn:hover {
-            background: #1a1a1a;
-            color: white;
-        }
-        
-        .premium-btn {
-            background: #1a1a1a;
-            color: white;
-        }
-        
-        .premium-btn:hover {
-            background: #000;
-            border-color: #000;
-        }
 
         /* Header - Caliber's clean layout */
         header {
@@ -1058,80 +912,6 @@
             color: #000;
         }
         
-        /* Screening Steps Styles */
-        .screening-step {
-            margin-top: 48px;
-        }
-
-        .screening-questions {
-            margin-top: 32px;
-        }
-
-        .question-item {
-            background: #f8f8f8;
-            padding: 24px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border-left: 3px solid #e0e0e0;
-            transition: border-left-color 0.3s ease;
-        }
-
-        .question-item:hover {
-            border-left-color: #1a1a1a;
-        }
-
-        .question-text {
-            font-size: 16px;
-            font-weight: 500;
-            color: #2d2d2d;
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 24px;
-        }
-
-        .radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 15px;
-            color: #4a4a4a;
-            cursor: pointer;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-        }
-
-        .radio-group label:hover {
-            background: #f0f0f0;
-        }
-
-        .radio-group input[type="radio"] {
-            margin: 0;
-            transform: scale(1.2);
-        }
-
-        .bmi-inputs {
-            display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .bmi-inputs {
-                grid-template-columns: 1fr;
-            }
-            
-            .radio-group {
-                flex-direction: column;
-                gap: 12px;
-            }
-        }
-        
         /* Mobile */
         @media (max-width: 768px) {
             h1 { font-size: 36px; }
@@ -1151,10 +931,10 @@
                 <div class="logo-mark">C</div>
                 <div>
                     <div class="logo-text">Cadence</div>
-                    <div class="tagline">Advanced GLP-1 therapy with precision monitoring</div>
+                    <div class="tagline">Board-Certified Physicians. Evidence-Based Results. At Your Cadence.</div>
                 </div>
             </div>
-            <button class="cta-btn" onclick="showSection('assessment')" style="background: #4a5fcf;">Check Insurance Coverage</button>
+            <button class="cta-btn" onclick="showSection('assessment')">Start Now</button>
         </div>
     </header>
 
@@ -1171,99 +951,33 @@
 
     <main>
         <section id="home" class="section active">
-            <h1>Your <span class="accent">metabolic reset</span> starts here</h1>
-            <p class="subtitle">Advanced GLP-1 therapy with precision monitoring by board-certified physicians</p>
-            <div style="background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%); border-radius: 8px; padding: 20px; margin: 24px auto 32px; max-width: 700px; border: 1px solid #d0d8ff;">
-                <p style="font-size: 18px; color: #1a1a1a; font-weight: 500; margin: 0; text-align: center;">🎯 Most insurance plans cover our Premium monitoring at no additional cost</p>
-                <p style="font-size: 14px; color: #4a5fcf; margin: 8px 0 0; text-align: center;">Why choose less when your insurance covers comprehensive care?</p>
+            <h1>Find Your <span class="accent">Rhythm</span> in Weight Loss.</h1>
+            <p class="subtitle">Guided by board-certified internal medicine physicians with 20+ years of hospitalist and faculty experience at leading institutions including Mayo Clinic, UCSF, University of Minnesota, Allina Health, and PeaceHealth.</p>
+            
+            <div class="rhythm">
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
             </div>
-            <p style="font-size: 16px; color: #666; line-height: 1.6; max-width: 800px; margin: 0 auto 48px;">Get the most advanced GLP-1 therapy with daily physician monitoring. Insurance typically covers our Premium program completely. Self-pay patients can add it for just $99/month.</p>
             
             <div class="features">
                 <div class="feature">
-                    <h3 data-number="1">Board-Certified Expertise</h3>
-                    <p>Internal medicine physicians with 20+ years of hospitalist and faculty experience at Mayo Clinic, UCSF, University of Minnesota, Allina Health, and PeaceHealth.</p>
+                    <h3 data-number="1">Your Pace</h3>
+                    <p>Sustainable weight loss adapted to your body's natural response.</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Week 1-2: Initial assessment and treatment start</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="2">Insurance Coverage</h3>
-                    <p>Most insurance plans cover our Premium monitoring program completely. We handle all billing and prior authorizations for you.</p>
+                    <h3 data-number="2">Real Results</h3>
+                    <p>15-20% average weight loss through proven GLP-1 therapy.</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Week 2-4: Appetite changes and early progress</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="3">Superior Outcomes</h3>
-                    <p>Patients with daily monitoring achieve 22% better results. Real-time data allows precise dose optimization and early intervention.</p>
+                    <h3 data-number="3">Medical Supervision</h3>
+                    <p>Monthly physician monitoring to optimize your treatment.</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Week 4+: Ongoing optimization and support</p>
                 </div>
-            </div>
-            
-            <!-- Service Tiers -->
-            <div class="service-tiers">
-                <h2>Your Insurance Likely Covers Premium</h2>
-                <p class="tiers-intro">Most patients pay nothing extra for comprehensive daily monitoring</p>
-                
-                <div class="tier-comparison">
-                    <div class="tier-card premium" style="order: 1;">
-                        <div class="premium-badge">RECOMMENDED - TYPICALLY COVERED</div>
-                        <h3>Premium Metabolic Monitoring</h3>
-                        <div class="tier-price">
-                            <span class="price-main" style="font-size: 32px;">Insurance: $0</span>
-                            <span class="price-label">Most plans cover 100% (CPT 99453/99454)</span>
-                            <span style="display: block; margin-top: 8px; font-size: 13px; color: #999;">Self-pay: +$99/month</span>
-                        </div>
-                        <ul class="tier-features">
-                            <li>✓ <strong>Complete GLP-1 medical care</strong></li>
-                            <li>✓ FDA-cleared Withings medical devices shipped to you</li>
-                            <li>✓ Daily weight and body composition tracking</li>
-                            <li>✓ Blood pressure monitoring</li>
-                            <li>✓ Real-time physician analysis of your data</li>
-                            <li>✓ Proactive dose adjustments based on your progress</li>
-                            <li>✓ 24/7 monitored care with alerts</li>
-                            <li>✓ All consultations and follow-ups included</li>
-                        </ul>
-                        <button class="tier-btn premium-btn" onclick="showSection('assessment')">Check Insurance Coverage →</button>
-                    </div>
-                    
-                    <div class="tier-card" style="order: 2; opacity: 0.9;">
-                        <h3 style="color: #666;">Basic Visit-Only Care</h3>
-                        <div class="tier-price">
-                            <span class="price-main" style="font-size: 28px; color: #666;">$249/$199</span>
-                            <span class="price-label">Per-visit pricing</span>
-                        </div>
-                        <p style="font-size: 14px; color: #999; margin-bottom: 20px; font-style: italic;">For patients who prefer minimal monitoring</p>
-                        <ul class="tier-features">
-                            <li style="color: #999;">✓ Telehealth consultations only</li>
-                            <li style="color: #999;">✓ GLP-1 prescriptions</li>
-                            <li style="color: #999;">✓ Basic dose adjustments</li>
-                            <li style="color: #999;">✓ No daily monitoring</li>
-                            <li style="color: #999;">✓ No medical devices</li>
-                            <li style="color: #999;">✓ Traditional care model</li>
-                        </ul>
-                        <button class="tier-btn" style="background: #f8f8f8; color: #666; border-color: #ddd;" onclick="showSection('assessment')">Choose Basic Care</button>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 48px; padding: 24px; background: #fff8f0; border-radius: 8px;">
-                    <p style="font-size: 20px; font-weight: 500; color: #ff6b35; margin-bottom: 8px;">Why settle for less when insurance covers more?</p>
-                    <p style="font-size: 15px; color: #666;">Most patients qualify for Premium monitoring at no additional cost. We'll verify your benefits immediately.</p>
-                </div>
-            </div>
-            
-            <div class="quick-faq">
-                <div class="quick-faq-grid">
-                    <div class="quick-faq-item">
-                        <div class="quick-faq-question">Is Premium monitoring really free?</div>
-                        <div class="quick-faq-answer">Yes! Most insurance plans cover our Premium monitoring completely under RPM benefits. We verify coverage immediately and handle all billing. If not covered, it's just $99/month extra.</div>
-                    </div>
-                    <div class="quick-faq-item">
-                        <div class="quick-faq-question">How much more weight will I lose?</div>
-                        <div class="quick-faq-answer">Studies show 22% better outcomes with daily monitoring. Premium patients lose 18-25% body weight vs 15-20% with basic care. Real-time data enables precise optimization.</div>
-                    </div>
-                    <div class="quick-faq-item">
-                        <div class="quick-faq-question">What devices do I get?</div>
-                        <div class="quick-faq-answer">FDA-cleared Withings smart scale and blood pressure monitor shipped free. Daily measurements sync automatically to your physician for real-time adjustments.</div>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 32px;">
-                    <button class="cta-btn" onclick="showSection('assessment')" style="padding: 12px 32px; background: #4a5fcf;">Check If Premium Is Covered →</button>
-                </p>
             </div>
         </section>
 
@@ -1329,43 +1043,23 @@
         </section>
 
         <section id="pricing" class="section">
-            <h2>Simple, Transparent Pricing</h2>
-            <p class="subtitle">Most patients pay nothing for Premium monitoring through insurance</p>
+            <h2>Simple Pricing</h2>
+            <p class="subtitle">Transparent, straightforward, no surprises.</p>
             
-            <div class="tier-comparison" style="margin-top: 48px;">
-                <div class="tier-card premium" style="order: 1;">
-                    <div class="premium-badge">MOST POPULAR - COVERED BY INSURANCE</div>
-                    <h3 style="margin-top: 0;">Premium Metabolic Monitoring</h3>
-                    <div style="margin-bottom: 24px;">
-                        <div class="price" style="color: #4a5fcf;">$0</div>
-                        <div class="price-label">For Most Insurance Patients</div>
-                        <p class="price-description" style="margin-top: 16px; font-weight: 500;">Complete GLP-1 care + daily monitoring + medical devices + real-time physician oversight</p>
-                    </div>
-                    <div style="padding: 20px; background: linear-gradient(135deg, #f0f4ff, #e8ecff); border-radius: 4px; margin-top: 24px;">
-                        <p style="font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 12px;">✓ Covered by most insurance plans</p>
-                        <p style="font-size: 13px; color: #4a5fcf; line-height: 1.5; margin-bottom: 8px;">We bill your insurance using CPT codes 99453/99454</p>
-                        <p style="font-size: 13px; color: #666;">Self-pay option: Add $99/month to consultation fees</p>
-                    </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price">$249</div>
+                    <div class="price-label">Initial Consultation</div>
+                    <p class="price-description">Comprehensive metabolic and medical evaluation, treatment plan, baseline labs review, and GLP-1 prescribing when appropriate.</p>
                 </div>
-                
-                <div class="tier-card" style="order: 2; opacity: 0.85;">
-                    <h3 style="margin-top: 0; color: #666;">Basic Visit-Only</h3>
-                    <div style="margin-bottom: 24px;">
-                        <div class="price" style="font-size: 36px; color: #999;">$249</div>
-                        <div class="price-label">Initial Consultation</div>
-                        <p class="price-description" style="margin-top: 16px; color: #999;">Basic evaluation and prescription only</p>
-                    </div>
-                    <div style="padding-top: 24px; border-top: 1px solid rgba(0, 0, 0, 0.06);">
-                        <div class="price" style="font-size: 36px; color: #999;">$199</div>
-                        <div class="price-label">Per Follow-Up</div>
-                        <p class="price-description" style="margin-top: 16px; color: #999;">Traditional telehealth visits without monitoring</p>
-                    </div>
-                    <p style="font-size: 13px; color: #999; margin-top: 20px; padding: 12px; background: #f8f8f8; border-radius: 4px;">Missing out on: Daily monitoring, medical devices, proactive adjustments, better outcomes</p>
+                <div class="price-card">
+                    <div class="price">$199</div>
+                    <div class="price-label">Follow-Up Visits</div>
+                    <p class="price-description">Dose titration, side-effect management, ongoing monitoring, and prior authorization support. Typically scheduled at Week 4, then every 12 weeks.</p>
                 </div>
             </div>
-            
-            <p style="text-align: center; margin-top: 48px; padding: 20px; background: #fafafa; border-left: 3px solid #ddd; font-size: 14px; color: #666;">
-                <strong>Important:</strong> Medication costs are separate and determined by your pharmacy/insurance. We provide prescribing services only. GLP-1 medications typically range from $250-$1,000/month depending on insurance coverage.
+            <p style="text-align: center; margin-top: 32px; font-size: 14px; color: #666;">
+                <strong>Note:</strong> Medication cost is separate and determined by your pharmacy/insurance. We provide prescribing services only.
             </p>
         </section>
 
@@ -1575,148 +1269,37 @@
         </section>
 
         <section id="assessment" class="section">
-            <h2>Check Your Coverage & Get Started</h2>
-            <p class="subtitle">Most patients qualify for Premium monitoring at no extra cost through insurance</p>
+            <h2>Get Started</h2>
+            <p class="subtitle">Schedule your consultation today.</p>
             
-            <div style="background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%); border-radius: 8px; padding: 24px; margin: 32px auto; max-width: 600px; text-align: center;">
-                <p style="font-size: 18px; font-weight: 500; color: #1a1a1a; margin-bottom: 8px;">✓ We'll verify your insurance coverage immediately</p>
-                <p style="font-size: 14px; color: #4a5fcf;">95% of patients with insurance get Premium monitoring covered</p>
-            </div>
-            
-            <!-- Step 1: BMI Calculator -->
-            <div id="step-1" class="screening-step">
-                <h3>Step 1: BMI Assessment</h3>
-                <p>GLP-1 therapy is typically recommended for individuals with a BMI of 27 or higher.</p>
+            <form class="form-container">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">Full Name</label>
+                </div>
                 
-                <div class="bmi-calculator">
-                    <div class="bmi-inputs">
-                        <div class="bmi-input-group">
-                            <input type="number" id="height-feet" class="bmi-input" min="3" max="8" placeholder="5" required>
-                            <label class="bmi-label">Height (feet)</label>
-                        </div>
-                        <div class="bmi-input-group">
-                            <input type="number" id="height-inches" class="bmi-input" min="0" max="11" placeholder="8" required>
-                            <label class="bmi-label">Height (inches)</label>
-                        </div>
-                        <div class="bmi-input-group">
-                            <input type="number" id="weight" class="bmi-input" min="80" max="500" placeholder="180" required>
-                            <label class="bmi-label">Weight (lbs)</label>
-                        </div>
-                    </div>
-                    
-                    <button type="button" class="bmi-calculate" onclick="calculateBMIAndProceed()">Calculate BMI & Continue</button>
-                    
-                    <div id="bmi-result" class="bmi-result">
-                        <div id="bmi-value" class="bmi-number">--</div>
-                        <div id="bmi-status" class="bmi-status">BMI Status</div>
-                        <div id="bmi-message" class="bmi-message"></div>
-                    </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email</label>
                 </div>
-            </div>
-
-            <!-- Step 2: Medical Screening -->
-            <div id="step-2" class="screening-step" style="display: none;">
-                <h3>Step 2: Safety Screening</h3>
-                <p>Please answer these important medical questions to ensure GLP-1 therapy is safe for you.</p>
                 
-                <div class="screening-questions">
-                    <div class="question-item">
-                        <p class="question-text">Are you currently pregnant or breastfeeding?</p>
-                        <div class="radio-group">
-                            <label><input type="radio" name="pregnant" value="yes" required> Yes</label>
-                            <label><input type="radio" name="pregnant" value="no" required> No</label>
-                        </div>
-                    </div>
-
-                    <div class="question-item">
-                        <p class="question-text">Do you have a personal or family history of medullary thyroid cancer?</p>
-                        <div class="radio-group">
-                            <label><input type="radio" name="thyroid-cancer" value="yes" required> Yes</label>
-                            <label><input type="radio" name="thyroid-cancer" value="no" required> No</label>
-                        </div>
-                    </div>
-
-                    <div class="question-item">
-                        <p class="question-text">Do you have Multiple Endocrine Neoplasia syndrome type 2 (MEN2)?</p>
-                        <div class="radio-group">
-                            <label><input type="radio" name="men2" value="yes" required> Yes</label>
-                            <label><input type="radio" name="men2" value="no" required> No</label>
-                        </div>
-                    </div>
-
-                    <div class="question-item">
-                        <p class="question-text">Do you have a history of pancreatitis?</p>
-                        <div class="radio-group">
-                            <label><input type="radio" name="pancreatitis" value="yes" required> Yes</label>
-                            <label><input type="radio" name="pancreatitis" value="no" required> No</label>
-                        </div>
-                    </div>
-
-                    <div class="question-item">
-                        <p class="question-text">Are you under 18 years of age?</p>
-                        <div class="radio-group">
-                            <label><input type="radio" name="under-18" value="yes" required> Yes</label>
-                            <label><input type="radio" name="under-18" value="no" required> No</label>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <input type="tel" class="form-input" placeholder=" " required>
+                    <label class="form-label">Phone</label>
                 </div>
-
-                <button type="button" class="cta-btn" style="width: 100%; padding: 14px; margin-top: 24px;" onclick="processScreening()">Continue to Contact Information</button>
-            </div>
-
-            <!-- Step 3: Schedule in Charm Health -->
-            <div id="step-3" class="screening-step" style="display: none;">
-                <div style="text-align: center; padding: 48px 24px;">
-                    <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 50%; width: 80px; height: 80px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;">
-                        <span style="font-size: 48px;">✓</span>
-                    </div>
-                    
-                    <h3 style="font-size: 28px; margin-bottom: 16px;">Great! You're a Candidate</h3>
-                    <p style="font-size: 18px; color: #666; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">
-                        Based on your screening, you appear to be a good candidate for GLP-1 therapy with our Premium monitoring program.
-                    </p>
-                    
-                    <div style="background: white; border: 2px solid #4a5fcf; border-radius: 8px; padding: 32px; max-width: 500px; margin: 0 auto;">
-                        <h4 style="color: #4a5fcf; margin-bottom: 16px;">Next Step: Schedule Your Consultation</h4>
-                        <p style="color: #666; margin-bottom: 24px; font-size: 15px;">
-                            Click below to schedule directly in our secure patient portal. You'll complete your full medical intake there.
-                        </p>
-                        
-                        <!-- TODO: Replace # with actual Charm Health scheduling URL -->
-                        <a href="#" onclick="alert('Scheduling link will be added soon. Please email appointments@cadencehealth.com'); return false;" style="display: inline-block; background: #4a5fcf; color: white; padding: 16px 48px; border-radius: 4px; text-decoration: none; font-size: 16px; font-weight: 500; transition: all 0.3s ease; cursor: pointer;">
-                            Schedule in Charm Health →
-                        </a>
-                        
-                        <p style="font-size: 13px; color: #999; margin-top: 20px;">
-                            Secure portal • HIPAA compliant • Insurance verification included
-                        </p>
-                    </div>
-                    
-                    <div style="background: #f0f4ff; border-left: 3px solid #4a5fcf; padding: 20px; margin: 32px auto 0; border-radius: 4px; max-width: 500px; text-align: left;">
-                        <h4 style="margin-top: 0; color: #4a5fcf; font-size: 16px;">What to Expect:</h4>
-                        <ul style="margin-left: 20px; color: #666; font-size: 14px;">
-                            <li>We'll verify your insurance coverage for Premium monitoring</li>
-                            <li>Complete medical intake in the secure portal</li>
-                            <li>Video consultation with board-certified physician</li>
-                            <li>Receive your Withings devices if Premium is covered</li>
-                            <li>Start your personalized GLP-1 treatment plan</li>
-                        </ul>
-                    </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Current Weight (lbs)</label>
                 </div>
-            </div>
-
-            <!-- Not Eligible Message -->
-            <div id="not-eligible" class="screening-step" style="display: none;">
-                <div style="background: #fff8f0; border-left: 3px solid #ff6b35; padding: 24px; border-radius: 4px; text-align: center;">
-                    <h3 style="color: #ff6b35; margin-top: 0;">Important Medical Information</h3>
-                    <p>Based on your responses, GLP-1 therapy may not be appropriate for you at this time.</p>
-                    <p style="font-weight: 500;">We recommend discussing weight management options with your primary care physician or an endocrinologist.</p>
-                    <p style="font-size: 14px; color: #666; margin-top: 24px;">
-                        If you have questions about this screening, please contact us at 
-                        <a href="mailto:support@cadencehealth.com" style="color: #ff6b35;">support@cadencehealth.com</a>
-                    </p>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Goal Weight (lbs)</label>
                 </div>
-            </div>
+                
+                <button class="cta-btn" style="width: 100%; padding: 14px;">Schedule Consultation</button>
+            </form>
         </section>
     </main>
 
@@ -1752,16 +1335,18 @@
                     <h4>Patient Resources</h4>
                     <ul class="footer-links">
                         <li><a href="#faq">FAQs</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#" onclick="alert('For medical emergencies, call 911 immediately. This service is not for urgent care.')">Emergency: Call 911</a></li>
+                        <li><a href="emergency.html">Emergency Info</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Service Areas</h4>
-                    <p>Currently serving: Minnesota</p>
-                    <p>Expanding to: Washington, Oregon, California</p>
-                    <p>Licensed physicians in each state</p>
+                    <h4>Compliance</h4>
+                    <p>Licensed to practice in: MN</p>
+                    <p>NPI: [Pending]</p>
+                    <p>DEA: [If Applicable]</p>
+                    <p>State License: [Pending]</p>
                 </div>
             </div>
             
@@ -1803,21 +1388,17 @@
             }
         }
         
-        function calculateBMIAndProceed() {
-            const heightFeet = parseInt(document.getElementById('height-feet').value);
-            const heightInches = parseInt(document.getElementById('height-inches').value) || 0;
-            const weight = parseInt(document.getElementById('weight').value);
+        function calculateBMI() {
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
             
-            if (!heightFeet || !weight) {
-                alert('Please enter your height and weight');
+            if (!height || !weight) {
+                alert('Please enter both height and weight');
                 return;
             }
             
-            // Convert height to total inches
-            const totalInches = (heightFeet * 12) + heightInches;
-            
             // BMI = (weight in pounds × 703) / (height in inches)²
-            const bmi = (weight * 703) / (totalInches * totalInches);
+            const bmi = (weight * 703) / (height * height);
             const roundedBMI = bmi.toFixed(1);
             
             const resultDiv = document.getElementById('bmi-result');
@@ -1826,90 +1407,23 @@
             const bmiMessage = document.getElementById('bmi-message');
             
             bmiValue.textContent = roundedBMI;
-            resultDiv.className = 'bmi-result show';
             
-            // Determine eligibility and messaging
             if (bmi >= 27) {
                 bmiStatus.textContent = 'You Qualify!';
                 bmiStatus.className = 'bmi-status bmi-eligible';
-                bmiMessage.textContent = 'You meet the BMI criteria for GLP-1 therapy. Continue to the safety screening.';
-                
-                // Auto-proceed to step 2 after 2 seconds
-                setTimeout(() => {
-                    document.getElementById('step-1').style.display = 'none';
-                    document.getElementById('step-2').style.display = 'block';
-                    document.getElementById('step-2').scrollIntoView({ behavior: 'smooth' });
-                }, 2000);
-                
+                bmiMessage.textContent = 'You meet the BMI criteria for GLP-1 therapy. Complete the form below to schedule your consultation with a board-certified physician.';
             } else if (bmi >= 25) {
                 bmiStatus.textContent = 'May Qualify';
                 bmiStatus.className = 'bmi-status';
-                bmiMessage.textContent = 'You may qualify if you have weight-related health conditions. Continue to discuss your eligibility.';
-                
-                // Still allow to proceed but with caution
-                setTimeout(() => {
-                    document.getElementById('step-1').style.display = 'none';
-                    document.getElementById('step-2').style.display = 'block';
-                    document.getElementById('step-2').scrollIntoView({ behavior: 'smooth' });
-                }, 2000);
-                
+                bmiMessage.textContent = 'You may qualify if you have weight-related health conditions. Our physicians will evaluate your complete health profile during consultation.';
             } else {
                 bmiStatus.textContent = 'Below Threshold';
                 bmiStatus.className = 'bmi-status bmi-not-eligible';
-                bmiMessage.textContent = 'GLP-1 therapy is typically recommended for BMI 27 or higher. Consider discussing alternatives with your physician.';
-                
-                // Show not eligible after delay
-                setTimeout(() => {
-                    document.getElementById('step-1').style.display = 'none';
-                    document.getElementById('not-eligible').style.display = 'block';
-                    document.getElementById('not-eligible').scrollIntoView({ behavior: 'smooth' });
-                }, 3000);
+                bmiMessage.textContent = 'GLP-1 therapy is typically recommended for BMI 27 or higher. Consider scheduling a consultation to discuss alternative approaches.';
             }
+            
+            resultDiv.className = 'bmi-result show';
         }
-
-        function processScreening() {
-            // Check all screening questions
-            const questions = [
-                { name: 'pregnant', failValue: 'yes' },
-                { name: 'thyroid-cancer', failValue: 'yes' },
-                { name: 'men2', failValue: 'yes' },
-                { name: 'pancreatitis', failValue: 'yes' },
-                { name: 'under-18', failValue: 'yes' }
-            ];
-
-            let allAnswered = true;
-            let hasDealBreaker = false;
-
-            for (let question of questions) {
-                const answer = document.querySelector(`input[name="${question.name}"]:checked`);
-                if (!answer) {
-                    allAnswered = false;
-                    break;
-                }
-                if (answer.value === question.failValue) {
-                    hasDealBreaker = true;
-                }
-            }
-
-            if (!allAnswered) {
-                alert('Please answer all screening questions to continue.');
-                return;
-            }
-
-            if (hasDealBreaker) {
-                // Show not eligible screen
-                document.getElementById('step-2').style.display = 'none';
-                document.getElementById('not-eligible').style.display = 'block';
-                document.getElementById('not-eligible').scrollIntoView({ behavior: 'smooth' });
-            } else {
-                // Proceed to contact form
-                document.getElementById('step-2').style.display = 'none';
-                document.getElementById('step-3').style.display = 'block';
-                document.getElementById('step-3').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Function removed - no longer needed since we're using direct Charm Health scheduling link
     </script>
 </body>
 </html>
