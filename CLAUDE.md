@@ -295,8 +295,13 @@ font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-
 ## File Structure
 ```
 glp-clinic-website/
-├── index.html (main landing)
-├── modern.html (hipster modern style)
+├── fusion.html (DEFAULT - PRIMARY DEVELOPMENT FILE)
+├── modern.html (archived - original GLP Clinic design)
+├── caliber.html (variant - pure minimalist)
+├── meridian.html (variant - warm medical)
+├── index-variant.html (variant - data-driven)
+├── tempo.html (variant - soft modern)
+├── variants.html (comparison page)
 ├── css/
 │   └── (component styles)
 ├── js/
@@ -304,6 +309,15 @@ glp-clinic-website/
 └── assets/
     └── (images, icons)
 ```
+
+## PRIMARY DEVELOPMENT FILE: fusion.html
+**This is the approved design moving forward**
+- Brand: Tempo
+- Tagline: "Weight loss at your pace"
+- Design: Caliber's clean minimalist layout
+- Messaging: Tempo's rhythm/pace philosophy
+- Colors: Pure white background, black primary
+- ALL FUTURE DEVELOPMENT should be on fusion.html
 
 ## Version Control
 - Commit message format: "Component: Brief description"
@@ -314,9 +328,11 @@ glp-clinic-website/
 ## CRITICAL MESSAGING REQUIREMENTS
 
 ### Core Positioning
-**"Medical weight loss that actually works"**
-- Lasting weight loss and metabolic change, guided by board-certified MDs
-- Focus on MD supervision and monitoring throughout
+**"Find your rhythm in weight loss"**
+- Brand Name: **Tempo**
+- Tagline: "Weight loss at your pace"
+- Philosophy: Sustainable weight loss guided by board-certified MDs, adapted to each patient's natural pace
+- Focus on MD supervision with emphasis on sustainable, pressure-free progress
 
 ### Required Messaging Elements
 1. **Always emphasize MD monitoring** - Every patient is supervised by board-certified physicians
