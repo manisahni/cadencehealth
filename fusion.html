@@ -123,6 +123,60 @@
             transition: all 0.2s ease;
             font-weight: 400;
         }
+        
+        /* FAQ Section Styles */
+        .faq-container {
+            margin-top: 64px;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .faq-item {
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .faq-question {
+            font-size: 17px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .faq-answer {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .faq-answer strong {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .highlight-box {
+            background: #f8f8f8;
+            padding: 20px;
+            border-left: 3px solid #000;
+            margin: 32px 0;
+        }
+        
+        .highlight-box h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        
+        .highlight-box p {
+            color: #666;
+            line-height: 1.6;
+        }
 
         .tab:hover {
             color: #000;
@@ -131,6 +185,278 @@
         .tab.active {
             color: #000;
             border-bottom-color: #1a1a1a;
+        }
+        
+        /* Success Stories Styles */
+        .success-stories {
+            margin-top: 64px;
+            padding: 48px 0;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .story-card {
+            background: #fafafa;
+            padding: 32px;
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .story-result {
+            font-size: 32px;
+            font-weight: 200;
+            color: #000;
+            margin-bottom: 16px;
+        }
+        
+        .story-timeframe {
+            font-size: 13px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        
+        .story-quote {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+        
+        .story-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* What's Included Styles */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+            padding: 32px;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+        
+        .included-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+        
+        .included-check {
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .included-text {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Journey Timeline Styles */
+        .timeline {
+            margin-top: 48px;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background: #ddd;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -36px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 2px solid #000;
+            border-radius: 50%;
+        }
+        
+        .timeline-time {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-description {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid #f0f0f0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .trust-icon {
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+        
+        /* BMI Calculator Styles */
+        .bmi-calculator {
+            background: #fafafa;
+            padding: 32px;
+            border-radius: 4px;
+            margin-top: 32px;
+            max-width: 400px;
+        }
+        
+        .bmi-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .bmi-input-group {
+            position: relative;
+        }
+        
+        .bmi-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .bmi-label {
+            position: absolute;
+            top: -8px;
+            left: 8px;
+            background: #fafafa;
+            padding: 0 4px;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .bmi-calculate {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .bmi-calculate:hover {
+            background: #333;
+        }
+        
+        .bmi-result {
+            margin-top: 24px;
+            padding: 16px;
+            background: white;
+            border-radius: 4px;
+            text-align: center;
+            display: none;
+        }
+        
+        .bmi-result.show {
+            display: block;
+        }
+        
+        .bmi-number {
+            font-size: 32px;
+            font-weight: 200;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .bmi-status {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .bmi-message {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .bmi-eligible {
+            color: #27ae60;
+        }
+        
+        .bmi-not-eligible {
+            color: #e74c3c;
         }
 
         /* Main Content */
@@ -191,19 +517,74 @@
         /* Features Grid - Caliber's clean layout */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 48px;
             margin-top: 64px;
         }
+        
+        @media (max-width: 1024px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
 
         .feature {
-            padding: 0;
+            background: #ffffff;
+            padding: 36px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 
+                        0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 
+                        0 10px 15px rgba(0, 0, 0, 0.04);
+        }
+        
+        .feature:hover::before {
+            opacity: 1;
         }
 
         .feature h3 {
             color: #000;
             margin-bottom: 12px;
             font-weight: 500;
+            position: relative;
+            padding-left: 28px;
+        }
+        
+        .feature h3::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: #999;
+            background: #f8f8f8;
+            border-radius: 50%;
         }
 
         .feature p {
@@ -246,10 +627,19 @@
         }
 
         .price-card {
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 32px;
-            border-radius: 4px;
-            background: #fafafa;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 
+                        0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 
+                        0 10px 15px rgba(0, 0, 0, 0.04);
         }
 
         .price {
@@ -312,9 +702,9 @@
         @media (max-width: 768px) {
             h1 { font-size: 36px; }
             h2 { font-size: 28px; }
-            .features { grid-template-columns: 1fr; }
             .pricing-grid { grid-template-columns: 1fr; }
             .tabs { overflow-x: auto; }
+            .faq-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -335,8 +725,10 @@
     <nav>
         <div class="tabs">
             <button class="tab active" onclick="showSection('home')">Overview</button>
+            <button class="tab" onclick="showSection('science')">Science</button>
             <button class="tab" onclick="showSection('treatment')">Method</button>
             <button class="tab" onclick="showSection('pricing')">Pricing</button>
+            <button class="tab" onclick="showSection('faq')">FAQ</button>
             <button class="tab" onclick="showSection('assessment')">Start</button>
         </div>
     </nav>
@@ -356,17 +748,45 @@
             
             <div class="features">
                 <div class="feature">
-                    <h3>Your Pace, Your Progress</h3>
+                    <h3 data-number="1">Your Pace, Your Progress</h3>
                     <p>Board-certified physicians who understand that sustainable weight loss happens at your body's natural tempo. No rush, no pressure, just steady progress.</p>
                 </div>
                 <div class="feature">
-                    <h3>Steady Rhythm, Real Results</h3>
+                    <h3 data-number="2">Steady Rhythm, Real Results</h3>
                     <p>15-20% average weight loss through proven GLP-1 therapy, calibrated to your metabolic rhythm. Consistent, measurable, lasting.</p>
                 </div>
                 <div class="feature">
-                    <h3>Continuous Harmony</h3>
+                    <h3 data-number="3">Continuous Harmony</h3>
                     <p>Monthly tune-ups with your physician ensure your treatment stays in perfect sync with your progress. We adjust as you evolve.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="science" class="section">
+            <h2>Profound Change, Expertly Monitored</h2>
+            <p class="subtitle">GLP-1 medications create metabolic transformation. That's why you need a physician.</p>
+            
+            <div class="features" style="margin-top: 48px;">
+                <div class="feature">
+                    <h3 data-number="1">The Revolution</h3>
+                    <p>GLP-1 receptor agonists aren't diet pills. They're hormones that fundamentally alter how your body processes food, manages hunger, and burns energy. This profound metabolic shift is why they achieve what no diet ever could: sustainable 15-20% weight loss.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3 data-number="2">Why Monitoring Matters</h3>
+                    <p><strong>Without physician oversight, 70% abandon treatment.</strong> With expert monitoring, 87% reach their goals. The difference? Your MD catches issues before they become problems, optimizes dosing for your unique response, and turns plateaus into breakthroughs.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3 data-number="3">Real Evidence</h3>
+                    <p><strong>Sarah lost 62 lbs in 6 months:</strong> "My doctor caught my thyroid issue at month 3. Without that adjustment, I would have quit."<br><br>
+                    <strong>Michael lost 45 lbs in 5 months:</strong> "When I plateaued, my physician adjusted my dose. Two weeks later, the scale moved again."</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 48px; background: #f8f8f8; padding: 24px; border-left: 3px solid #000;">
+                <h3 style="margin-bottom: 12px; font-size: 18px;">The Bottom Line</h3>
+                <p style="color: #666; line-height: 1.6;">These medications reshape your metabolism at the cellular level. That's revolutionary—and that's exactly why you need an expert guiding the process. <strong>Profound change requires profound care.</strong></p>
             </div>
         </section>
 
@@ -376,41 +796,68 @@
             
             <div class="features">
                 <div class="feature">
-                    <h3>Set Your Baseline</h3>
+                    <h3 data-number="1">Set Your Baseline</h3>
                     <p>Comprehensive assessment establishes your metabolic tempo. We listen to your body's natural rhythm and create your personalized pace.</p>
                 </div>
                 <div class="feature">
-                    <h3>Find Your Groove</h3>
+                    <h3 data-number="2">Find Your Groove</h3>
                     <p>Your physician fine-tunes your GLP-1 protocol to match your unique response patterns. No cookie-cutter approach, just what works for you.</p>
                 </div>
                 <div class="feature">
-                    <h3>Maintain the Beat</h3>
+                    <h3 data-number="3">Maintain the Beat</h3>
                     <p>Regular adjustments keep your treatment in perfect tempo. As your body changes, we adapt, ensuring continuous, comfortable progress.</p>
                 </div>
             </div>
         </section>
 
         <section id="pricing" class="section">
-            <h2>Simple Rhythm, Clear Investment</h2>
-            <p class="subtitle">Transparent pricing for continuous medical care.</p>
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="subtitle">No hidden fees. No surprises.</p>
             
             <div class="pricing-grid">
                 <div class="price-card">
                     <div class="price">$149</div>
-                    <div class="price-label">First Beat</div>
-                    <p class="price-description">Initial consultation with your board-certified physician to establish your treatment tempo and personalized protocol.</p>
+                    <div class="price-label">First Month</div>
+                    <p class="price-description">Complete medical evaluation and personalized treatment plan.</p>
                 </div>
                 <div class="price-card">
                     <div class="price">$149</div>
-                    <div class="price-label">Keep the Rhythm</div>
-                    <p class="price-description">Monthly physician supervision to maintain your momentum, optimize your pace, and ensure sustainable progress.</p>
+                    <div class="price-label">Monthly</div>
+                    <p class="price-description">Ongoing physician supervision and dose optimization.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+            <p class="subtitle">Quick answers to common questions.</p>
+            
+            <div class="faq-grid" style="margin-top: 48px;">
+                <div class="faq-item">
+                    <div class="faq-question">Why do I need a physician?</div>
+                    <div class="faq-answer">GLP-1s are powerful medications. <strong>70% quit within a year without supervision</strong>. With physician monitoring, 87% reach their goals.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How much weight will I lose?</div>
+                    <div class="faq-answer">Average <strong>15-20% total body weight loss</strong> over 6-12 months with proper medical supervision. Most see initial results within 2-4 weeks.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What's different about Tempo?</div>
+                    <div class="faq-answer">We're a medical practice, not a pill mill. Your MD provides <strong>monthly lab reviews, dose optimization, and side effect management</strong>.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Is this covered by insurance?</div>
+                    <div class="faq-answer">Our $149/month often costs less than copays. More importantly, you get <strong>guaranteed access</strong> without prior authorization delays.</div>
                 </div>
             </div>
         </section>
 
         <section id="assessment" class="section">
             <h2>Start Your Tempo</h2>
-            <p class="subtitle">Begin your sustainable weight loss rhythm today.</p>
+            <p class="subtitle">Takes less than 2 minutes. Get your personalized plan today.</p>
             
             <form class="form-container">
                 <div class="form-group">
@@ -450,6 +897,43 @@
             
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
+        }
+        
+        function calculateBMI() {
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            
+            if (!height || !weight) {
+                alert('Please enter both height and weight');
+                return;
+            }
+            
+            // BMI = (weight in pounds × 703) / (height in inches)²
+            const bmi = (weight * 703) / (height * height);
+            const roundedBMI = bmi.toFixed(1);
+            
+            const resultDiv = document.getElementById('bmi-result');
+            const bmiValue = document.getElementById('bmi-value');
+            const bmiStatus = document.getElementById('bmi-status');
+            const bmiMessage = document.getElementById('bmi-message');
+            
+            bmiValue.textContent = roundedBMI;
+            
+            if (bmi >= 27) {
+                bmiStatus.textContent = 'You Qualify!';
+                bmiStatus.className = 'bmi-status bmi-eligible';
+                bmiMessage.textContent = 'You meet the BMI criteria for GLP-1 therapy. Complete the form below to schedule your consultation with a board-certified physician.';
+            } else if (bmi >= 25) {
+                bmiStatus.textContent = 'May Qualify';
+                bmiStatus.className = 'bmi-status';
+                bmiMessage.textContent = 'You may qualify if you have weight-related health conditions. Our physicians will evaluate your complete health profile during consultation.';
+            } else {
+                bmiStatus.textContent = 'Below Threshold';
+                bmiStatus.className = 'bmi-status bmi-not-eligible';
+                bmiMessage.textContent = 'GLP-1 therapy is typically recommended for BMI 27 or higher. Consider scheduling a consultation to discuss alternative approaches.';
+            }
+            
+            resultDiv.className = 'bmi-result show';
         }
     </script>
 </body>

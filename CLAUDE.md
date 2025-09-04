@@ -319,6 +319,51 @@ glp-clinic-website/
 - Colors: Pure white background, black primary
 - ALL FUTURE DEVELOPMENT should be on fusion.html
 
+## Final Layout Structure
+
+### Navigation (6 Tabs)
+1. **Overview** - Core value propositions with rhythm indicator
+2. **Science** - "Profound Change, Expertly Monitored" education
+3. **Method** - The 3-step Tempo approach
+4. **Pricing** - Simple $149/month transparent pricing
+5. **FAQ** - 4 essential questions (concise answers)
+6. **Start** - Simple assessment form
+
+### Design System
+
+#### Feature Cards
+- **Background**: White (#ffffff)
+- **Shadow**: Layered (0 1px 3px rgba(0,0,0,0.04), 0 4px 6px rgba(0,0,0,0.02))
+- **Border Radius**: 8px
+- **Padding**: 36px
+- **Hover**: Lifts with translateY(-4px) and enhanced shadow
+- **Accent**: Hidden gradient bar appears on hover
+- **Numbers**: Small circular badges (1,2,3) for step indicators
+
+#### Grid Layout
+- **Desktop**: 3 columns (fixed) for perfect alignment
+- **Tablet/Mobile**: Single column stack
+- **Gap**: 48px between cards
+
+### Key Messaging
+- **Core Theme**: "Profound change requires profound care"
+- **Success Stat**: 70% quit without MDs vs 87% succeed with monitoring
+- **Weight Loss**: 15-20% average body weight loss
+- **Differentiation**: Medical practice, not pill mill
+
+### FAQ Content (Exact)
+1. **Why do I need a physician?**
+   - GLP-1s are powerful medications. 70% quit within a year without supervision. With physician monitoring, 87% reach their goals.
+
+2. **How much weight will I lose?**
+   - Average 15-20% total body weight loss over 6-12 months with proper medical supervision. Most see initial results within 2-4 weeks.
+
+3. **What's different about Tempo?**
+   - We're a medical practice, not a pill mill. Your MD provides monthly lab reviews, dose optimization, and side effect management.
+
+4. **Is this covered by insurance?**
+   - Our $149/month often costs less than copays. More importantly, you get guaranteed access without prior authorization delays.
+
 ## Version Control
 - Commit message format: "Component: Brief description"
 - Always test responsive design before committing
