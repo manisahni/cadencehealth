@@ -99,9 +99,12 @@
 
         /* Navigation - Caliber style */
         nav {
-            margin-top: 70px;
+            margin-top: 110px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 90;
         }
 
         .tabs {
@@ -355,12 +358,32 @@
         }
         
         /* BMI Calculator Styles */
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 1000px;
+            margin: 32px auto 0;
+        }
+        
+        @media (max-width: 768px) {
+            .assessment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .assessment-card {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
         .bmi-calculator {
-            background: #fafafa;
-            padding: 32px;
-            border-radius: 4px;
-            margin-top: 32px;
-            max-width: 400px;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         
         .bmi-inputs {
@@ -443,11 +466,13 @@
         }
         
         .bmi-eligible {
-            color: #27ae60;
+            color: #1a1a1a;
+            font-weight: 500;
         }
         
         .bmi-not-eligible {
-            color: #e74c3c;
+            color: #666;
+            font-weight: 400;
         }
         
         /* Accordion Styles */
@@ -774,7 +799,7 @@
         /* Form */
         .form-container {
             max-width: 600px;
-            margin-top: 48px;
+            margin: 48px auto 0;
         }
 
         .form-group {
@@ -786,24 +811,30 @@
             width: 100%;
             padding: 12px 0;
             font-size: 16px;
+            font-weight: 300;
+            color: #2d2d2d;
             border: none;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e5e5e5;
             background: transparent;
             transition: border-color 0.3s ease;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
         }
 
         .form-input:focus {
             outline: none;
-            border-bottom-color: #000;
+            border-bottom: 2px solid #1a1a1a;
         }
 
         .form-label {
             position: absolute;
             top: -8px;
             left: 0;
-            font-size: 12px;
+            font-size: 13px;
             color: #999;
-            font-weight: 500;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
         }
 
         /* Footer Styles */
@@ -964,9 +995,9 @@
             
             <div class="features">
                 <div class="feature">
-                    <h3 data-number="1">Real-Time Medical Monitoring</h3>
-                    <p>FDA-cleared devices track your progress</p>
-                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Covered by most insurance plans</p>
+                    <h3 data-number="1">360° Health Transformation</h3>
+                    <p>Comprehensive labs: A1C, cholesterol, liver function. Track body composition, not just weight.</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Reverse prediabetes while losing weight</p>
                 </div>
                 <div class="feature">
                     <h3 data-number="2">Affordable Access</h3>
@@ -974,9 +1005,9 @@
                     <p style="font-size: 13px; color: #999; margin-top: 12px;">Many patients achieve $50/month costs</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="3">Board-Certified Physicians</h3>
-                    <p>20+ years at Mayo, UCSF, and leading institutions</p>
-                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Continuous medical supervision</p>
+                    <h3 data-number="3">Real Medical Practice</h3>
+                    <p>Not a pill mill: Comprehensive labs, continuous monitoring, proven outcomes</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Save thousands doing it right the first time</p>
                 </div>
             </div>
             
@@ -1012,16 +1043,26 @@
             <div class="highlight-box" style="margin-top: 64px;">
                 <h3>The Difference Physician Supervision Makes</h3>
                 <p style="margin-bottom: 20px;">Profound metabolic change requires profound care. Research shows physician-supervised GLP-1 therapy achieves significantly higher success and compliance rates:</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-top: 24px;">
                     <div style="text-align: center;">
-                        <div style="font-size: 36px; font-weight: 500; color: #000; margin-bottom: 8px;">30%</div>
-                        <div style="font-size: 14px; color: #666; font-weight: 500;">Success Rate Without MD Supervision</div>
-                        <div style="font-size: 12px; color: #999; margin-top: 4px;">Many discontinue due to side effects or access issues</div>
+                        <div style="font-size: 32px; font-weight: 500; color: #000; margin-bottom: 8px;">68%</div>
+                        <div style="font-size: 13px; color: #666; font-weight: 500;">Reverse Prediabetes</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 4px;">A1C normalized</div>
                     </div>
                     <div style="text-align: center;">
-                        <div style="font-size: 36px; font-weight: 500; color: #000; margin-bottom: 8px;">87%</div>
-                        <div style="font-size: 14px; color: #666; font-weight: 500;">Success Rate With Physician Care</div>
-                        <div style="font-size: 12px; color: #999; margin-top: 4px;">Sustainable results through proper monitoring</div>
+                        <div style="font-size: 32px; font-weight: 500; color: #000; margin-bottom: 8px;">-32%</div>
+                        <div style="font-size: 13px; color: #666; font-weight: 500;">Lower Cholesterol</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 4px;">LDL reduction</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 32px; font-weight: 500; color: #000; margin-bottom: 8px;">18%</div>
+                        <div style="font-size: 13px; color: #666; font-weight: 500;">Weight Loss</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 4px;">Fat, not muscle</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 32px; font-weight: 500; color: #000; margin-bottom: 8px;">85%</div>
+                        <div style="font-size: 13px; color: #666; font-weight: 500;">Complete Program</div>
+                        <div style="font-size: 11px; color: #999; margin-top: 4px;">With monitoring</div>
                     </div>
                 </div>
                 <p style="margin-top: 24px; font-size: 14px; color: #666; font-style: italic;">Physician supervision transforms treatment from temporary intervention to sustainable, profound metabolic change.</p>
@@ -1035,17 +1076,78 @@
             
             <div class="features">
                 <div class="feature">
-                    <h3 data-number="1">Assessment</h3>
-                    <p>Medical evaluation to determine your treatment plan.</p>
+                    <h3 data-number="1">Comprehensive Labs</h3>
+                    <p>A1C, cholesterol, liver enzymes, kidney function. Establish baseline and track improvements.</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="2">Optimization</h3>
-                    <p>Dose adjustments based on your response.</p>
+                    <h3 data-number="2">Body Composition</h3>
+                    <p>Ensure fat loss, not muscle loss. Monitor visceral fat reduction and metabolic health.</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="3">Maintenance</h3>
-                    <p>Ongoing support to sustain your results.</p>
+                    <h3 data-number="3">Continuous Optimization</h3>
+                    <p>Weekly data review, monthly adjustments. Catch plateaus early, prevent complications.</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f8f8f8; padding: 48px 32px; border-radius: 8px; margin-bottom: 64px;">
+            <h2 style="text-align: center; margin-bottom: 8px;">360° Health Monitoring</h2>
+            <p class="subtitle" style="text-align: center; margin-bottom: 48px;">Choose your level of metabolic insight</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto;">
+                <div>
+                    <h4 style="font-size: 16px; font-weight: 500; margin-bottom: 12px; color: #1a1a1a;">Metabolic Health</h4>
+                    <ul style="font-size: 14px; color: #666; line-height: 1.8; list-style: none; padding: 0;">
+                        <li>• A1C <span style="color: #999; font-size: 12px;">(covered)</span></li>
+                        <li>• Glucose <span style="color: #999; font-size: 12px;">(covered)</span></li>
+                        <li>• TSH <span style="color: #999; font-size: 12px;">(covered)</span></li>
+                        <li style="color: #1a1a1a; font-weight: 500; margin-top: 8px;">Advanced ($):</li>
+                        <li>• Insulin + HOMA-IR <span style="color: #999; font-size: 12px;">(cash)</span></li>
+                        <li>• hs-CRP <span style="color: #999; font-size: 12px;">(cash)</span></li>
+                        <li>• Free T3/T4 <span style="color: #999; font-size: 12px;">(varies)</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 16px; font-weight: 500; margin-bottom: 12px; color: #1a1a1a;">Cardiovascular</h4>
+                    <ul style="font-size: 14px; color: #666; line-height: 1.8; list-style: none; padding: 0;">
+                        <li>• Lipid panel <span style="color: #999; font-size: 12px;">(covered)</span></li>
+                        <li>• Blood pressure <span style="color: #999; font-size: 12px;">(daily)</span></li>
+                        <li>• Heart rate <span style="color: #999; font-size: 12px;">(daily)</span></li>
+                        <li style="color: #1a1a1a; font-weight: 500; margin-top: 8px;">Advanced ($):</li>
+                        <li>• ApoB <span style="color: #999; font-size: 12px;">(cash ~$75)</span></li>
+                        <li>• Lp(a) <span style="color: #999; font-size: 12px;">(cash ~$100)</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 16px; font-weight: 500; margin-bottom: 12px; color: #1a1a1a;">Safety Monitoring</h4>
+                    <ul style="font-size: 14px; color: #666; line-height: 1.8; list-style: none; padding: 0;">
+                        <li>• CMP (liver, kidney) <span style="color: #999; font-size: 12px;">(covered)</span></li>
+                        <li>• CBC <span style="color: #999; font-size: 12px;">(covered)</span></li>
+                        <li>• Vitamin D <span style="color: #999; font-size: 12px;">(varies)</span></li>
+                        <li>• B12 <span style="color: #999; font-size: 12px;">(if deficient)</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 16px; font-weight: 500; margin-bottom: 12px; color: #1a1a1a;">Body Composition</h4>
+                    <ul style="font-size: 14px; color: #666; line-height: 1.8; list-style: none; padding: 0;">
+                        <li>• Smart scale analysis (Essential)</li>
+                        <li>• Body fat % vs muscle mass</li>
+                        <li>• Visceral fat rating</li>
+                        <li>• DEXA scan (Advanced add-on)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid #ddd;">
+                <p style="font-size: 18px; color: #1a1a1a; font-weight: 400; margin-bottom: 8px;">
+                    <strong>Pill mills:</strong> Quick prescription, no labs, no monitoring, high failure rate
+                </p>
+                <p style="font-size: 18px; color: #1a1a1a; font-weight: 400;">
+                    <strong>Cadence:</strong> Comprehensive care that transforms your health, not just your weight
+                </p>
+                <p style="font-size: 14px; color: #666; margin-top: 24px; padding: 16px; background: #fff; border-radius: 4px;">
+                    <strong>Billing Transparency:</strong> We'll maximize insurance coverage using applicable diagnosis codes (obesity E66.9, prediabetes R73.03, metabolic syndrome E88.81). However, insurance often considers weight loss "cosmetic" so advanced tests may require cash payment. We'll always discuss costs before ordering non-standard labs.
+                </p>
             </div>
         </section>
 
@@ -1053,27 +1155,37 @@
             <h2>Simple Pricing</h2>
             <p class="subtitle">Transparent, straightforward, no surprises.</p>
             <p style="text-align: center; margin: 24px auto 32px; max-width: 600px; font-size: 16px; color: #666;">
-                <strong>Our Commitment:</strong> We work tirelessly to reduce your medication costs through insurance advocacy and manufacturer programs. Many patients achieve medication costs as low as $50/month with our help.
+                <strong>Our Commitment:</strong> We work tirelessly to reduce your medication costs through insurance advocacy and manufacturer programs. With good insurance coverage, many patients pay as little as $0 for their medications.
             </p>
             
             <div class="pricing-grid">
                 <div class="price-card">
-                    <div class="price">$249</div>
+                    <div class="price">$249<span style="font-size: 16px; font-weight: 300;">/visit</span></div>
                     <div class="price-label">Initial Consultation</div>
                     <p class="price-description">Comprehensive metabolic and medical evaluation, treatment plan, baseline labs review, and GLP-1 prescribing when appropriate.</p>
-                    <p style="font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">Cash-pay service. We provide superbills for insurance reimbursement. Many PPO plans offer partial out-of-network reimbursement.</p>
+                    <p style="font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">One-time visit fee. We provide superbills for insurance reimbursement. Many PPO plans offer partial out-of-network reimbursement.</p>
                 </div>
                 <div class="price-card">
-                    <div class="price">$199</div>
+                    <div class="price">$199<span style="font-size: 16px; font-weight: 300;">/visit</span></div>
                     <div class="price-label">Follow-Up Visits</div>
                     <p class="price-description">Dose titration, side-effect management, ongoing monitoring, and prior authorization support. Typically scheduled at Week 4, then every 12 weeks.</p>
-                    <p style="font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">Cash-pay service. We provide superbills for insurance reimbursement. Many PPO plans offer partial out-of-network reimbursement.</p>
+                    <p style="font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">Per-visit fee. We provide superbills for insurance reimbursement. Many PPO plans offer partial out-of-network reimbursement.</p>
                 </div>
                 <div class="price-card">
-                    <div class="price">$99</div>
-                    <div class="price-label">Monthly Monitoring</div>
-                    <p class="price-description">Real-time medical monitoring with FDA-cleared devices. Includes smart scale, blood pressure monitor, and continuous physician oversight.</p>
-                    <p style="font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">Monitoring devices not included. Cash payment only. We'll provide documentation for insurance reimbursement if requested.</p>
+                    <div class="price">$99<span style="font-size: 16px; font-weight: 300;">/month</span></div>
+                    <div class="price-label">Essential Monitoring</div>
+                    <div style="font-size: 12px; color: #666; margin-bottom: 12px; font-style: italic;">(Optional but Highly Recommended)</div>
+                    <p class="price-description">Daily vitals, quarterly standard labs (CBC, CMP, lipids, A1C, TSH), body composition via smart scale. Weekly physician review ensures safe, effective weight loss.</p>
+                    <p style="font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">Monthly subscription. Labs typically covered with obesity diagnosis (E66.9). RPM may reimburse $30-40/month. Smart scale ~$100 one-time purchase.</p>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 32px;">
+                <div class="price-card" style="border: 2px solid #1a1a1a; max-width: 400px;">
+                    <div class="price">$149<span style="font-size: 16px; font-weight: 300;">/month</span></div>
+                    <div class="price-label">Advanced Metabolic Package</div>
+                    <div style="font-size: 12px; color: #666; margin-bottom: 12px; font-style: italic;">(Optional but Highly Recommended)</div>
+                    <p class="price-description">Everything in Essential PLUS: Insulin resistance tracking (HOMA-IR), advanced lipids (ApoB, Lp(a)), inflammation (hs-CRP), complete thyroid panel. Track prediabetes reversal in real-time.</p>
+                    <p style="font-size: 12px; color: #999; margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">Monthly subscription. Advanced markers typically cash-pay (~$300/quarter). Worth it for prediabetics or those wanting detailed metabolic tracking.</p>
                 </div>
             </div>
             <p style="text-align: center; margin-top: 32px; font-size: 14px; color: #666;">
@@ -1094,7 +1206,7 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Coverage varies, but we fight for every patient. We handle prior authorizations, appeals, and work directly with your insurance to get you the lowest cost possible. Many patients achieve costs as low as $50/month with insurance approval. Even without insurance coverage, we ensure access through manufacturer programs.
+                            Coverage varies, but we fight for every patient. We handle prior authorizations, appeals, and work directly with your insurance to get you the lowest cost possible. With good insurance coverage, many patients pay as little as $0. Even without insurance coverage, we ensure access through manufacturer programs.
                             <ul style="margin-top: 12px; font-size: 14px;">
                                 <li><strong>With insurance approval:</strong> Often $0-50/month copay</li>
                                 <li><strong>Zepbound™ manufacturer program:</strong> $549/month for all doses</li>
@@ -1119,12 +1231,36 @@
                 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What labs do you check and why?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Unlike pill mills that just prescribe, we provide comprehensive metabolic monitoring. Quarterly labs include: A1C and HOMA-IR (insulin resistance), advanced lipids (LDL, HDL, triglycerides, ApoB), inflammatory markers (hs-CRP), complete liver panel (ALT, AST, GGT), kidney function (eGFR, creatinine), thyroid (TSH, Free T3/T4), and key vitamins (B12, D3, ferritin). Optional DEXA scans track body composition. We ensure you're reversing metabolic disease, not just losing weight.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Will insurance cover the monitoring service?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             Our $99/month monitoring service is cash-pay only. However, many insurance plans cover Remote Patient Monitoring (RPM) under codes 99453, 99454, and 99457. We'll provide documentation with appropriate RPM codes that you can submit for reimbursement. Coverage varies by plan, but Medicare and many commercial insurers reimburse $50-120/month for qualifying RPM services.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Should I get the Advanced Metabolic Package?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            The $149 Advanced Package is ideal if you have prediabetes, insulin resistance, or family history of diabetes/heart disease. It includes insulin testing with HOMA-IR calculation to track insulin resistance reversal, plus advanced cardiovascular markers (ApoB, Lp(a)) that better predict risk than standard cholesterol. Most patients see dramatic improvements in these markers within 3-6 months. The extra $50/month often saves thousands by optimizing your metabolic health faster.
                         </div>
                     </div>
                 </div>
@@ -1173,7 +1309,7 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            We're committed to making GLP-1 therapy accessible. We explore every avenue - insurance prior authorizations, appeals, manufacturer programs, and strategic diagnostic coding when appropriate. Many patients achieve costs as low as $50/month with insurance coverage. Even without insurance, we'll help you access manufacturer programs that cap costs at $549/month. We don't give up after the first denial - we'll work tirelessly to find an affordable solution.
+                            We're committed to making GLP-1 therapy accessible. We explore every avenue - insurance prior authorizations, appeals, manufacturer programs, and strategic diagnostic coding when appropriate. With good insurance coverage, many patients pay as little as $0. Even without insurance, we'll help you access manufacturer programs that cap costs at $549/month. We don't give up after the first denial - we'll work tirelessly to find an affordable solution.
                         </div>
                     </div>
                 </div>
@@ -1204,6 +1340,20 @@
                 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How much will labs actually cost me?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <strong>Essential Package:</strong> Standard labs (CBC, CMP, lipids, A1C, TSH) are typically covered by insurance with obesity diagnosis (E66.9) or annual physical. Out-of-pocket: usually $0-50.<br><br>
+                            <strong>Advanced Package:</strong> Specialized tests (insulin, HOMA-IR, ApoB, Lp(a), hs-CRP) are rarely covered by insurance for weight loss. Cash cost: ~$300-500 per quarter. We'll use all applicable diagnosis codes to maximize coverage, but these tests are often considered "experimental" for obesity treatment.<br><br>
+                            <strong>Bottom line:</strong> Essential monitoring has minimal lab costs. Advanced package is for those willing to invest in detailed metabolic tracking.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
                         <span>What monitoring devices do I need?</span>
                         <span class="accordion-icon">+</span>
                     </button>
@@ -1225,6 +1375,18 @@
                     <div class="accordion-content">
                         <div class="accordion-body">
                             A prior authorization (PA) is paperwork your insurance requires before covering medication. We submit this electronically through CoverMyMeds with details from your visit. Reviews usually take 3–5 business days.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How is this different from online pill mills?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Pill mills provide quick prescriptions with no real medical oversight. We're a legitimate medical practice: comprehensive labs every quarter, continuous monitoring, body composition tracking, dose optimization based on data, and board-certified physicians who review your progress weekly. Result: 85% completion rate vs 30% with pill mills. You save money, time, and most importantly, your health by doing it right.
                         </div>
                     </div>
                 </div>
@@ -1368,117 +1530,166 @@
         </section>
 
         <section id="assessment" class="section">
-            <h2>Check Your Eligibility</h2>
-            <p class="subtitle">We maintain strict safety criteria for optimal outcomes. See if you qualify.</p>
+            <h2>Start Your Journey</h2>
+            <p class="subtitle">A quick 3-step eligibility check to ensure your safety and success.</p>
             
-            <div class="bmi-calculator">
-                <h3 style="font-size: 18px; margin-bottom: 20px; font-weight: 400;">Step 1: Calculate Your BMI</h3>
-                <div class="bmi-inputs">
-                    <div class="bmi-input-group">
-                        <label style="display: block; font-size: 13px; color: #999; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Height (inches)</label>
-                        <input type="number" id="height" class="bmi-input" placeholder="e.g., 68" style="width: 100%; padding: 12px; border: 1px solid #e5e5e5; border-radius: 4px; font-size: 16px;">
+            <div style="max-width: 500px; margin: 48px auto 0;">
+                <!-- Progress Indicator -->
+                <div id="progress-indicator" style="display: flex; justify-content: center; margin-bottom: 48px; gap: 24px;">
+                    <div class="progress-step active" style="text-align: center;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #1a1a1a; color: white; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 14px;">1</div>
+                        <span style="font-size: 12px; color: #1a1a1a;">BMI Check</span>
                     </div>
-                    <div class="bmi-input-group">
-                        <label style="display: block; font-size: 13px; color: #999; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Weight (lbs)</label>
-                        <input type="number" id="weight" class="bmi-input" placeholder="e.g., 180" style="width: 100%; padding: 12px; border: 1px solid #e5e5e5; border-radius: 4px; font-size: 16px;">
+                    <div class="progress-step" id="step2-indicator" style="text-align: center; opacity: 0.3;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #e5e5e5; color: #999; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 14px;">2</div>
+                        <span style="font-size: 12px; color: #999;">Basic Info</span>
+                    </div>
+                    <div class="progress-step" id="step3-indicator" style="text-align: center; opacity: 0.3;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #e5e5e5; color: #999; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 14px;">3</div>
+                        <span style="font-size: 12px; color: #999;">Safety</span>
                     </div>
                 </div>
-                <button type="button" onclick="calculateBMI()" style="width: 100%; padding: 12px; background: #1a1a1a; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; margin-top: 16px;">Calculate BMI</button>
                 
-                <div id="bmi-result" class="bmi-result" style="display: none; margin-top: 24px; padding: 20px; background: #f0f8f0; border-radius: 4px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 14px; color: #666;">Your BMI:</span>
-                        <span id="bmi-value" style="font-size: 24px; font-weight: 500; color: #1a1a1a;"></span>
-                    </div>
-                    <div id="bmi-status" style="margin-top: 12px; font-size: 16px; font-weight: 500;"></div>
-                    <div id="bmi-message" style="margin-top: 8px; font-size: 14px; color: #666;"></div>
-                </div>
-                
-                <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #e5e5e5;">
-                    <h3 style="font-size: 18px; margin-bottom: 20px; font-weight: 400;">Step 2: Verify Age & Location</h3>
+                <!-- Step 1: BMI Calculator -->
+                <div id="step1" style="text-align: center;">
+                    <h3 style="font-size: 20px; margin-bottom: 8px; font-weight: 400;">Calculate Your BMI</h3>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 32px;">We treat patients with BMI ≥ 30</p>
                     
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label style="display: block; font-size: 13px; color: #999; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Your Age</label>
-                        <input type="number" id="age" min="18" max="120" style="width: 100%; padding: 12px; border: 1px solid #e5e5e5; border-radius: 4px; font-size: 16px;" placeholder="e.g., 45" onchange="checkAge()">
-                        <div id="age-message" style="display: none; margin-top: 12px; padding: 12px; background: #fff8f0; border-left: 3px solid #ff9500; border-radius: 4px;">
-                            <p style="margin: 0; font-size: 14px; color: #666;">For safety reasons, we treat patients ages 25-65. Please consult your primary care physician.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+                        <div class="form-group">
+                            <input type="number" id="height" placeholder="68" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;">
+                            <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Height (inches)</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="weight" placeholder="180" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;">
+                            <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Weight (lbs)</label>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label style="display: block; font-size: 13px; color: #999; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">State of Residence</label>
-                        <select id="state" class="form-input" style="width: 100%; padding: 12px; border: 1px solid #e5e5e5; border-radius: 4px; font-size: 16px; background: white;" onchange="checkState()">
-                            <option value="">Select your state</option>
-                            <option value="MN" selected>Minnesota</option>
-                            <option value="other">Other State</option>
-                        </select>
-                        <div id="state-message" style="display: none; margin-top: 12px; padding: 12px; background: #fff8f0; border-left: 3px solid #ff9500; border-radius: 4px;">
-                            <p style="margin: 0; font-size: 14px; color: #666;">We currently serve Minnesota residents only. <a href="#" onclick="joinWaitlist(); return false;" style="color: #1a1a1a; font-weight: 500;">Join our waitlist</a> to be notified when we expand to your state.</p>
+                    <button type="button" onclick="calculateBMI()" style="padding: 14px 48px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.2s;">
+                        Calculate BMI
+                    </button>
+                    
+                    <div id="bmi-result" style="display: none; margin-top: 32px; padding: 24px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                        <div style="font-size: 48px; font-weight: 300; color: #1a1a1a; margin-bottom: 8px;">
+                            <span id="bmi-value"></span>
+                        </div>
+                        <div id="bmi-status" style="font-size: 20px; margin-bottom: 8px;"></div>
+                        <div id="bmi-message" style="font-size: 14px; color: #666;"></div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Basic Information -->
+                <div id="step2" style="display: none;">
+                    <h3 style="font-size: 20px; margin-bottom: 8px; font-weight: 400; text-align: center;">Basic Information</h3>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 32px; text-align: center;">We treat Minnesota residents ages 25-65</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <div class="form-group">
+                            <input type="number" id="age" min="18" max="120" placeholder="45" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center;" onchange="checkAge()">
+                            <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">Your Age</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="state" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; cursor: pointer;" onchange="checkState()">
+                                <option value="">State</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="other">Other State</option>
+                            </select>
+                            <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">Residence</label>
                         </div>
                     </div>
-                </div>
-                
-                <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #e5e5e5;">
-                    <h3 style="font-size: 18px; margin-bottom: 20px; font-weight: 400;">Step 3: Safety Screening</h3>
-                    <p style="font-size: 14px; color: #666; margin-bottom: 16px;">Please confirm ALL of the following:</p>
-                    <div style="font-size: 14px; line-height: 2;">
-                        <label style="display: block; cursor: pointer; margin-bottom: 8px;">
-                            <input type="checkbox" id="safety1" onchange="checkSafety()" style="margin-right: 8px;">
-                            I have NO history of thyroid cancer or Multiple Endocrine Neoplasia
-                        </label>
-                        <label style="display: block; cursor: pointer; margin-bottom: 8px;">
-                            <input type="checkbox" id="safety2" onchange="checkSafety()" style="margin-right: 8px;">
-                            I am NOT pregnant or breastfeeding
-                        </label>
-                        <label style="display: block; cursor: pointer; margin-bottom: 8px;">
-                            <input type="checkbox" id="safety3" onchange="checkSafety()" style="margin-right: 8px;">
-                            I have NO history of pancreatitis
-                        </label>
-                        <label style="display: block; cursor: pointer; margin-bottom: 8px;">
-                            <input type="checkbox" id="safety4" onchange="checkSafety()" style="margin-right: 8px;">
-                            I have NO severe kidney disease
-                        </label>
-                        <label style="display: block; cursor: pointer; margin-bottom: 8px;">
-                            <input type="checkbox" id="safety5" onchange="checkSafety()" style="margin-right: 8px;">
-                            I have NO active eating disorder
-                        </label>
+                    
+                    <div id="age-message" style="display: none; margin-top: 24px; padding: 16px; background: #f8f8f8; border-radius: 8px; text-align: center;">
+                        <p style="margin: 0; font-size: 14px; color: #666;">We currently treat patients ages 25-65 for optimal safety.</p>
                     </div>
-                    <div id="safety-message" style="display: none; margin-top: 16px; padding: 12px; background: #fff8f0; border-left: 3px solid #ff9500; border-radius: 4px;">
-                        <p style="margin: 0; font-size: 14px; color: #666;">You must confirm all safety criteria to proceed. If you have any of these conditions, please consult your primary care physician.</p>
+                    
+                    <div id="state-message" style="display: none; margin-top: 24px; padding: 16px; background: #f8f8f8; border-radius: 8px; text-align: center;">
+                        <p style="margin: 0; font-size: 14px; color: #666;">We're currently available in Minnesota only.</p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 32px;">
+                        <button type="button" onclick="proceedToStep3()" id="continue-to-safety" style="display: none; padding: 14px 48px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+                            Continue
+                        </button>
                     </div>
                 </div>
-            </div>
-            
-            <div id="contact-form" style="display: none;">
-                <h3 style="font-size: 20px; margin: 32px 0 20px; font-weight: 400; text-align: center;">Schedule Your Consultation</h3>
-                <form class="form-container">
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder=" " required>
-                    <label class="form-label">Full Name</label>
+                
+                <!-- Step 3: Safety Screening -->
+                <div id="step3" style="display: none;">
+                    <h3 style="font-size: 20px; margin-bottom: 8px; font-weight: 400; text-align: center;">Safety Screening</h3>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 32px; text-align: center;">Please confirm you have NONE of the following conditions</p>
+                    
+                    <div style="background: white; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                        <label style="display: flex; align-items: flex-start; cursor: pointer; margin-bottom: 20px;">
+                            <input type="checkbox" id="safety1" onchange="checkSafety()" style="margin-right: 12px; margin-top: 2px;">
+                            <span style="font-size: 15px; line-height: 1.5;">No thyroid cancer or MEN syndrome history</span>
+                        </label>
+                        
+                        <label style="display: flex; align-items: flex-start; cursor: pointer; margin-bottom: 20px;">
+                            <input type="checkbox" id="safety2" onchange="checkSafety()" style="margin-right: 12px; margin-top: 2px;">
+                            <span style="font-size: 15px; line-height: 1.5;">Not pregnant or breastfeeding</span>
+                        </label>
+                        
+                        <label style="display: flex; align-items: flex-start; cursor: pointer; margin-bottom: 20px;">
+                            <input type="checkbox" id="safety3" onchange="checkSafety()" style="margin-right: 12px; margin-top: 2px;">
+                            <span style="font-size: 15px; line-height: 1.5;">No history of pancreatitis</span>
+                        </label>
+                        
+                        <label style="display: flex; align-items: flex-start; cursor: pointer; margin-bottom: 20px;">
+                            <input type="checkbox" id="safety4" onchange="checkSafety()" style="margin-right: 12px; margin-top: 2px;">
+                            <span style="font-size: 15px; line-height: 1.5;">No severe kidney disease</span>
+                        </label>
+                        
+                        <label style="display: flex; align-items: flex-start; cursor: pointer; margin-bottom: 0;">
+                            <input type="checkbox" id="safety5" onchange="checkSafety()" style="margin-right: 12px; margin-top: 2px;">
+                            <span style="font-size: 15px; line-height: 1.5;">No active eating disorder</span>
+                        </label>
+                    </div>
+                    
+                    <div id="safety-message" style="display: none; margin-top: 24px; padding: 16px; background: #f8f8f8; border-radius: 8px; text-align: center;">
+                        <p style="margin: 0; font-size: 14px; color: #666;">Please confirm all safety criteria to proceed.</p>
+                    </div>
                 </div>
                 
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder=" " required>
-                    <label class="form-label">Email</label>
+                <!-- Contact Form -->
+                <div id="contact-form" style="display: none; margin-top: 48px;">
+                    <h3 style="font-size: 24px; margin: 0 0 8px; font-weight: 400; text-align: center;">You're Eligible!</h3>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 32px; text-align: center;">Schedule your consultation to begin your transformation</p>
+                    
+                    <form style="background: white; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <input type="text" placeholder="Full Name" required style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <input type="email" placeholder="Email Address" required style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <input type="tel" placeholder="Phone Number" required style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent;">
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                            <div class="form-group">
+                                <input type="number" placeholder="Current Weight" required style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent;">
+                                <label style="display: block; margin-top: 4px; font-size: 11px; color: #999;">pounds</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" placeholder="Goal Weight" required style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent;">
+                                <label style="display: block; margin-top: 4px; font-size: 11px; color: #999;">pounds</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" style="width: 100%; padding: 16px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.2s;">
+                            Schedule My $249 Consultation
+                        </button>
+                        
+                        <p style="margin-top: 16px; font-size: 12px; color: #999; text-align: center;">
+                            Includes comprehensive evaluation, treatment plan, and prescription when appropriate
+                        </p>
+                    </form>
                 </div>
-                
-                <div class="form-group">
-                    <input type="tel" class="form-input" placeholder=" " required>
-                    <label class="form-label">Phone</label>
-                </div>
-                
-                <div class="form-group">
-                    <input type="number" class="form-input" placeholder=" " required>
-                    <label class="form-label">Current Weight (lbs)</label>
-                </div>
-                
-                <div class="form-group">
-                    <input type="number" class="form-input" placeholder=" " required>
-                    <label class="form-label">Goal Weight (lbs)</label>
-                </div>
-                
-                <button class="cta-btn" style="width: 100%; padding: 14px;">Schedule Consultation</button>
-            </form>
             </div>
         </section>
     </main>
@@ -1586,14 +1797,26 @@
             
             if (bmi >= 30) {
                 bmiStatus.textContent = 'You Qualify!';
-                bmiStatus.style.color = '#27ae60';
-                bmiMessage.textContent = 'You meet the criteria for medically supervised weight loss. Please continue with the safety screening below.';
-                checkEligibility();
+                bmiStatus.style.color = '#1a1a1a';
+                bmiStatus.style.fontWeight = '500';
+                bmiMessage.textContent = 'Great! Let\'s continue to the next step.';
+                
+                // Show Step 2 after a delay
+                setTimeout(() => {
+                    document.getElementById('step1').style.display = 'none';
+                    document.getElementById('step2').style.display = 'block';
+                    
+                    // Update progress indicator
+                    document.getElementById('step2-indicator').style.opacity = '1';
+                    document.getElementById('step2-indicator').querySelector('div').style.background = '#1a1a1a';
+                    document.getElementById('step2-indicator').querySelector('div').style.color = 'white';
+                    document.getElementById('step2-indicator').querySelector('span').style.color = '#1a1a1a';
+                }, 1500);
             } else {
-                bmiStatus.textContent = 'Not Eligible';
-                bmiStatus.style.color = '#e74c3c';
-                bmiMessage.textContent = 'We currently treat patients with BMI ≥ 30. Please consult your primary care physician for weight management options.';
-                document.getElementById('contact-form').style.display = 'none';
+                bmiStatus.textContent = 'BMI Below 30';
+                bmiStatus.style.color = '#666';
+                bmiStatus.style.fontWeight = '400';
+                bmiMessage.textContent = 'We currently treat patients with BMI ≥ 30.';
             }
             
             resultDiv.style.display = 'block';
@@ -1602,30 +1825,55 @@
         function checkState() {
             const state = document.getElementById('state').value;
             const stateMessage = document.getElementById('state-message');
+            const continueBtn = document.getElementById('continue-to-safety');
             
             if (state === 'other') {
                 stateMessage.style.display = 'block';
-                document.getElementById('contact-form').style.display = 'none';
+                continueBtn.style.display = 'none';
             } else if (state === 'MN') {
                 stateMessage.style.display = 'none';
-                checkEligibility();
+                checkBasicInfo();
             } else {
                 stateMessage.style.display = 'none';
-                document.getElementById('contact-form').style.display = 'none';
+                continueBtn.style.display = 'none';
             }
+        }
+        
+        function checkBasicInfo() {
+            const age = document.getElementById('age').value;
+            const state = document.getElementById('state').value;
+            const continueBtn = document.getElementById('continue-to-safety');
+            
+            if (age && age >= 25 && age <= 65 && state === 'MN') {
+                continueBtn.style.display = 'inline-block';
+            } else {
+                continueBtn.style.display = 'none';
+            }
+        }
+        
+        function proceedToStep3() {
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('step3').style.display = 'block';
+            
+            // Update progress indicator
+            document.getElementById('step3-indicator').style.opacity = '1';
+            document.getElementById('step3-indicator').querySelector('div').style.background = '#1a1a1a';
+            document.getElementById('step3-indicator').querySelector('div').style.color = 'white';
+            document.getElementById('step3-indicator').querySelector('span').style.color = '#1a1a1a';
         }
         
         function checkAge() {
             const age = document.getElementById('age').value;
             const ageMessage = document.getElementById('age-message');
+            const continueBtn = document.getElementById('continue-to-safety');
             
             if (age && (age < 25 || age > 65)) {
                 ageMessage.style.display = 'block';
-                document.getElementById('contact-form').style.display = 'none';
+                continueBtn.style.display = 'none';
                 return false;
-            } else {
+            } else if (age) {
                 ageMessage.style.display = 'none';
-                checkEligibility();
+                checkBasicInfo();
                 return true;
             }
         }
@@ -1644,33 +1892,12 @@
                 return false;
             } else {
                 safetyMessage.style.display = 'none';
-                checkEligibility();
+                document.getElementById('contact-form').style.display = 'block';
                 return true;
             }
         }
         
-        function checkEligibility() {
-            const state = document.getElementById('state').value;
-            const age = document.getElementById('age').value;
-            const resultDiv = document.getElementById('bmi-result');
-            const bmiStatus = document.getElementById('bmi-status').textContent;
-            const safety1 = document.getElementById('safety1').checked;
-            const safety2 = document.getElementById('safety2').checked;
-            const safety3 = document.getElementById('safety3').checked;
-            const safety4 = document.getElementById('safety4').checked;
-            const safety5 = document.getElementById('safety5').checked;
-            
-            // Must meet ALL criteria
-            if (state === 'MN' && 
-                resultDiv.style.display === 'block' && 
-                bmiStatus === 'You Qualify!' &&
-                age && age >= 25 && age <= 65 &&
-                safety1 && safety2 && safety3 && safety4 && safety5) {
-                document.getElementById('contact-form').style.display = 'block';
-            } else {
-                document.getElementById('contact-form').style.display = 'none';
-            }
-        }
+        // Function removed - no longer needed with progressive disclosure
         
         function joinWaitlist() {
             alert('Waitlist feature coming soon! Please check back or email us at support@cadencehealth.com');
