@@ -312,10 +312,10 @@ glp-clinic-website/
 
 ## PRIMARY DEVELOPMENT FILE: fusion.html
 **This is the approved design moving forward**
-- Brand: Tempo
+- Brand: Cadence
 - Tagline: "Weight loss at your pace"
-- Design: Caliber's clean minimalist layout
-- Messaging: Tempo's rhythm/pace philosophy
+- Design: Clean minimalist layout with sophisticated cards
+- Messaging: Rhythm/pace philosophy with medical credibility
 - Colors: Pure white background, black primary
 - ALL FUTURE DEVELOPMENT should be on fusion.html
 
