@@ -71,7 +71,7 @@
         }
 
         .tagline {
-            font-size: 10px;
+            font-size: 12px;
             color: #666;
             letter-spacing: 0.5px;
             margin-top: 2px;
@@ -210,7 +210,7 @@
         
         .story-result {
             font-size: 32px;
-            font-weight: 200;
+            font-weight: 300;
             color: #000;
             margin-bottom: 16px;
         }
@@ -218,8 +218,6 @@
         .story-timeframe {
             font-size: 13px;
             color: #999;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
             margin-bottom: 20px;
         }
         
@@ -227,7 +225,6 @@
             font-size: 16px;
             line-height: 1.6;
             color: #666;
-            font-style: italic;
             margin-bottom: 16px;
         }
         
@@ -310,8 +307,6 @@
         .timeline-time {
             font-size: 13px;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: #999;
             margin-bottom: 8px;
         }
@@ -345,8 +340,6 @@
             gap: 8px;
             font-size: 13px;
             color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         
         .trust-icon {
@@ -396,10 +389,8 @@
             left: 8px;
             background: #fafafa;
             padding: 0 4px;
-            font-size: 11px;
+            font-size: 12px;
             color: #999;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         
         .bmi-calculate {
@@ -434,7 +425,7 @@
         
         .bmi-number {
             font-size: 32px;
-            font-weight: 200;
+            font-weight: 300;
             color: #000;
             margin-bottom: 8px;
         }
@@ -602,10 +593,10 @@
         /* Typography - Clean like Caliber, messaging like Tempo */
         h1 {
             font-size: 48px;
-            font-weight: 200;
+            font-weight: 300;
             line-height: 1.2;
             margin-bottom: 20px;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
         }
 
         h1 .accent {
@@ -614,9 +605,9 @@
 
         h2 {
             font-size: 36px;
-            font-weight: 200;
+            font-weight: 300;
             margin-bottom: 24px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
 
         h3 {
@@ -763,7 +754,7 @@
 
         .price {
             font-size: 48px;
-            font-weight: 200;
+            font-weight: 300;
             margin-bottom: 8px;
         }
 
@@ -810,13 +801,117 @@
             position: absolute;
             top: -8px;
             left: 0;
-            font-size: 11px;
+            font-size: 12px;
             color: #999;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
             font-weight: 500;
         }
 
+        /* Footer Styles */
+        footer {
+            margin-top: 100px;
+            border-top: 1px solid #f0f0f0;
+            background: #fafafa;
+            padding: 48px 0 32px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        
+        .footer-section p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #000;
+        }
+        
+        .footer-disclaimer {
+            padding: 32px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .footer-disclaimer h4 {
+            font-size: 13px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        
+        .footer-disclaimer p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .footer-copyright {
+            font-size: 13px;
+            color: #999;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-legal-links a {
+            font-size: 13px;
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer-legal-links a:hover {
+            color: #000;
+        }
+        
         /* Mobile */
         @media (max-width: 768px) {
             h1 { font-size: 36px; }
@@ -824,6 +919,8 @@
             .pricing-grid { grid-template-columns: 1fr; }
             .tabs { overflow-x: auto; }
             .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -834,7 +931,7 @@
                 <div class="logo-mark">C</div>
                 <div>
                     <div class="logo-text">Cadence</div>
-                    <div class="tagline">Weight loss at your pace</div>
+                    <div class="tagline">Board-Certified Physicians. Evidence-Based Results. At Your Cadence.</div>
                 </div>
             </div>
             <button class="cta-btn" onclick="showSection('assessment')">Start Now</button>
@@ -845,7 +942,7 @@
         <div class="tabs">
             <button class="tab active" onclick="showSection('home')">Overview</button>
             <button class="tab" onclick="showSection('science')">Science</button>
-            <button class="tab" onclick="showSection('treatment')">Method</button>
+            <button class="tab" onclick="showSection('method')">Method</button>
             <button class="tab" onclick="showSection('pricing')">Pricing</button>
             <button class="tab" onclick="showSection('faq')">FAQ</button>
             <button class="tab" onclick="showSection('assessment')">Start</button>
@@ -854,8 +951,8 @@
 
     <main>
         <section id="home" class="section active">
-            <h1>Find your <span class="accent">rhythm</span> in weight loss</h1>
-            <p class="subtitle">Sustainable change guided by board-certified physicians, adapted to your natural pace.</p>
+            <h1>Find Your <span class="accent">Rhythm</span> in Weight Loss.</h1>
+            <p class="subtitle">Guided by board-certified internal medicine physicians with 20+ years of hospitalist and faculty experience at leading institutions including Mayo Clinic, UCSF, University of Minnesota, Allina Health, and PeaceHealth.</p>
             
             <div class="rhythm">
                 <div class="beat"></div>
@@ -867,118 +964,140 @@
             
             <div class="features">
                 <div class="feature">
-                    <h3 data-number="1">Your Pace, Your Progress</h3>
-                    <p>Board-certified physicians who understand that sustainable weight loss happens at your body's natural tempo. No rush, no pressure, just steady progress.</p>
+                    <h3 data-number="1">Your Pace</h3>
+                    <p>Sustainable weight loss adapted to your body's natural response.</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Week 1-2: Initial assessment and treatment start</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="2">Steady Rhythm, Real Results</h3>
-                    <p>15-20% average weight loss through proven GLP-1 therapy, calibrated to your metabolic rhythm. Consistent, measurable, lasting.</p>
+                    <h3 data-number="2">Real Results</h3>
+                    <p>15-20% average weight loss through proven GLP-1 therapy.</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Week 2-4: Appetite changes and early progress</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="3">Continuous Harmony</h3>
-                    <p>Monthly tune-ups with your physician ensure your treatment stays in perfect sync with your progress. We adjust as you evolve.</p>
+                    <h3 data-number="3">Medical Supervision</h3>
+                    <p>Monthly physician monitoring to optimize your treatment.</p>
+                    <p style="font-size: 13px; color: #999; margin-top: 12px;">Week 4+: Ongoing optimization and support</p>
                 </div>
             </div>
             
+            
             <div class="quick-faq">
-                <h3>Common Questions</h3>
                 <div class="quick-faq-grid">
                     <div class="quick-faq-item">
-                        <div class="quick-faq-question">Is this covered by insurance?</div>
-                        <div class="quick-faq-answer">Coverage varies by plan. Many require prior authorization. Our $149/month cash price often beats copays, with no delays or denials.</div>
+                        <div class="quick-faq-question">Will my insurance cover this?</div>
+                        <div class="quick-faq-answer">Coverage can be challenging. Most plans require prior authorization. We'll work with you to submit paperwork and, if not approved, guide you to manufacturer direct-pay programs. No guarantees — but we'll help you explore every option.</div>
                     </div>
                     <div class="quick-faq-item">
                         <div class="quick-faq-question">How much weight will I lose?</div>
-                        <div class="quick-faq-answer">Clinical trials show 15-22% body weight loss over 12-18 months. Most notice appetite changes within weeks.</div>
+                        <div class="quick-faq-answer">Results vary. In trials, patients lost 15–22% of body weight over 12–18 months. Most notice appetite changes within weeks.</div>
                     </div>
                     <div class="quick-faq-item">
                         <div class="quick-faq-question">Why do I need a physician?</div>
-                        <div class="quick-faq-answer">GLP-1s are powerful. With MD guidance, you get safe dosing, side effect management, and better success rates.</div>
+                        <div class="quick-faq-answer">GLP-1s are powerful medications. With physician-led care, you get safe titration, side-effect management, labs, and structured follow-ups.</div>
                     </div>
                 </div>
+                <p style="text-align: center; margin-top: 32px;">
+                    <button class="cta-btn" onclick="showSection('assessment')" style="padding: 12px 32px;">Schedule Your Consultation</button>
+                </p>
             </div>
         </section>
 
         <section id="science" class="section">
-            <h2>Profound Change, Expertly Monitored</h2>
-            <p class="subtitle">GLP-1 medications create metabolic transformation. That's why you need a physician.</p>
+            <h2>The Science</h2>
+            <p class="subtitle">Understanding GLP-1 therapy and metabolic change.</p>
             
             <div class="features" style="margin-top: 48px;">
                 <div class="feature">
-                    <h3 data-number="1">The Revolution</h3>
-                    <p>GLP-1 receptor agonists aren't diet pills. They're hormones that fundamentally alter how your body processes food, manages hunger, and burns energy. This profound metabolic shift is why they achieve what no diet ever could: sustainable 15-20% weight loss.</p>
+                    <h3 data-number="1">How It Works</h3>
+                    <p>GLP-1 medications mimic natural hormones to regulate appetite and metabolism, achieving 15-20% average weight loss.</p>
                 </div>
                 
                 <div class="feature">
-                    <h3 data-number="2">Why Monitoring Matters</h3>
-                    <p><strong>Without physician oversight, 70% abandon treatment.</strong> With expert monitoring, 87% reach their goals. The difference? Your MD catches issues before they become problems, optimizes dosing for your unique response, and turns plateaus into breakthroughs.</p>
+                    <h3 data-number="2">Medical Supervision</h3>
+                    <p>Physician monitoring improves success rates and safety through proper dosing and side effect management.</p>
                 </div>
                 
                 <div class="feature">
-                    <h3 data-number="3">Real Evidence</h3>
-                    <p><strong>Sarah lost 62 lbs in 6 months:</strong> "My doctor caught my thyroid issue at month 3. Without that adjustment, I would have quit."<br><br>
-                    <strong>Michael lost 45 lbs in 5 months:</strong> "When I plateaued, my physician adjusted my dose. Two weeks later, the scale moved again."</p>
+                    <h3 data-number="3">Clinical Results</h3>
+                    <p>Studies show consistent weight loss of 15-20% with proper medical supervision and dose optimization.</p>
                 </div>
             </div>
             
-            <div class="highlight-box" style="margin-top: 48px; background: #f8f8f8; padding: 24px; border-left: 3px solid #000;">
-                <h3 style="margin-bottom: 12px; font-size: 18px;">The Bottom Line</h3>
-                <p style="color: #666; line-height: 1.6;">These medications reshape your metabolism at the cellular level. That's revolutionary—and that's exactly why you need an expert guiding the process. <strong>Profound change requires profound care.</strong></p>
+            <div class="highlight-box" style="margin-top: 64px;">
+                <h3>The Difference Physician Supervision Makes</h3>
+                <p style="margin-bottom: 20px;">Profound metabolic change requires profound care. Research shows physician-supervised GLP-1 therapy achieves significantly higher success and compliance rates:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 36px; font-weight: 500; color: #000; margin-bottom: 8px;">30%</div>
+                        <div style="font-size: 14px; color: #666; font-weight: 500;">Success Rate Without MD Supervision</div>
+                        <div style="font-size: 12px; color: #999; margin-top: 4px;">Many discontinue due to side effects or access issues</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 36px; font-weight: 500; color: #000; margin-bottom: 8px;">87%</div>
+                        <div style="font-size: 14px; color: #666; font-weight: 500;">Success Rate With Physician Care</div>
+                        <div style="font-size: 12px; color: #999; margin-top: 4px;">Sustainable results through proper monitoring</div>
+                    </div>
+                </div>
+                <p style="margin-top: 24px; font-size: 14px; color: #666; font-style: italic;">Physician supervision transforms treatment from temporary intervention to sustainable, profound metabolic change.</p>
             </div>
+            
         </section>
 
-        <section id="treatment" class="section">
-            <h2>The Tempo Method</h2>
-            <p class="subtitle">Finding your sustainable rhythm for lasting change.</p>
+        <section id="method" class="section">
+            <h2>Our Method</h2>
+            <p class="subtitle">Simple, effective, personalized.</p>
             
             <div class="features">
                 <div class="feature">
-                    <h3 data-number="1">Set Your Baseline</h3>
-                    <p>Comprehensive assessment establishes your metabolic tempo. We listen to your body's natural rhythm and create your personalized pace.</p>
+                    <h3 data-number="1">Assessment</h3>
+                    <p>Medical evaluation to determine your treatment plan.</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="2">Find Your Groove</h3>
-                    <p>Your physician fine-tunes your GLP-1 protocol to match your unique response patterns. No cookie-cutter approach, just what works for you.</p>
+                    <h3 data-number="2">Optimization</h3>
+                    <p>Dose adjustments based on your response.</p>
                 </div>
                 <div class="feature">
-                    <h3 data-number="3">Maintain the Beat</h3>
-                    <p>Regular adjustments keep your treatment in perfect tempo. As your body changes, we adapt, ensuring continuous, comfortable progress.</p>
+                    <h3 data-number="3">Maintenance</h3>
+                    <p>Ongoing support to sustain your results.</p>
                 </div>
             </div>
         </section>
 
         <section id="pricing" class="section">
-            <h2>Simple, Transparent Pricing</h2>
-            <p class="subtitle">No hidden fees. No surprises.</p>
+            <h2>Simple Pricing</h2>
+            <p class="subtitle">Transparent, straightforward, no surprises.</p>
             
             <div class="pricing-grid">
                 <div class="price-card">
-                    <div class="price">$149</div>
-                    <div class="price-label">First Month</div>
-                    <p class="price-description">Complete medical evaluation and personalized treatment plan.</p>
+                    <div class="price">$249</div>
+                    <div class="price-label">Initial Consultation</div>
+                    <p class="price-description">Comprehensive metabolic and medical evaluation, treatment plan, baseline labs review, and GLP-1 prescribing when appropriate.</p>
                 </div>
                 <div class="price-card">
-                    <div class="price">$149</div>
-                    <div class="price-label">Monthly</div>
-                    <p class="price-description">Ongoing physician supervision and dose optimization.</p>
+                    <div class="price">$199</div>
+                    <div class="price-label">Follow-Up Visits</div>
+                    <p class="price-description">Dose titration, side-effect management, ongoing monitoring, and prior authorization support. Typically scheduled at Week 4, then every 12 weeks.</p>
                 </div>
             </div>
+            <p style="text-align: center; margin-top: 32px; font-size: 14px; color: #666;">
+                <strong>Note:</strong> Medication cost is separate and determined by your pharmacy/insurance. We provide prescribing services only.
+            </p>
         </section>
 
         <section id="faq" class="section">
             <h2>Frequently Asked Questions</h2>
-            <p class="subtitle">Everything you need to know about GLP-1 therapy.</p>
+            <p class="subtitle">Everything you need to know.</p>
             
             <div class="accordion">
-                <!-- Top 3 Essential FAQs - Expanded by Default -->
+                <!-- Top questions expanded by default -->
                 <div class="accordion-item active">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>Is this covered by insurance?</span>
+                        <span>Will my insurance cover this?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Coverage depends on your plan. Many insurers require prior authorization and certain criteria (BMI + health conditions). Medicare usually only covers GLP-1s for diabetes, not weight loss. Medicaid coverage is very limited. <strong>If not covered, we'll guide you to cash-pay programs</strong> like Wegovy® (~$499/month) and Zepbound™ ($349–$499/month). Our $149 monthly fee covers all physician services.
+                            Coverage for GLP-1s can be challenging. Most plans require prior authorization with strict criteria. We'll work with you to submit the paperwork and, if insurance doesn't approve, guide you to manufacturer direct-pay programs. No guarantees — but we'll help you explore every option.
                         </div>
                     </div>
                 </div>
@@ -990,7 +1109,7 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Results vary, but <strong>clinical trials with lifestyle support show 15–22% body weight loss over 12–18 months</strong>. Most people notice appetite changes within a few weeks, with steady progress as doses increase. Your physician will optimize your dosing based on your individual response and tolerance.
+                            Results vary. In clinical trials, patients lost 15–22% of their body weight over 12–18 months with lifestyle support. Most notice appetite changes within weeks, with steady progress as doses increase.
                         </div>
                     </div>
                 </div>
@@ -1002,20 +1121,20 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            GLP-1s are powerful medications that affect multiple organ systems. <strong>Without medical guidance, many people stop early due to side effects or access issues</strong>. With physician-led care, you get safe dose titration, side-effect management, and lab monitoring when needed—improving both safety and success rates from 30% to over 87%.
+                            GLP-1s are powerful medications. With physician-led care, you get safe dose titration, side-effect management, lab monitoring, and structured follow-ups — support that improves both safety and long-term success.
                         </div>
                     </div>
                 </div>
                 
-                <!-- Additional Questions - Collapsed by Default -->
+                <!-- Additional questions -->
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>What is prior authorization (PA)?</span>
+                        <span>What is a prior authorization?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            It's extra paperwork your insurance requires before paying for medication. <strong>We submit PAs electronically</strong> with your BMI, medical history, and labs. Review usually takes 3–5 business days. We handle this process for you.
+                            A prior authorization (PA) is paperwork your insurance requires before covering medication. We submit this electronically through CoverMyMeds with details from your visit. Reviews usually take 3–5 business days.
                         </div>
                     </div>
                 </div>
@@ -1027,55 +1146,21 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            We'll appeal once if appropriate. If still denied, <strong>we'll help you use manufacturer direct-pay programs or retail cash pricing</strong>. Many patients find cash options more reliable than fighting insurance.
+                            You still have options:<br><br>
+                            <strong>Manufacturer programs:</strong> Wegovy® DirectPay (~$499/month), Zepbound™ DirectPay ($349–$499/month).<br><br>
+                            <strong>GoodRx coupons:</strong> Sometimes reduce pharmacy prices, though manufacturer programs are usually cheaper and more reliable.
                         </div>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>Do I need lab tests?</span>
+                        <span>Can I use compounded GLP-1s?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Yes, we may request recent labs (A1c, basic metabolic panel, cholesterol, ± thyroid labs) before starting and periodically while on treatment. <strong>This ensures safe, effective therapy</strong> and helps us optimize your results.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>How will follow-ups work?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            You'll get a titration calendar and side-effect guide. <strong>We check in at Week 2 (online), Week 4 (short visit), and about every 12 weeks</strong>. You can message us anytime in between for support or questions.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>What if I miss a dose?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            If it's within a few days, take it when you remember and resume weekly on that new day. If longer, <strong>contact us before restarting</strong>. Never double up doses.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>Can I use GoodRx or compounding pharmacies?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>GoodRx may reduce retail pharmacy prices</strong>, but manufacturer programs are usually cheaper and more reliable. We only use compounding pharmacies when medically necessary (e.g., ingredient intolerance) and through licensed pharmacies.
+                            Only when medically necessary (such as allergies to inactive ingredients) and always through licensed pharmacies. We don't routinely prescribe compounded versions.
                         </div>
                     </div>
                 </div>
@@ -1087,16 +1172,126 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Ask them to check nearby locations in their chain. <strong>If needed, we can redirect your prescription</strong>. Sometimes lower-dose pens are available temporarily (with adjusted guidance from your physician).
+                            If your pharmacy doesn't have your medication:<br><br>
+                            • Ask them to check nearby locations.<br>
+                            • Request a prescription transfer.<br>
+                            • Sometimes lower-dose pens may be available temporarily — only with our guidance.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Do I need labs?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Often yes. We may request recent labs (A1c, metabolic panel, cholesterol, ± thyroid tests) before starting and periodically while on treatment.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Is GLP-1 therapy safe for everyone?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            No. It's not recommended if you have:<br><br>
+                            • Personal/family history of medullary thyroid cancer or MEN2<br>
+                            • Prior pancreatitis<br>
+                            • Are pregnant or breastfeeding<br><br>
+                            We carefully screen your history to ensure safety.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How do follow-ups work?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <strong>Week 2:</strong> Online check-in<br>
+                            <strong>Week 4:</strong> Short visit<br>
+                            <strong>Every 12 weeks:</strong> Ongoing visits<br><br>
+                            You'll also receive a titration calendar, side-effect guide, and secure messaging for questions.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>When will I see results?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Most patients notice appetite changes within weeks. Meaningful weight loss builds gradually over months as doses increase. Clinical trials show average losses of 15–22% over 12–18 months with lifestyle support.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What if I miss a dose?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            If within a few days, take it when you remember and continue weekly from that new day. If much longer, message us before restarting. Never double up.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Do you coordinate with my primary care clinician?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Yes. On request, we'll send a summary to your PCP so they stay in the loop. We complement, not replace, your primary care.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Do you accept insurance for visits?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            No. Visits are cash-pay: $149 initial consult, $149 follow-up. HSA/FSA cards accepted. We provide receipts you may submit for possible out-of-network reimbursement.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Can you guarantee results or medication availability?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            No medical therapy can guarantee outcomes or stock. What we do guarantee is evidence-based care, physician oversight, and multiple access pathways (insurance, manufacturer programs, retail pharmacies) to maximize your chances of success.
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div style="margin-top: 48px; padding: 24px; background: #f8f8f8; border-left: 3px solid #ddd; font-size: 13px; color: #666;">
+                <p style="margin: 0;"><strong>Important Note:</strong> We provide prescribing services only. We do not sell or ship medications. Dispensing and pricing are handled by your pharmacy and/or insurance.</p>
+            </div>
         </section>
 
         <section id="assessment" class="section">
-            <h2>Start Your Tempo</h2>
-            <p class="subtitle">Takes less than 2 minutes. Get your personalized plan today.</p>
+            <h2>Get Started</h2>
+            <p class="subtitle">Schedule your consultation today.</p>
             
             <form class="form-container">
                 <div class="form-group">
@@ -1124,10 +1319,70 @@
                     <label class="form-label">Goal Weight (lbs)</label>
                 </div>
                 
-                <button class="cta-btn" style="width: 100%; padding: 14px;">Find My Tempo</button>
+                <button class="cta-btn" style="width: 100%; padding: 14px;">Schedule Consultation</button>
             </form>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-disclaimer">
+                <h4>Medical Disclaimer</h4>
+                <p>We provide prescribing services only. We do not sell or ship medications. Dispensing and pricing are handled by your pharmacy and/or insurance.</p>
+                <p>GLP-1 therapy is not suitable for everyone. Not for use in patients with personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia type 2.</p>
+                <p>Common side effects may include nausea, vomiting, diarrhea, decreased appetite, and constipation. Serious side effects are rare but possible.</p>
+                <p>This service does not replace your primary care physician. For urgent or emergency care, call 911 or go to the ER.</p>
+            </div>
+            
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Cadence Health</h4>
+                    <p>Cadence Health LLC is a Minnesota-based telemedicine practice specializing in medical weight management through physician-supervised GLP-1 therapy.</p>
+                    <p>We provide prescription services only. We do not sell, ship, or dispense medications. All medications are fulfilled through licensed pharmacies.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="hipaa-notice.html">HIPAA Notice</a></li>
+                        <li><a href="telehealth-consent.html">Telehealth Consent</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Patient Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#faq">FAQs</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="emergency.html">Emergency Info</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Compliance</h4>
+                    <p>Licensed to practice in: MN</p>
+                    <p>NPI: [Pending]</p>
+                    <p>DEA: [If Applicable]</p>
+                    <p>State License: [Pending]</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2024 Cadence Health LLC. All rights reserved. A Minnesota Limited Liability Company.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms-of-service.html">Terms</a>
+                    <a href="hipaa-notice.html">HIPAA</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         function showSection(id) {
