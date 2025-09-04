@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cadence Health</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #2d2d2d;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: #6a6a6a;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1a1a1a;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 120px auto 80px;
+            padding: 0 32px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 48px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: #2d2d2d;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #4a4a4a;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .contact-card {
+            background: #f8f8f8;
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 3px solid #1a1a1a;
+        }
+
+        .contact-card h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .contact-detail strong {
+            min-width: 80px;
+            color: #2d2d2d;
+        }
+
+        .contact-detail a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .contact-detail a:hover {
+            text-decoration: underline;
+        }
+
+        .emergency-box {
+            background: #fff8f0;
+            border-left: 3px solid #ff6b35;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .emergency-box h3 {
+            margin-top: 0;
+            color: #ff6b35;
+            font-size: 20px;
+        }
+
+        .hours-table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .hours-table th,
+        .hours-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .hours-table th {
+            background: #f8f8f8;
+            font-weight: 500;
+            color: #2d2d2d;
+        }
+
+        .service-areas {
+            background: #f0f4ff;
+            border-left: 3px solid #4a5fcf;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .service-areas h3 {
+            margin-top: 0;
+            color: #4a5fcf;
+        }
+
+        .state-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .state-item {
+            padding: 8px 12px;
+            background: white;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .state-item.current {
+            background: #4a5fcf;
+            color: white;
+        }
+
+        .state-item.coming-soon {
+            background: #e8f2ff;
+            color: #4a5fcf;
+        }
+
+        footer {
+            background: #fafafa;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 32px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: #6a6a6a;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 0 20px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="fusion.html" class="logo">
+                <div class="logo-mark">C</div>
+                <div class="logo-text">Cadence</div>
+            </a>
+            <div class="nav-links">
+                <a href="fusion.html">Home</a>
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="terms-of-service.html">Terms</a>
+                <a href="hipaa-notice.html">HIPAA</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <p class="subtitle">Connect with our team for questions about our services, billing inquiries, or to schedule your consultation.</p>
+
+        <div class="emergency-box">
+            <h3>⚠️ Medical Emergencies</h3>
+            <p><strong>For medical emergencies, call 911 immediately or go to your nearest emergency room.</strong></p>
+            <p>Our telehealth services are not designed for urgent or emergency medical situations.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>General Information</h3>
+                <div class="contact-detail">
+                    <strong>Email:</strong> 
+                    <a href="mailto:support@cadencehealth.com">support@cadencehealth.com</a>
+                </div>
+                <div class="contact-detail">
+                    <strong>Phone:</strong> 
+                    <span>(Coming Soon)</span>
+                </div>
+                <div class="contact-detail">
+                    <strong>Response:</strong> 
+                    <span>Within 1-2 business days</span>
+                </div>
+                <p style="font-size: 14px; color: #666; margin-top: 16px;">
+                    For general questions about our services, appointments, or account information.
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Clinical Questions</h3>
+                <div class="contact-detail">
+                    <strong>Email:</strong> 
+                    <a href="mailto:clinical@cadencehealth.com">clinical@cadencehealth.com</a>
+                </div>
+                <div class="contact-detail">
+                    <strong>For:</strong> 
+                    <span>Current patients only</span>
+                </div>
+                <div class="contact-detail">
+                    <strong>Response:</strong> 
+                    <span>Within 24 hours</span>
+                </div>
+                <p style="font-size: 14px; color: #666; margin-top: 16px;">
+                    For current patients with questions about treatment, side effects, or dosing.
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Billing & Insurance</h3>
+                <div class="contact-detail">
+                    <strong>Email:</strong> 
+                    <a href="mailto:billing@cadencehealth.com">billing@cadencehealth.com</a>
+                </div>
+                <div class="contact-detail">
+                    <strong>Hours:</strong> 
+                    <span>Monday-Friday, 9 AM-5 PM CT</span>
+                </div>
+                <div class="contact-detail">
+                    <strong>Response:</strong> 
+                    <span>Within 2-3 business days</span>
+                </div>
+                <p style="font-size: 14px; color: #666; margin-top: 16px;">
+                    For questions about charges, refunds, insurance claims, or prior authorizations.
+                </p>
+            </div>
+
+            <div class="contact-card">
+                <h3>New Patient Consultations</h3>
+                <div class="contact-detail">
+                    <strong>Schedule:</strong> 
+                    <a href="#assessment" onclick="window.location.href='fusion.html#assessment'">Online Booking</a>
+                </div>
+                <div class="contact-detail">
+                    <strong>Email:</strong> 
+                    <a href="mailto:appointments@cadencehealth.com">appointments@cadencehealth.com</a>
+                </div>
+                <div class="contact-detail">
+                    <strong>Fee:</strong> 
+                    <span>$249 Initial Consultation</span>
+                </div>
+                <p style="font-size: 14px; color: #666; margin-top: 16px;">
+                    Ready to start? Schedule your comprehensive evaluation with a board-certified physician.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-areas">
+            <h3>📍 Service Areas</h3>
+            <p>We provide telehealth services to patients in select states with licensed physicians.</p>
+            
+            <div class="state-list">
+                <div class="state-item current">Minnesota</div>
+                <div class="state-item coming-soon">Washington</div>
+                <div class="state-item coming-soon">Oregon</div>
+                <div class="state-item coming-soon">California</div>
+            </div>
+            
+            <p style="margin-top: 16px; font-size: 14px; color: #666;">
+                <strong>Currently Available:</strong> Minnesota residents<br>
+                <strong>Coming Soon:</strong> Washington, Oregon, and California (2024)
+            </p>
+        </div>
+
+        <h2>Business Hours</h2>
+        <table class="hours-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Hours (Central Time)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Patient Consultations</td>
+                    <td>Monday-Friday, 8 AM-6 PM</td>
+                </tr>
+                <tr>
+                    <td>Customer Support</td>
+                    <td>Monday-Friday, 9 AM-5 PM</td>
+                </tr>
+                <tr>
+                    <td>Clinical Questions</td>
+                    <td>Monday-Friday, 9 AM-5 PM</td>
+                </tr>
+                <tr>
+                    <td>Billing Inquiries</td>
+                    <td>Monday-Friday, 9 AM-5 PM</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Company Information</h2>
+        <p><strong>Cadence Health LLC</strong></p>
+        <p>A Minnesota Limited Liability Company</p>
+        <p>Specializing in physician-supervised weight management through GLP-1 therapy</p>
+
+        <h3>Mailing Address</h3>
+        <p>
+            Cadence Health LLC<br>
+            [Street Address]<br>
+            [City], Minnesota [ZIP Code]
+        </p>
+
+        <h2>What to Expect</h2>
+        <p>When you contact us:</p>
+        <ul style="margin-left: 24px; color: #4a4a4a;">
+            <li><strong>Email Response:</strong> We respond to all emails within 1-2 business days</li>
+            <li><strong>Clinical Questions:</strong> Current patients receive priority response within 24 hours</li>
+            <li><strong>Urgent Matters:</strong> For urgent (non-emergency) clinical questions, use your patient portal or call during business hours</li>
+            <li><strong>Professional Service:</strong> All communications are handled by our trained support team with physician oversight</li>
+        </ul>
+
+        <h2>Privacy Notice</h2>
+        <p>All communications with Cadence Health are confidential and protected under HIPAA regulations. We use secure email systems and never share your personal health information without proper authorization.</p>
+
+        <p style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #e0e0e0; font-size: 14px; color: #666;">
+            <strong>Note:</strong> This contact information is for Cadence Health LLC only. We do not provide emergency services. For medical emergencies, always call 911 or go to your nearest emergency room.
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cadence Health LLC. All rights reserved.</p>
+        <p>A Minnesota Limited Liability Company</p>
+        <p><a href="fusion.html">Return to Home</a></p>
+    </footer>
+</body>
+</html>

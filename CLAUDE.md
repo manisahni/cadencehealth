@@ -311,13 +311,16 @@ glp-clinic-website/
 ```
 
 ## PRIMARY DEVELOPMENT FILE: fusion.html
-**This is the approved design moving forward**
-- Brand: Cadence
-- Tagline: "Weight loss at your pace"
-- Design: Clean minimalist layout with sophisticated cards
-- Messaging: Rhythm/pace philosophy with medical credibility
+**This is the FINAL approved design - DO NOT MODIFY WITHOUT EXPLICIT USER PERMISSION**
+- Brand: Cadence Health LLC
+- Tagline: "Board-Certified Physicians. Evidence-Based Results. At Your Cadence."
+- Design: Premium medical practice with extensive physician credentials
+- Messaging: Evidence-based medicine with detailed institutional affiliations
+- Pricing: Premium positioning ($249 initial, $199 follow-up)
 - Colors: Pure white background, black primary
-- ALL FUTURE DEVELOPMENT should be on fusion.html
+- Status: **LOCKED FOR PRODUCTION** - Commit 8110a79 (Sept 4, 2025)
+
+⚠️ **CRITICAL: This file is now PRODUCTION-READY and should NOT be modified without explicit user approval**
 
 ## Final Layout Structure
 
@@ -394,26 +397,25 @@ Three cards displayed on the Overview tab for immediate answers to top concerns:
 - Philosophy: Sustainable weight loss guided by board-certified MDs, adapted to each patient's natural pace
 - Focus on MD supervision with emphasis on sustainable, pressure-free progress
 
-### Required Messaging Elements
-1. **Always emphasize MD monitoring** - Every patient is supervised by board-certified physicians
-2. **Use clear "weight loss" language** - Not "metabolic health" or vague wellness terms
-3. **Highlight continuous supervision** - Monthly lab reviews, dose adjustments, ongoing optimization
-4. **Lead with medical legitimacy** - Board-certified MDs, not just "providers" or "clinicians"
-5. **Speed + Safety** - "Start Now" but with proper medical evaluation
+### FINAL APPROVED MESSAGING (LOCKED - DO NOT CHANGE)
 
-### Key Differentiators to Always Include
-- **Continuous MD Monitoring**: Your board-certified physician reviews labs monthly
-- **Personalized Treatment**: MD creates customized weight management protocol
-- **Complete Medical Care**: Not just prescriptions - ongoing supervision and optimization
-- **Direct MD Access**: Same physician throughout, available for questions
+**Official Tagline:** "Board-Certified Physicians. Evidence-Based Results. At Your Cadence."
 
-### Language Requirements
-- Say "weight loss" or "weight management" NOT "metabolic transformation"
-- Say "board-certified MD" or "physician" NOT just "doctor" or "provider"
-- Say "medical supervision" NOT "support" or "guidance"
-- Say "Start Now" NOT "Begin your journey" or other soft language
+**Hero Headline:** "Find Your Rhythm in Weight Loss."
 
-### The Closing Statement
-**"Lasting change in weight and metabolism, guided by board-certified MDs"**
-- Use this or variation as tagline/footer
-- Emphasizes both outcome and medical authority
+**Physician Credentials:** "Guided by board-certified internal medicine physicians with 20+ years of hospitalist and faculty experience at leading institutions including Mayo Clinic, UCSF, University of Minnesota, Allina Health, and PeaceHealth."
+
+**Pricing Structure:**
+- Initial Consultation: $249 (comprehensive metabolic evaluation)
+- Follow-Up Visits: $199 (dose titration and monitoring)
+
+**Key Statistics:** 30% success rate without MD supervision vs 87% with physician care
+
+**Core Messaging Themes:**
+- Premium medical practice positioning
+- Extensive institutional credentials (Mayo, UCSF, etc.)
+- Evidence-based medicine approach  
+- "Profound metabolic change requires profound care"
+- Sustainable, physician-supervised results
+
+⚠️ **DO NOT MODIFY THESE MESSAGING ELEMENTS WITHOUT EXPLICIT USER APPROVAL**
