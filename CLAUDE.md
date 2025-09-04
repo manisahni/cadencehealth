@@ -351,18 +351,33 @@ glp-clinic-website/
 - **Weight Loss**: 15-20% average body weight loss
 - **Differentiation**: Medical practice, not pill mill
 
-### FAQ Content (Exact)
-1. **Why do I need a physician?**
-   - GLP-1s are powerful medications. 70% quit within a year without supervision. With physician monitoring, 87% reach their goals.
+### FAQ Content Structure
+
+#### Quick FAQ (Overview Section)
+Three cards displayed on the Overview tab for immediate answers to top concerns:
+1. **Is this covered by insurance?** - Coverage varies by plan. Many require prior authorization. Our $149/month cash price often beats copays, with no delays or denials.
+2. **How much weight will I lose?** - Clinical trials show 15-22% body weight loss over 12-18 months. Most notice appetite changes within weeks.
+3. **Why do I need a physician?** - GLP-1s are powerful. With MD guidance, you get safe dosing, side effect management, and better success rates.
+
+#### Full FAQ (Accordion on FAQ Tab)
+**Top 3 Questions (Expanded by Default):**
+1. **Is this covered by insurance?**
+   - Coverage depends on your plan. Many insurers require prior authorization and certain criteria (BMI + health conditions). Medicare usually only covers GLP-1s for diabetes, not weight loss. Medicaid coverage is very limited. If not covered, we'll guide you to cash-pay programs like Wegovy® (~$499/month) and Zepbound™ ($349–$499/month). Our $149 monthly fee covers all physician services.
 
 2. **How much weight will I lose?**
-   - Average 15-20% total body weight loss over 6-12 months with proper medical supervision. Most see initial results within 2-4 weeks.
+   - Results vary, but clinical trials with lifestyle support show 15–22% body weight loss over 12–18 months. Most people notice appetite changes within a few weeks, with steady progress as doses increase. Your physician will optimize your dosing based on your individual response and tolerance.
 
-3. **What's different about Tempo?**
-   - We're a medical practice, not a pill mill. Your MD provides monthly lab reviews, dose optimization, and side effect management.
+3. **Why do I need a physician?**
+   - GLP-1s are powerful medications that affect multiple organ systems. Without medical guidance, many people stop early due to side effects or access issues. With physician-led care, you get safe dose titration, side-effect management, and lab monitoring when needed—improving both safety and success rates from 30% to over 87%.
 
-4. **Is this covered by insurance?**
-   - Our $149/month often costs less than copays. More importantly, you get guaranteed access without prior authorization delays.
+**Additional Questions (Collapsed by Default):**
+- What is prior authorization (PA)?
+- What if my insurance denies coverage?
+- Do I need lab tests?
+- How will follow-ups work?
+- What if I miss a dose?
+- Can I use GoodRx or compounding pharmacies?
+- What if my pharmacy is out of stock?
 
 ## Version Control
 - Commit message format: "Component: Brief description"
