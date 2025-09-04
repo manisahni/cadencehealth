@@ -458,6 +458,125 @@
         .bmi-not-eligible {
             color: #e74c3c;
         }
+        
+        /* Accordion Styles */
+        .accordion {
+            margin-top: 48px;
+        }
+        
+        .accordion-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+        }
+        
+        .accordion-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background: #fafafa;
+        }
+        
+        .accordion-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+        
+        .accordion-body {
+            padding: 0 24px 20px 24px;
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .accordion-body strong {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Quick FAQ Cards */
+        .quick-faq {
+            margin-top: 64px;
+            padding-top: 64px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .quick-faq h3 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .quick-faq-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        @media (max-width: 1024px) {
+            .quick-faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .quick-faq-item {
+            text-align: center;
+        }
+        
+        .quick-faq-question {
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 12px;
+        }
+        
+        .quick-faq-answer {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
 
         /* Main Content */
         main {
@@ -760,6 +879,24 @@
                     <p>Monthly tune-ups with your physician ensure your treatment stays in perfect sync with your progress. We adjust as you evolve.</p>
                 </div>
             </div>
+            
+            <div class="quick-faq">
+                <h3>Common Questions</h3>
+                <div class="quick-faq-grid">
+                    <div class="quick-faq-item">
+                        <div class="quick-faq-question">Is this covered by insurance?</div>
+                        <div class="quick-faq-answer">Coverage varies by plan. Many require prior authorization. Our $149/month cash price often beats copays, with no delays or denials.</div>
+                    </div>
+                    <div class="quick-faq-item">
+                        <div class="quick-faq-question">How much weight will I lose?</div>
+                        <div class="quick-faq-answer">Clinical trials show 15-22% body weight loss over 12-18 months. Most notice appetite changes within weeks.</div>
+                    </div>
+                    <div class="quick-faq-item">
+                        <div class="quick-faq-question">Why do I need a physician?</div>
+                        <div class="quick-faq-answer">GLP-1s are powerful. With MD guidance, you get safe dosing, side effect management, and better success rates.</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="science" class="section">
@@ -830,27 +967,129 @@
 
         <section id="faq" class="section">
             <h2>Frequently Asked Questions</h2>
-            <p class="subtitle">Quick answers to common questions.</p>
+            <p class="subtitle">Everything you need to know about GLP-1 therapy.</p>
             
-            <div class="faq-grid" style="margin-top: 48px;">
-                <div class="faq-item">
-                    <div class="faq-question">Why do I need a physician?</div>
-                    <div class="faq-answer">GLP-1s are powerful medications. <strong>70% quit within a year without supervision</strong>. With physician monitoring, 87% reach their goals.</div>
+            <div class="accordion">
+                <!-- Top 3 Essential FAQs - Expanded by Default -->
+                <div class="accordion-item active">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Is this covered by insurance?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Coverage depends on your plan. Many insurers require prior authorization and certain criteria (BMI + health conditions). Medicare usually only covers GLP-1s for diabetes, not weight loss. Medicaid coverage is very limited. <strong>If not covered, we'll guide you to cash-pay programs</strong> like Wegovy® (~$499/month) and Zepbound™ ($349–$499/month). Our $149 monthly fee covers all physician services.
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">How much weight will I lose?</div>
-                    <div class="faq-answer">Average <strong>15-20% total body weight loss</strong> over 6-12 months with proper medical supervision. Most see initial results within 2-4 weeks.</div>
+                <div class="accordion-item active">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How much weight will I lose?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Results vary, but <strong>clinical trials with lifestyle support show 15–22% body weight loss over 12–18 months</strong>. Most people notice appetite changes within a few weeks, with steady progress as doses increase. Your physician will optimize your dosing based on your individual response and tolerance.
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">What's different about Tempo?</div>
-                    <div class="faq-answer">We're a medical practice, not a pill mill. Your MD provides <strong>monthly lab reviews, dose optimization, and side effect management</strong>.</div>
+                <div class="accordion-item active">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Why do I need a physician?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            GLP-1s are powerful medications that affect multiple organ systems. <strong>Without medical guidance, many people stop early due to side effects or access issues</strong>. With physician-led care, you get safe dose titration, side-effect management, and lab monitoring when needed—improving both safety and success rates from 30% to over 87%.
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">Is this covered by insurance?</div>
-                    <div class="faq-answer">Our $149/month often costs less than copays. More importantly, you get <strong>guaranteed access</strong> without prior authorization delays.</div>
+                <!-- Additional Questions - Collapsed by Default -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What is prior authorization (PA)?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            It's extra paperwork your insurance requires before paying for medication. <strong>We submit PAs electronically</strong> with your BMI, medical history, and labs. Review usually takes 3–5 business days. We handle this process for you.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What if my insurance denies coverage?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            We'll appeal once if appropriate. If still denied, <strong>we'll help you use manufacturer direct-pay programs or retail cash pricing</strong>. Many patients find cash options more reliable than fighting insurance.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Do I need lab tests?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Yes, we may request recent labs (A1c, basic metabolic panel, cholesterol, ± thyroid labs) before starting and periodically while on treatment. <strong>This ensures safe, effective therapy</strong> and helps us optimize your results.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How will follow-ups work?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            You'll get a titration calendar and side-effect guide. <strong>We check in at Week 2 (online), Week 4 (short visit), and about every 12 weeks</strong>. You can message us anytime in between for support or questions.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What if I miss a dose?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            If it's within a few days, take it when you remember and resume weekly on that new day. If longer, <strong>contact us before restarting</strong>. Never double up doses.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Can I use GoodRx or compounding pharmacies?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <strong>GoodRx may reduce retail pharmacy prices</strong>, but manufacturer programs are usually cheaper and more reliable. We only use compounding pharmacies when medically necessary (e.g., ingredient intolerance) and through licensed pharmacies.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What if my pharmacy is out of stock?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Ask them to check nearby locations in their chain. <strong>If needed, we can redirect your prescription</strong>. Sometimes lower-dose pens are available temporarily (with adjusted guidance from your physician).
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -897,6 +1136,22 @@
             
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
+        }
+        
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items if you want only one open at a time
+            // Uncomment the next two lines for single-item mode:
+            // document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+            
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
         }
         
         function calculateBMI() {
