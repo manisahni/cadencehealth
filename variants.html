@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Brand Identity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .variants-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .variant-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .variant-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+
+        .variant-preview {
+            height: 400px;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+
+        .variant-preview iframe {
+            width: 200%;
+            height: 800px;
+            transform: scale(0.5);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+
+        .variant-info {
+            padding: 24px;
+        }
+
+        .variant-name {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .variant-logo {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .variant-tagline {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .variant-details {
+            margin-bottom: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
+        }
+
+        .detail-label {
+            color: #999;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: #333;
+            font-weight: 400;
+        }
+
+        .color-samples {
+            display: flex;
+            gap: 8px;
+        }
+
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #e0e0e0;
+        }
+
+        .view-btn {
+            width: 100%;
+            padding: 12px;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .view-btn:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        /* Variant-specific styles */
+        .caliber-logo {
+            background: white;
+            color: #000;
+            border: 1.5px solid #000;
+            border-radius: 50%;
+        }
+
+        .meridian-logo {
+            background: linear-gradient(135deg, #c67557, #d4896b);
+            color: white;
+        }
+
+        .index-logo {
+            background: #0f172a;
+            color: #0ea5e9;
+        }
+
+        .tempo-logo {
+            background: #7c9885;
+            color: white;
+        }
+
+        .current-logo {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .comparison-section {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .comparison-table th {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #e0e0e0;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .variants-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Choose Your Brand Identity</h1>
+        <p class="subtitle">Explore different naming and design directions for your medical weight loss clinic</p>
+    </div>
+
+    <div class="variants-grid">
+        <!-- Current Design -->
+        <div class="variant-card">
+            <div class="variant-preview">
+                <iframe src="modern.html"></iframe>
+            </div>
+            <div class="variant-info">
+                <div class="variant-name">
+                    <div class="variant-logo current-logo">GC</div>
+                    GLP Clinic (Current)
+                </div>
+                <div class="variant-tagline">Medical weight loss, monitored by MDs</div>
+                <div class="variant-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Background</span>
+                        <span class="detail-value">#fafafa (off-white)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Primary Color</span>
+                        <span class="detail-value">#1a1a1a (near black)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Style</span>
+                        <span class="detail-value">Soft minimalist</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Feel</span>
+                        <span class="detail-value">Premium boutique</span>
+                    </div>
+                </div>
+                <button class="view-btn" onclick="window.open('modern.html', '_blank')">View Full Site</button>
+            </div>
+        </div>
+
+        <!-- Caliber -->
+        <div class="variant-card">
+            <div class="variant-preview">
+                <iframe src="caliber.html"></iframe>
+            </div>
+            <div class="variant-info">
+                <div class="variant-name">
+                    <div class="variant-logo caliber-logo">C</div>
+                    Caliber
+                </div>
+                <div class="variant-tagline">Medical precision in weight loss</div>
+                <div class="variant-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Background</span>
+                        <span class="detail-value">#ffffff (pure white)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Accent Color</span>
+                        <span class="detail-value">#0d5f4f (forest green)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Style</span>
+                        <span class="detail-value">Swiss minimalism</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Feel</span>
+                        <span class="detail-value">Medical precision</span>
+                    </div>
+                </div>
+                <button class="view-btn" onclick="window.open('caliber.html', '_blank')">View Full Site</button>
+            </div>
+        </div>
+
+        <!-- Meridian -->
+        <div class="variant-card">
+            <div class="variant-preview">
+                <iframe src="meridian.html"></iframe>
+            </div>
+            <div class="variant-info">
+                <div class="variant-name">
+                    <div class="variant-logo meridian-logo">M</div>
+                    Meridian
+                </div>
+                <div class="variant-tagline">Your metabolic turning point</div>
+                <div class="variant-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Background</span>
+                        <span class="detail-value">#fef9f3 (warm cream)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Accent Color</span>
+                        <span class="detail-value">#c67557 (terracotta)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Style</span>
+                        <span class="detail-value">Warm medical</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Feel</span>
+                        <span class="detail-value">Approachable care</span>
+                    </div>
+                </div>
+                <button class="view-btn" onclick="window.open('meridian.html', '_blank')">View Full Site</button>
+            </div>
+        </div>
+
+        <!-- Index -->
+        <div class="variant-card">
+            <div class="variant-preview">
+                <iframe src="index-variant.html"></iframe>
+            </div>
+            <div class="variant-info">
+                <div class="variant-name">
+                    <div class="variant-logo index-logo">I</div>
+                    Index
+                </div>
+                <div class="variant-tagline">Weight loss indexed to you</div>
+                <div class="variant-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Background</span>
+                        <span class="detail-value">#f8f9fa (cool gray)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Accent Color</span>
+                        <span class="detail-value">#0ea5e9 (electric blue)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Style</span>
+                        <span class="detail-value">Data-driven</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Feel</span>
+                        <span class="detail-value">Tech-medical</span>
+                    </div>
+                </div>
+                <button class="view-btn" onclick="window.open('index-variant.html', '_blank')">View Full Site</button>
+            </div>
+        </div>
+
+        <!-- Tempo -->
+        <div class="variant-card">
+            <div class="variant-preview">
+                <iframe src="tempo.html"></iframe>
+            </div>
+            <div class="variant-info">
+                <div class="variant-name">
+                    <div class="variant-logo tempo-logo">T</div>
+                    Tempo
+                </div>
+                <div class="variant-tagline">Weight loss at your pace</div>
+                <div class="variant-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Background</span>
+                        <span class="detail-value">Gradient (#fafafa)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Accent Color</span>
+                        <span class="detail-value">#7c9885 (sage)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Style</span>
+                        <span class="detail-value">Soft modern</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Feel</span>
+                        <span class="detail-value">Gentle progress</span>
+                    </div>
+                </div>
+                <button class="view-btn" onclick="window.open('tempo.html', '_blank')">View Full Site</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="comparison-section">
+        <h2 style="font-size: 24px; margin-bottom: 16px;">Quick Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Best For</th>
+                    <th>Target Audience</th>
+                    <th>Key Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>GLP Clinic</strong></td>
+                    <td>Direct, medical focus</td>
+                    <td>Informed searchers</td>
+                    <td>Medical weight loss that works</td>
+                </tr>
+                <tr>
+                    <td><strong>Caliber</strong></td>
+                    <td>Premium positioning</td>
+                    <td>Quality-conscious professionals</td>
+                    <td>Precision and excellence</td>
+                </tr>
+                <tr>
+                    <td><strong>Meridian</strong></td>
+                    <td>Warm, approachable</td>
+                    <td>Hesitant first-timers</td>
+                    <td>Turning point in health</td>
+                </tr>
+                <tr>
+                    <td><strong>Index</strong></td>
+                    <td>Data-driven approach</td>
+                    <td>Tech-savvy, analytical</td>
+                    <td>Personalized to your data</td>
+                </tr>
+                <tr>
+                    <td><strong>Tempo</strong></td>
+                    <td>Sustainable journey</td>
+                    <td>Those fearing rapid change</td>
+                    <td>Your pace, your progress</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

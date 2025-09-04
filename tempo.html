@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo - Weight Loss at Your Pace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(180deg, #fafafa 0%, #f5f7f5 100%);
+            color: #2a2a2a;
+            line-height: 1.6;
+            font-weight: 400;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 250, 250, 0.92);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(124, 152, 133, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+        }
+
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            background: #7c9885;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 300;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            background: white;
+            transform: rotate(90deg);
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            background: white;
+        }
+
+        .logo:hover .logo-mark {
+            transform: rotate(90deg);
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: #2a2a2a;
+        }
+
+        .tagline {
+            font-size: 11px;
+            color: #7c9885;
+            letter-spacing: 0.3px;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            background: #2a2a2a;
+            color: white;
+            border: none;
+            padding: 11px 26px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #1a1a1a;
+            transform: scale(1.02);
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 72px;
+            background: rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid rgba(124, 152, 133, 0.08);
+        }
+
+        .tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 32px;
+        }
+
+        .tab {
+            padding: 18px 0;
+            margin-right: 48px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-size: 15px;
+            color: #6a6a6a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .tab::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #7c9885;
+            transition: width 0.3s ease;
+        }
+
+        .tab:hover::after,
+        .tab.active::after {
+            width: 100%;
+        }
+
+        .tab:hover {
+            color: #2a2a2a;
+        }
+
+        .tab.active {
+            color: #2a2a2a;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 32px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeUp 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        h1 {
+            font-size: 54px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #2a2a2a, #7c9885);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 300;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: #2a2a2a;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 14px;
+            color: #2a2a2a;
+        }
+
+        .subtitle {
+            font-size: 19px;
+            color: #5a5a5a;
+            margin-bottom: 48px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 64px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 36px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(124, 152, 133, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(124, 152, 133, 0.15);
+        }
+
+        .feature h3 {
+            color: #2a2a2a;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .feature p {
+            color: #5a5a5a;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(124, 152, 133, 0.15);
+            padding: 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 40px rgba(124, 152, 133, 0.2);
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 200;
+            margin-bottom: 8px;
+            color: #2a2a2a;
+        }
+
+        .price-label {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #7c9885;
+        }
+
+        .price-description {
+            color: #5a5a5a;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin-top: 48px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(124, 152, 133, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 0;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid rgba(124, 152, 133, 0.3);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: #7c9885;
+        }
+
+        .form-label {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            font-size: 11px;
+            color: #7c9885;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Rhythm Indicator */
+        .rhythm {
+            display: flex;
+            gap: 8px;
+            margin-top: 24px;
+            justify-content: center;
+        }
+
+        .beat {
+            width: 3px;
+            height: 20px;
+            background: #7c9885;
+            border-radius: 2px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .beat:nth-child(2) { animation-delay: 0.2s; }
+        .beat:nth-child(3) { animation-delay: 0.4s; }
+        .beat:nth-child(4) { animation-delay: 0.6s; }
+        .beat:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scaleY(0.5); opacity: 0.5; }
+            50% { transform: scaleY(1); opacity: 1; }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 38px; }
+            h2 { font-size: 30px; }
+            .features { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .tabs { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-mark"></div>
+                <div>
+                    <div class="logo-text">Tempo</div>
+                    <div class="tagline">Weight loss at your pace</div>
+                </div>
+            </div>
+            <button class="cta-btn" onclick="showSection('assessment')">Start Now</button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('home')">Home</button>
+            <button class="tab" onclick="showSection('treatment')">Method</button>
+            <button class="tab" onclick="showSection('pricing')">Pricing</button>
+            <button class="tab" onclick="showSection('assessment')">Begin</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <h1>Find your tempo</h1>
+            <p class="subtitle">Sustainable weight loss guided by board-certified physicians, adapted to your natural rhythm.</p>
+            
+            <div class="rhythm">
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Your Pace, Your Progress</h3>
+                    <p>Board-certified physicians who understand that sustainable weight loss happens at your body's natural tempo.</p>
+                </div>
+                <div class="feature">
+                    <h3>Steady Rhythm</h3>
+                    <p>15-20% average weight loss through proven GLP-1 therapy, calibrated to your metabolic rhythm.</p>
+                </div>
+                <div class="feature">
+                    <h3>Continuous Harmony</h3>
+                    <p>Monthly tune-ups with your physician ensure your treatment stays in perfect sync with your progress.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="treatment" class="section">
+            <h2>The Tempo Method</h2>
+            <p class="subtitle">Finding your sustainable rhythm for lasting change.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Set the Baseline</h3>
+                    <p>Comprehensive assessment establishes your metabolic tempo and creates your personalized rhythm.</p>
+                </div>
+                <div class="feature">
+                    <h3>Find Your Groove</h3>
+                    <p>Your physician fine-tunes your protocol to match your body's unique response patterns.</p>
+                </div>
+                <div class="feature">
+                    <h3>Maintain the Beat</h3>
+                    <p>Regular adjustments keep your treatment in perfect tempo with your changing needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <h2>Simple Rhythm</h2>
+            <p class="subtitle">Transparent pricing for continuous care.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">First Beat</div>
+                    <p class="price-description">Initial consultation with your board-certified physician to establish your treatment tempo.</p>
+                </div>
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Keep the Rhythm</div>
+                    <p class="price-description">Monthly physician supervision to maintain your momentum and optimize your pace.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="assessment" class="section">
+            <h2>Start Your Tempo</h2>
+            <p class="subtitle">Begin your sustainable weight loss rhythm.</p>
+            
+            <form class="form-container">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" class="form-input" placeholder=" " required>
+                    <label class="form-label">Phone</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Current Weight</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Goal Weight</label>
+                </div>
+                
+                <button class="cta-btn" style="width: 100%; padding: 16px; font-size: 16px; border-radius: 12px;">Find My Tempo</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

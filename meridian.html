@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian - Your Metabolic Turning Point</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
+            background: #fef9f3;
+            color: #1c1c1c;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(254, 249, 243, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(198, 117, 87, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 22px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+        }
+
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, #c67557, #d4896b);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(198, 117, 87, 0.2);
+        }
+
+        .logo:hover .logo-mark {
+            transform: rotate(-5deg) scale(1.05);
+            box-shadow: 0 4px 12px rgba(198, 117, 87, 0.3);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: #1c1c1c;
+        }
+
+        .tagline {
+            font-size: 11px;
+            color: #8a6a5e;
+            letter-spacing: 0.3px;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            background: #c67557;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(198, 117, 87, 0.2);
+        }
+
+        .cta-btn:hover {
+            background: #b56447;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(198, 117, 87, 0.3);
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 76px;
+            border-bottom: 1px solid rgba(198, 117, 87, 0.08);
+            background: rgba(254, 249, 243, 0.8);
+        }
+
+        .tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 32px;
+        }
+
+        .tab {
+            padding: 18px 0;
+            margin-right: 48px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-size: 15px;
+            color: #8a6a5e;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 400;
+        }
+
+        .tab:hover {
+            color: #1c1c1c;
+        }
+
+        .tab.active {
+            color: #1c1c1c;
+            border-bottom-color: #c67557;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 32px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 52px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        h1 .accent {
+            color: #c67557;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 38px;
+            font-weight: 300;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: #1c1c1c;
+        }
+
+        h3 {
+            font-size: 21px;
+            font-weight: 500;
+            margin-bottom: 14px;
+            color: #2a2a2a;
+        }
+
+        .subtitle {
+            font-size: 19px;
+            color: #6a5a54;
+            margin-bottom: 48px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 48px;
+            margin-top: 64px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid rgba(198, 117, 87, 0.08);
+        }
+
+        .feature h3 {
+            color: #1c1c1c;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .feature p {
+            color: #5a4a44;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid rgba(198, 117, 87, 0.12);
+            padding: 36px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(198, 117, 87, 0.08);
+        }
+
+        .price {
+            font-size: 52px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            color: #c67557;
+        }
+
+        .price-label {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #1c1c1c;
+        }
+
+        .price-description {
+            color: #5a4a44;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin-top: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 0;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px solid rgba(198, 117, 87, 0.2);
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: #c67557;
+        }
+
+        .form-label {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            font-size: 11px;
+            color: #8a6a5e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 38px; }
+            h2 { font-size: 30px; }
+            .features { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .tabs { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-mark">M</div>
+                <div>
+                    <div class="logo-text">Meridian</div>
+                    <div class="tagline">Your metabolic turning point</div>
+                </div>
+            </div>
+            <button class="cta-btn" onclick="showSection('assessment')">Start Now</button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('home')">Welcome</button>
+            <button class="tab" onclick="showSection('treatment')">Approach</button>
+            <button class="tab" onclick="showSection('pricing')">Investment</button>
+            <button class="tab" onclick="showSection('assessment')">Begin</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <h1>Reach your <span class="accent">meridian</span></h1>
+            <p class="subtitle">The turning point in your metabolic health, guided by board-certified physicians.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Personal Physician Care</h3>
+                    <p>Your dedicated MD monitors your journey, reviewing labs monthly and adjusting your path with medical precision.</p>
+                </div>
+                <div class="feature">
+                    <h3>Transformative Results</h3>
+                    <p>Average 15-20% weight loss through proven GLP-1 therapy, optimized for your unique metabolism.</p>
+                </div>
+                <div class="feature">
+                    <h3>Continuous Guidance</h3>
+                    <p>From first consultation through lasting change, your physician provides ongoing support and optimization.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="treatment" class="section">
+            <h2>The Meridian Approach</h2>
+            <p class="subtitle">Where traditional medicine meets modern transformation.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Holistic Assessment</h3>
+                    <p>Complete medical evaluation addressing not just weight, but overall metabolic health and wellbeing.</p>
+                </div>
+                <div class="feature">
+                    <h3>Personalized Pathway</h3>
+                    <p>Your physician designs a custom protocol based on your body's unique needs and responses.</p>
+                </div>
+                <div class="feature">
+                    <h3>Evolving Excellence</h3>
+                    <p>Monthly refinements ensure your treatment evolves with your progress, maximizing results safely.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <h2>Your Investment</h2>
+            <p class="subtitle">In lasting health and transformation.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Initial Consultation</div>
+                    <p class="price-description">Comprehensive evaluation with your board-certified physician, including labs and personalized planning.</p>
+                </div>
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Monthly Partnership</div>
+                    <p class="price-description">Ongoing physician supervision, lab monitoring, treatment optimization, and direct MD support.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="assessment" class="section">
+            <h2>Begin Your Journey</h2>
+            <p class="subtitle">Your meridian moment starts here.</p>
+            
+            <form class="form-container">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email Address</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" class="form-input" placeholder=" " required>
+                    <label class="form-label">Phone Number</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Current Weight</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Goal Weight</label>
+                </div>
+                
+                <button class="cta-btn" style="width: 100%; padding: 16px; font-size: 16px;">Begin Assessment</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index - Medical Weight Management, Indexed to You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', sans-serif;
+            background: #f8f9fa;
+            color: #0f172a;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 249, 250, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #0ea5e9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::after {
+            content: '•';
+            position: absolute;
+            top: -8px;
+            right: 2px;
+            font-size: 12px;
+            color: #0ea5e9;
+        }
+
+        .logo:hover .logo-mark {
+            background: #1e293b;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+        }
+
+        .tagline {
+            font-size: 10px;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .cta-btn {
+            background: #0ea5e9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cta-btn::before {
+            content: '→';
+            font-size: 16px;
+        }
+
+        .cta-btn:hover {
+            background: #0284c7;
+            transform: translateX(2px);
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 68px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fff;
+        }
+
+        .tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 32px;
+        }
+
+        .tab {
+            padding: 14px 0;
+            margin-right: 40px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 14px;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .tab:hover {
+            color: #0f172a;
+        }
+
+        .tab.active {
+            color: #0f172a;
+            border-bottom-color: #0ea5e9;
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            right: -12px;
+            width: 6px;
+            height: 6px;
+            background: #0ea5e9;
+            border-radius: 50%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 32px;
+        }
+
+        .section {
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        h1 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        h1 .accent {
+            color: #0ea5e9;
+            position: relative;
+        }
+
+        h1 .accent::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #0ea5e9;
+            opacity: 0.3;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            color: #64748b;
+            margin-bottom: 48px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Data Cards */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .data-card {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-left: 3px solid #0ea5e9;
+        }
+
+        .data-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+
+        .data-label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .feature {
+            background: white;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #0284c7);
+        }
+
+        .feature h3 {
+            color: #0f172a;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .feature p {
+            color: #475569;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #0ea5e9;
+        }
+
+        .price {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-feature-settings: "tnum";
+        }
+
+        .price-label {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .price-description {
+            color: #475569;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin-top: 48px;
+            background: white;
+            padding: 32px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #e2e8f0;
+            background: #f8f9fa;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0ea5e9;
+            background: white;
+        }
+
+        .form-label {
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            font-size: 10px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            background: white;
+            padding: 0 4px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 26px; }
+            .data-grid { grid-template-columns: 1fr; }
+            .features { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .tabs { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-mark">I</div>
+                <div>
+                    <div class="logo-text">Index</div>
+                    <div class="tagline">Weight Loss Indexed to You</div>
+                </div>
+            </div>
+            <button class="cta-btn" onclick="showSection('assessment')">Start Analysis</button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('home')">Dashboard</button>
+            <button class="tab" onclick="showSection('treatment')">Protocol</button>
+            <button class="tab" onclick="showSection('pricing')">Plans</button>
+            <button class="tab" onclick="showSection('assessment')">Analyze</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <h1>Weight loss <span class="accent">indexed</span> to your data</h1>
+            <p class="subtitle">Physician-supervised GLP-1 therapy optimized by continuous metabolic monitoring.</p>
+            
+            <div class="data-grid">
+                <div class="data-card">
+                    <div class="data-value">15-20%</div>
+                    <div class="data-label">Average Weight Loss</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-value">87%</div>
+                    <div class="data-label">Success Rate</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-value">24/7</div>
+                    <div class="data-label">MD Support</div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Data-Driven Protocol</h3>
+                    <p>Your treatment indexed to lab results, not generic guidelines. Monthly calibration based on your metrics.</p>
+                </div>
+                <div class="feature">
+                    <h3>Physician Analytics</h3>
+                    <p>Board-certified MD reviews your data points monthly, optimizing dosage and monitoring metabolic markers.</p>
+                </div>
+                <div class="feature">
+                    <h3>Predictive Adjustments</h3>
+                    <p>Proactive protocol modifications based on your response patterns and progress trajectories.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="treatment" class="section">
+            <h2>The Index Protocol</h2>
+            <p class="subtitle">Systematic weight loss through data-driven medicine.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Baseline Analysis</h3>
+                    <p>Comprehensive metabolic profiling establishes your baseline index for personalized treatment planning.</p>
+                </div>
+                <div class="feature">
+                    <h3>Custom Algorithm</h3>
+                    <p>Your physician creates a treatment protocol indexed to your specific metabolic markers and health data.</p>
+                </div>
+                <div class="feature">
+                    <h3>Continuous Indexing</h3>
+                    <p>Monthly recalibration based on labs, weight trends, and metabolic responses ensures optimal outcomes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <h2>Transparent Metrics</h2>
+            <p class="subtitle">Clear pricing for data-driven medical care.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Initial Analysis</div>
+                    <p class="price-description">Comprehensive metabolic assessment, baseline indexing, and personalized protocol development.</p>
+                </div>
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Monthly Optimization</div>
+                    <p class="price-description">Continuous monitoring, data analysis, protocol adjustments, and direct physician access.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="assessment" class="section">
+            <h2>Begin Analysis</h2>
+            <p class="subtitle">Start your data-driven weight loss protocol.</p>
+            
+            <form class="form-container">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Enter full name" required>
+                    <label class="form-label">Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Enter email" required>
+                    <label class="form-label">Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" class="form-input" placeholder="Enter phone" required>
+                    <label class="form-label">Phone</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder="Current weight in lbs" required>
+                    <label class="form-label">Current Index</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder="Target weight in lbs" required>
+                    <label class="form-label">Target Index</label>
+                </div>
+                
+                <button class="cta-btn" style="width: 100%; padding: 14px; justify-content: center;">Initialize Protocol</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

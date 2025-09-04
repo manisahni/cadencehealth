@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo - Find Your Rhythm in Weight Loss</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Header - Caliber's clean layout */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-mark {
+            background: #000;
+            color: #fff;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 10px;
+            color: #666;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .cta-btn {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-btn:hover {
+            background: #000;
+            transform: translateY(-1px);
+        }
+
+        /* Navigation - Caliber style */
+        nav {
+            margin-top: 70px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: #fff;
+        }
+
+        .tabs {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 32px;
+        }
+
+        .tab {
+            padding: 16px 0;
+            margin-right: 48px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 400;
+        }
+
+        .tab:hover {
+            color: #000;
+        }
+
+        .tab.active {
+            color: #000;
+            border-bottom-color: #1a1a1a;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 32px;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography - Clean like Caliber, messaging like Tempo */
+        h1 {
+            font-size: 48px;
+            font-weight: 200;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+        }
+
+        h1 .accent {
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 200;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 48px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* Features Grid - Caliber's clean layout */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 48px;
+            margin-top: 64px;
+        }
+
+        .feature {
+            padding: 0;
+        }
+
+        .feature h3 {
+            color: #000;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Rhythm Indicator - Tempo's unique element, minimized */
+        .rhythm {
+            display: flex;
+            gap: 6px;
+            margin-top: 32px;
+            margin-bottom: 48px;
+        }
+
+        .beat {
+            width: 2px;
+            height: 16px;
+            background: #ddd;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .beat:nth-child(2) { animation-delay: 0.2s; }
+        .beat:nth-child(3) { animation-delay: 0.4s; }
+        .beat:nth-child(4) { animation-delay: 0.6s; }
+        .beat:nth-child(5) { animation-delay: 0.8s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scaleY(0.5); opacity: 0.3; }
+            50% { transform: scaleY(1); opacity: 1; }
+        }
+
+        /* Pricing - Caliber style */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .price-card {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 32px;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 200;
+            margin-bottom: 8px;
+        }
+
+        .price-label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .price-description {
+            color: #666;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin-top: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 0;
+            font-size: 16px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: #000;
+        }
+
+        .form-label {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            .features { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .tabs { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-mark">T</div>
+                <div>
+                    <div class="logo-text">Tempo</div>
+                    <div class="tagline">Weight loss at your pace</div>
+                </div>
+            </div>
+            <button class="cta-btn" onclick="showSection('assessment')">Start Now</button>
+        </div>
+    </header>
+
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('home')">Overview</button>
+            <button class="tab" onclick="showSection('treatment')">Method</button>
+            <button class="tab" onclick="showSection('pricing')">Pricing</button>
+            <button class="tab" onclick="showSection('assessment')">Start</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <h1>Find your <span class="accent">rhythm</span> in weight loss</h1>
+            <p class="subtitle">Sustainable change guided by board-certified physicians, adapted to your natural pace.</p>
+            
+            <div class="rhythm">
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Your Pace, Your Progress</h3>
+                    <p>Board-certified physicians who understand that sustainable weight loss happens at your body's natural tempo. No rush, no pressure, just steady progress.</p>
+                </div>
+                <div class="feature">
+                    <h3>Steady Rhythm, Real Results</h3>
+                    <p>15-20% average weight loss through proven GLP-1 therapy, calibrated to your metabolic rhythm. Consistent, measurable, lasting.</p>
+                </div>
+                <div class="feature">
+                    <h3>Continuous Harmony</h3>
+                    <p>Monthly tune-ups with your physician ensure your treatment stays in perfect sync with your progress. We adjust as you evolve.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="treatment" class="section">
+            <h2>The Tempo Method</h2>
+            <p class="subtitle">Finding your sustainable rhythm for lasting change.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Set Your Baseline</h3>
+                    <p>Comprehensive assessment establishes your metabolic tempo. We listen to your body's natural rhythm and create your personalized pace.</p>
+                </div>
+                <div class="feature">
+                    <h3>Find Your Groove</h3>
+                    <p>Your physician fine-tunes your GLP-1 protocol to match your unique response patterns. No cookie-cutter approach, just what works for you.</p>
+                </div>
+                <div class="feature">
+                    <h3>Maintain the Beat</h3>
+                    <p>Regular adjustments keep your treatment in perfect tempo. As your body changes, we adapt, ensuring continuous, comfortable progress.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <h2>Simple Rhythm, Clear Investment</h2>
+            <p class="subtitle">Transparent pricing for continuous medical care.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">First Beat</div>
+                    <p class="price-description">Initial consultation with your board-certified physician to establish your treatment tempo and personalized protocol.</p>
+                </div>
+                <div class="price-card">
+                    <div class="price">$149</div>
+                    <div class="price-label">Keep the Rhythm</div>
+                    <p class="price-description">Monthly physician supervision to maintain your momentum, optimize your pace, and ensure sustainable progress.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="assessment" class="section">
+            <h2>Start Your Tempo</h2>
+            <p class="subtitle">Begin your sustainable weight loss rhythm today.</p>
+            
+            <form class="form-container">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder=" " required>
+                    <label class="form-label">Full Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder=" " required>
+                    <label class="form-label">Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" class="form-input" placeholder=" " required>
+                    <label class="form-label">Phone</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Current Weight (lbs)</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" class="form-input" placeholder=" " required>
+                    <label class="form-label">Goal Weight (lbs)</label>
+                </div>
+                
+                <button class="cta-btn" style="width: 100%; padding: 14px;">Find My Tempo</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
