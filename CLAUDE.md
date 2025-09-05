@@ -548,3 +548,159 @@ netlify env:list       # Check environment variables
 - **Prevention**: Always verify deployment with curl test
 
 *Add new issues here to build institutional knowledge*
+
+## Local Development Environment
+
+### 🏗️ Development Philosophy
+
+**ALWAYS develop and test locally before pushing to production!**
+
+- **Bad**: Edit code → Git push → Hope it works on live site
+- **Good**: Edit code → Test locally → Verify functionality → Git push → Deploy
+
+### 🚀 Quick Start
+
+#### Method 1: Node.js Live Server (Recommended)
+```bash
+# Start development server with auto-reload
+npm run dev
+# Opens http://localhost:3000 automatically
+```
+
+#### Method 2: Python Simple Server (Backup)
+```bash
+# Start simple HTTP server (no auto-reload)
+npm run serve
+# Manual navigation to http://localhost:8000
+```
+
+### 📋 Available Development Commands
+
+```bash
+npm run dev      # Start dev server (no browser auto-open)
+npm run start    # Start dev server with browser auto-open
+npm run preview  # Start server with overview.html (development file)
+npm run serve    # Python fallback server
+```
+
+### 🎯 Development Workflow
+
+#### Step 1: Start Local Server
+```bash
+cd /Users/nish_macbook/glp-clinic-website
+npm run dev
+```
+
+#### Step 2: Make Changes
+- Edit `index.html`, CSS, or JavaScript
+- Changes auto-reload in browser (with live-server)
+- Test all functionality locally
+
+#### Step 3: Test Critical Paths
+- **Form Assessment Flow**: BMI calculator → Basic info → Safety checks
+- **FAQ Interaction**: Accordion expand/collapse
+- **Responsive Design**: Test mobile/desktop layouts
+- **Form Validation**: Test required fields
+
+#### Step 4: Deploy When Ready
+```bash
+git add .
+git commit -m "Description of changes"
+git push origin main
+# If auto-deploy fails: netlify deploy --prod
+```
+
+### 🔧 Form Development Strategy
+
+#### Local Form Testing Limitation
+**Issue**: Netlify Forms (`data-netlify="true"`) only work in production
+**Solution**: Test form structure locally, functionality in production
+
+#### Local Testing Checklist
+- [ ] Form fields display correctly
+- [ ] Required field validation works
+- [ ] Assessment flow logic functions
+- [ ] Form styling matches design
+- [ ] All form steps are accessible
+
+#### Production Form Testing
+Use Netlify Deploy Preview for actual form submission testing:
+```bash
+netlify deploy  # Creates preview URL for testing
+```
+
+### 🐛 Local Development Troubleshooting
+
+#### Common Issues
+
+**Port Already in Use**
+```bash
+# Find process using port 3000
+lsof -i :3000
+# Kill the process
+kill -9 <PID>
+```
+
+**Live-server Not Found**
+```bash
+# Reinstall globally
+npm install -g live-server
+```
+
+**Form Doesn't Work Locally**
+- **Expected**: Forms won't submit locally (Netlify dependency)
+- **Solution**: Test form structure locally, submission in production/preview
+
+### 🎨 File Development Priorities
+
+#### Primary Development File
+- **index.html** - Main production file served by Netlify
+- Always test changes in this file locally
+
+#### Secondary Files
+- **overview.html** - Development/experimental file
+- Use `npm run preview` to test overview.html changes
+
+### 📁 Development File Structure
+```
+glp-clinic-website/
+├── index.html          # Primary production file
+├── overview.html       # Development/experimental
+├── package.json        # Development scripts
+├── netlify.toml        # Netlify configuration
+├── CLAUDE.md           # Project documentation
+└── thank-you.html      # Form success page
+```
+
+### 🚨 Before Every Git Push
+
+#### Pre-Deployment Checklist
+- [ ] **Tested locally**: All changes work on localhost
+- [ ] **Critical paths verified**: Form flow, navigation, responsive design
+- [ ] **No console errors**: Check browser dev tools
+- [ ] **Form structure intact**: All required fields present
+- [ ] **Content accurate**: No typos or formatting issues
+
+#### Git Workflow
+```bash
+# 1. Test locally first
+npm run dev
+
+# 2. Verify everything works
+# Test forms, navigation, responsive design
+
+# 3. Commit with descriptive message
+git add .
+git commit -m "Specific description of what changed"
+
+# 4. Push to production
+git push origin main
+
+# 5. Verify deployment (wait 1-2 minutes)
+curl -s https://cadencehealth.netlify.app/ | grep "your-change"
+
+# 6. If deployment failed, force deploy
+netlify deploy --prod
+```
+
+This workflow prevents deployment issues and ensures professional development practices.

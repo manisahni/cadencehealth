@@ -1,0 +1,28 @@
+{
+  "name": "cadence-health-website",
+  "version": "1.0.0",
+  "description": "GLP-1 clinic website for Cadence Health - static HTML/CSS/JS",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html --no-browser",
+    "start": "live-server --port=3000 --open=/index.html",
+    "preview": "live-server --port=3000 --open=/overview.html",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "healthcare",
+    "glp-1",
+    "weight-loss",
+    "medical",
+    "static-site"
+  ],
+  "author": "Cadence Health LLC",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manisahni/cadencehealth.git"
+  },
+  "homepage": "https://cadencehealth.netlify.app"
+}
