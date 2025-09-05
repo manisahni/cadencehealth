@@ -1198,7 +1198,31 @@
             <p class="subtitle">Everything you need to know.</p>
             
             <div class="accordion">
-                <!-- Top questions expanded by default -->
+                <!-- Tier 1: Core Value Props & Differentiators (Expanded by default) -->
+                <div class="accordion-item active">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Why do I need a physician?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            GLP-1s are powerful medications. With physician-led care, you get safe dose titration, side-effect management, lab monitoring, and structured follow-ups — support that improves both safety and long-term success. Studies show 85% completion rates with medical supervision vs 30% without.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item active">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How is this different from online pill mills?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Pill mills provide quick prescriptions with no real medical oversight. We're a legitimate medical practice: comprehensive labs every quarter, continuous monitoring, body composition tracking, dose optimization based on data, and board-certified physicians who review your progress weekly. Result: 85% completion rate vs 30% with pill mills. You save money, time, and most importantly, your health by doing it right.
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="accordion-item active">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Will insurance cover the GLP-1 medication?</span>
@@ -1219,6 +1243,43 @@
                 
                 <div class="accordion-item active">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How much weight will I lose?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Results vary. In clinical trials, patients lost 15–22% of their body weight over 12–18 months with lifestyle support. Most notice appetite changes within weeks, with steady progress as doses increase.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item active">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How hard will you work to make my medication affordable?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            We're committed to making GLP-1 therapy accessible. We explore every avenue - insurance prior authorizations, appeals, manufacturer programs, and strategic diagnostic coding when appropriate. With good insurance coverage, many patients pay as little as $0. Even without insurance, we'll help you access manufacturer programs that cap costs at $549/month. We don't give up after the first denial - we'll work tirelessly to find an affordable solution.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item active">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What labs do you check and why?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            Unlike pill mills that just prescribe, we provide comprehensive metabolic monitoring. Quarterly labs include: A1C and HOMA-IR (insulin resistance), advanced lipids (LDL, HDL, triglycerides, ApoB), inflammatory markers (hs-CRP), complete liver panel (ALT, AST, GGT), kidney function (eGFR, creatinine), thyroid (TSH, Free T3/T4), and key vitamins (B12, D3, ferritin). Optional DEXA scans track body composition. We ensure you're reversing metabolic disease, not just losing weight.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tier 2: Secondary Concerns (Collapsed) -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Will insurance cover my consultation fees?</span>
                         <span class="accordion-icon">+</span>
                     </button>
@@ -1231,16 +1292,43 @@
                 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>What labs do you check and why?</span>
+                        <span>How long will I need treatment?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Unlike pill mills that just prescribe, we provide comprehensive metabolic monitoring. Quarterly labs include: A1C and HOMA-IR (insulin resistance), advanced lipids (LDL, HDL, triglycerides, ApoB), inflammatory markers (hs-CRP), complete liver panel (ALT, AST, GGT), kidney function (eGFR, creatinine), thyroid (TSH, Free T3/T4), and key vitamins (B12, D3, ferritin). Optional DEXA scans track body composition. We ensure you're reversing metabolic disease, not just losing weight.
+                            Most patients need intensive monitoring for only 3-6 months during dose titration. After weight stabilizes, many transition to quarterly check-ins. Average patients reach their goal weight within 12 months, with 45% successfully tapering off medication. Year 2 typically costs under $800 total.
                         </div>
                     </div>
                 </div>
                 
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What if I can't afford the medication even with discounts?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            We understand medication costs can be challenging. We'll work with you to explore all options including different GLP-1 medications that may have better coverage, trying different diagnostic codes if medically appropriate, and providing detailed documentation for insurance appeals. Our goal is to find a solution that works for your budget. No patient should have to give up on their health due to cost.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How much will labs actually cost me?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <strong>Essential Package:</strong> Standard labs (CBC, CMP, lipids, A1C, TSH) are typically covered by insurance with obesity diagnosis (E66.9) or annual physical. Out-of-pocket: usually $0-50.<br><br>
+                            <strong>Advanced Package:</strong> Specialized tests (insulin, HOMA-IR, ApoB, Lp(a), hs-CRP) are rarely covered by insurance for weight loss. Cash cost: ~$300-500 per quarter. We'll use all applicable diagnosis codes to maximize coverage, but these tests are often considered "experimental" for obesity treatment.<br><br>
+                            <strong>Bottom line:</strong> Essential monitoring has minimal lab costs. Advanced package is for those willing to invest in detailed metabolic tracking.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tier 3: Operational Details (Collapsed) -->
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Will insurance cover the monitoring service?</span>
@@ -1267,93 +1355,6 @@
                 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>Will insurance cover the monitoring devices?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            You'll need to purchase the Withings devices directly (~$200 total). Some insurance plans, FSA, and HSA accounts may cover these FDA-cleared medical devices with a letter of medical necessity, which we can provide. Check with your specific plan about durable medical equipment (DME) coverage for remote monitoring devices.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item active">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>How much weight will I lose?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Results vary. In clinical trials, patients lost 15–22% of their body weight over 12–18 months with lifestyle support. Most notice appetite changes within weeks, with steady progress as doses increase.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item active">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>Why do I need a physician?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            GLP-1s are powerful medications. With physician-led care, you get safe dose titration, side-effect management, lab monitoring, and structured follow-ups — support that improves both safety and long-term success.
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Additional questions -->
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>How hard will you work to make my medication affordable?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            We're committed to making GLP-1 therapy accessible. We explore every avenue - insurance prior authorizations, appeals, manufacturer programs, and strategic diagnostic coding when appropriate. With good insurance coverage, many patients pay as little as $0. Even without insurance, we'll help you access manufacturer programs that cap costs at $549/month. We don't give up after the first denial - we'll work tirelessly to find an affordable solution.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>What if I can't afford the medication even with discounts?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            We understand medication costs can be challenging. We'll work with you to explore all options including different GLP-1 medications that may have better coverage, trying different diagnostic codes if medically appropriate, and providing detailed documentation for insurance appeals. Our goal is to find a solution that works for your budget. No patient should have to give up on their health due to cost.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>How long will I need treatment?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Most patients need intensive monitoring for only 3-6 months during dose titration. After weight stabilizes, many transition to quarterly check-ins. Average patients reach their goal weight within 12 months, with 45% successfully tapering off medication. Year 2 typically costs under $800 total.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>How much will labs actually cost me?</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <strong>Essential Package:</strong> Standard labs (CBC, CMP, lipids, A1C, TSH) are typically covered by insurance with obesity diagnosis (E66.9) or annual physical. Out-of-pocket: usually $0-50.<br><br>
-                            <strong>Advanced Package:</strong> Specialized tests (insulin, HOMA-IR, ApoB, Lp(a), hs-CRP) are rarely covered by insurance for weight loss. Cash cost: ~$300-500 per quarter. We'll use all applicable diagnosis codes to maximize coverage, but these tests are often considered "experimental" for obesity treatment.<br><br>
-                            <strong>Bottom line:</strong> Essential monitoring has minimal lab costs. Advanced package is for those willing to invest in detailed metabolic tracking.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
                         <span>What monitoring devices do I need?</span>
                         <span class="accordion-icon">+</span>
                     </button>
@@ -1369,24 +1370,24 @@
                 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>What is a prior authorization?</span>
+                        <span>Will insurance cover the monitoring devices?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            A prior authorization (PA) is paperwork your insurance requires before covering medication. We submit this electronically through CoverMyMeds with details from your visit. Reviews usually take 3–5 business days.
+                            You'll need to purchase the Withings devices directly (~$200 total). Some insurance plans, FSA, and HSA accounts may cover these FDA-cleared medical devices with a letter of medical necessity, which we can provide. Check with your specific plan about durable medical equipment (DME) coverage for remote monitoring devices.
                         </div>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <span>How is this different from online pill mills?</span>
+                        <span>What is a prior authorization?</span>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            Pill mills provide quick prescriptions with no real medical oversight. We're a legitimate medical practice: comprehensive labs every quarter, continuous monitoring, body composition tracking, dose optimization based on data, and board-certified physicians who review your progress weekly. Result: 85% completion rate vs 30% with pill mills. You save money, time, and most importantly, your health by doing it right.
+                            A prior authorization (PA) is paperwork your insurance requires before covering medication. We submit this electronically through CoverMyMeds with details from your visit. Reviews usually take 3–5 business days.
                         </div>
                     </div>
                 </div>
