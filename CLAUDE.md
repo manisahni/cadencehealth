@@ -419,3 +419,132 @@ Three cards displayed on the Overview tab for immediate answers to top concerns:
 - Sustainable, physician-supervised results
 
 ⚠️ **DO NOT MODIFY THESE MESSAGING ELEMENTS WITHOUT EXPLICIT USER APPROVAL**
+
+## Netlify Deployment & Troubleshooting
+
+### 🚀 Deployment Architecture
+
+#### Normal Flow
+1. **Local changes** → `git add` → `git commit` → `git push origin main`
+2. **GitHub webhook** → Triggers Netlify build
+3. **Netlify auto-deploy** → Updates live site
+4. **Live URL**: https://cadencehealth.netlify.app
+
+#### Key Configuration
+- **Main file**: `index.html` (confirmed by `netlify.toml` redirect)
+- **Publish directory**: `.` (root directory)
+- **Build command**: None (static HTML)
+- **Repository**: https://github.com/manisahni/cadencehealth.git
+
+### ⚠️ Common Deployment Issues
+
+#### Issue: Changes Not Deploying (September 2025 Case Study)
+**Symptoms:**
+- Local files updated correctly ✅
+- Changes committed and pushed to GitHub ✅  
+- Live site serving old content ❌
+
+**Root Causes:**
+- Netlify auto-deployment failure (silent)
+- GitHub webhook disconnection
+- Netlify build cache issues
+- Branch mismatch in Netlify settings
+
+**Solution Hierarchy:**
+1. **Force manual deployment**: `netlify deploy --prod`
+2. **Check Netlify dashboard**: Look for failed builds
+3. **Clear Netlify cache**: If available in dashboard
+4. **Verify GitHub connection**: Ensure correct repo/branch
+
+### 🛠️ Troubleshooting Workflow
+
+#### Step 1: Verify Local Changes
+```bash
+# Check specific changes exist locally
+grep -n "your-change" index.html
+```
+
+#### Step 2: Verify Git Status  
+```bash
+# Check commits are pushed
+git status
+git log --oneline -3
+```
+
+#### Step 3: Test Live Site
+```bash
+# Check if changes are live
+curl -s https://cadencehealth.netlify.app/ | grep "your-change"
+```
+
+#### Step 4: Force Deploy (if needed)
+```bash
+# Manual deployment via CLI
+netlify status  # Verify connection
+netlify deploy --prod  # Force fresh deployment
+```
+
+#### Step 5: Verification
+```bash
+# Wait 30 seconds, then verify
+sleep 30
+curl -s https://cadencehealth.netlify.app/ | grep "your-change"
+```
+
+### 📋 Deployment Checklist
+
+Before considering a deployment "complete":
+- [ ] Local changes tested and committed
+- [ ] Changes pushed to GitHub successfully
+- [ ] Live site checked for updates (don't assume!)
+- [ ] Form functionality tested (if form changes made)
+- [ ] Critical user paths verified working
+
+### 🔧 Netlify CLI Setup
+
+#### Installation & Authentication
+```bash
+# Install Netlify CLI globally
+npm install -g netlify-cli
+
+# Login to your Netlify account  
+netlify login
+
+# Link to project (run in project directory)
+netlify link --id 85c63b0d-534b-46db-aac2-3b0b2a8a23f7
+```
+
+#### Essential Commands
+```bash
+netlify status          # Check connection & project info
+netlify deploy --prod   # Force production deployment  
+netlify open            # Open project in browser
+netlify env:list       # Check environment variables
+```
+
+### 🚨 Critical Lessons Learned
+
+#### Never Assume Deployment Worked
+- **Bad**: Push code → assume it's live
+- **Good**: Push code → verify it's live → test functionality
+
+#### Keep CLI as Backup
+- GitHub integration can fail silently
+- Manual deployment via CLI bypasses webhook issues
+- Always have `netlify-cli` installed and authenticated
+
+#### Document Recurring Issues
+- If deployment fails twice, document the pattern
+- Note specific error messages for future reference
+- Update this troubleshooting guide with new solutions
+
+### 📝 Historical Issues Log
+
+#### September 5, 2025: Auto-Deployment Failure
+- **Issue**: Phone number removal and FAQ reordering not deploying
+- **Duration**: ~45 minutes of debugging
+- **Root Cause**: Netlify auto-deployment stuck/failing silently
+- **Solution**: `netlify deploy --prod` worked immediately
+- **Prevention**: Always verify deployment with curl test
+
+*Add new issues here to build institutional knowledge*
