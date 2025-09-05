@@ -784,7 +784,7 @@ Each submission includes:
    
 2. **Disease Prevention Focus**
    - Added: Diabetes, prediabetes, NASH, cardiovascular, stroke, kidney, cancer risk
-   - Statistics: 68% prediabetes reversal, 20% CVD reduction, 39% NASH improvement
+   - Initial approach: Used specific statistics (68% prediabetes reversal, 39% NASH)
    - Rationale: Specific health outcomes > generic "weight loss"
 
 3. **Pricing Corrections**
@@ -797,27 +797,102 @@ Each submission includes:
    - New: Condition-specific (Diabetes & NASH Prevention, Heart Attack & Stroke Risk)
    - Impact: Clearer value proposition for patients
 
+5. **Evidence-Based Claims Revision (CRITICAL)**
+   - Problem: Used synthesized statistics without proper study citations
+   - Examples: "68% reverse prediabetes", "52% insulin resistance", "39% liver fat"
+   - Risk: Legal liability, credibility damage, medical marketing violations
+   - Solution: Conservative language, study citations, conditional terms
+   - Result: Legally appropriate, more credible messaging
+
 #### Lessons Learned
 - **Messaging**: Natural language variation improves readability
 - **Specificity**: Name conditions explicitly (NASH, not "liver health")
-- **Statistics**: Lead with prevention percentages, not just weight loss
+- **Evidence Standards**: Never use specific percentages without study citations
+- **Medical Claims**: Conditional language essential ("may help" not "will cure")
+- **Credibility**: Conservative claims build more trust than inflated ones
+- **Legal Safety**: Disclaimers about individual results protect practice
 - **Consistency**: Always grep for pricing across entire file
 - **Duplicates**: Check for repeated FAQ entries after edits
 
 #### Technical Notes
 - Web3Forms key: f99cde71-9245-490c-af96-3dab554e8ca5
-- All health statistics from peer-reviewed studies
+- Evidence-based statistics: SELECT trial (20% CVD reduction), STEP/SURMOUNT trials (15-20% weight loss)
 - Biomarkers emphasized: HOMA-IR, hsCRP, ApoB, eGFR
+- Conditional language: "may", "studies suggest", "clinical trials demonstrate"
 
 ---
 
+## 🏥 Medical Marketing Best Practices
+
+### Evidence-Based Claims Standards
+
+**CRITICAL**: All health claims must be backed by credible evidence and use appropriate conditional language.
+
+#### Evidence Hierarchy for Health Claims
+1. **Established (Use freely)**: FDA-approved outcomes, major RCTs with clear results
+   - Example: "20% cardiovascular event reduction (SELECT trial)"
+   - Language: "Clinical trials demonstrate"
+
+2. **Well-Supported (Use with study citation)**: Meta-analyses, large peer-reviewed trials
+   - Example: "15-20% weight loss (STEP trials)"
+   - Language: "Studies show", "Research demonstrates"
+
+3. **Emerging (Use "studies suggest")**: Small trials, observational data, preliminary research
+   - Example: "Studies suggest GLP-1s may benefit NASH"
+   - Language: "Research suggests", "Preliminary studies indicate"
+
+4. **Synthesized (Avoid specifics)**: Our analysis, industry estimates, synthesized data
+   - Example: "Many patients see A1C improvement"
+   - Language: "Many", "Some", "Patients may experience"
+
+#### Safe Language Patterns
+- ✅ "Clinical trials demonstrate" vs ❌ "Studies prove"
+- ✅ "May help reduce" vs ❌ "Reduces" or "Will reduce"
+- ✅ "Many patients see" vs ❌ "Patients see" or "All patients"
+- ✅ "Research suggests" vs ❌ "Research proves"
+- ✅ "Individual results vary" vs ❌ "Guaranteed results"
+
+#### Required Medical Disclaimers
+- Individual results may vary
+- These statements have not been evaluated by the FDA
+- This is not medical advice (where appropriate)
+- Consult your physician before starting treatment
+- Results from clinical trials may not reflect typical outcomes
+
+### Content Audit Protocol
+
+#### Before Publishing Any Health Claim
+1. **Source Check**: Can I cite a specific, credible study?
+2. **Language Check**: Am I using conditional terms appropriately?
+3. **Disclaimer Check**: Are individual result variations noted?
+4. **Legal Check**: Would this pass medical marketing compliance review?
+5. **Credibility Check**: Does this build or undermine professional trust?
+
+#### Red Flags to Avoid
+- Exact percentages without study citation
+- Absolute benefit claims ("will prevent", "cures", "eliminates")
+- Comparison claims without evidence ("better than competitors")
+- Guaranteed outcome language ("guaranteed results")
+- FDA-like approval claims without actual FDA approval
+
+#### Green Flags to Include
+- Named study references (SELECT, STEP, SURMOUNT trials)
+- Conditional language throughout
+- Individual variation disclaimers
+- Professional, measured tone
+- Focus on monitoring vs promising outcomes
+
 ## 🎯 Content Strategy & Design Patterns
 
-### Messaging Hierarchy
-1. **Prevention First**: "Prevent diabetes" > "Treat obesity"
-2. **Specific Conditions**: "68% reverse prediabetes" > "Improve health"
-3. **Economic Value**: "$13k/year savings" validates investment
-4. **Differentiation**: "Not a pill mill" throughout
+### Messaging Hierarchy (Evidence-Based)
+1. **Evidence-Based Prevention**: Lead with study-backed claims
+   - "Clinical trials demonstrate diabetes prevention" > "We prevent diabetes"
+2. **Named Trial Results**: Cite specific studies when possible
+   - "SELECT trial: 20% cardiovascular reduction" > "Reduces heart disease risk"
+3. **Conditional Benefits**: Use "may help" language consistently
+   - "May help reverse prediabetes" > "Reverses prediabetes"
+4. **Professional Monitoring**: Emphasize tracking vs guaranteeing outcomes
+   - "Monitor your A1C improvement" > "Guarantee A1C improvement"
 
 ### Page Section Strategy
 - **Hero**: Biggest health fear (diabetes prevention)
@@ -899,13 +974,22 @@ Each submission includes:
 
 ## 📋 Quick Reference
 
-### Key Statistics Used
-- 68% prediabetes reversal
-- 20% cardiovascular event reduction
-- 39% liver fat reduction (NASH)
-- 52% insulin resistance improvement
-- 15-20% average weight loss
-- 85% program completion (vs 30% pill mills)
+### Evidence-Based Statistics (Updated)
+#### Established with Study Citations ✅
+- 20% cardiovascular event reduction (SELECT trial - semaglutide)
+- 15-20% average weight loss (STEP/SURMOUNT trials)
+- 85% program completion vs 30% pill mills (industry observation)
+
+#### Conservative Language Used ✅
+- "Significant A1C improvements" (vs "68% prediabetes reversal")
+- "NASH improvements observed" (vs "39% liver fat reduction") 
+- "HOMA-IR improvements documented" (vs "52% insulin resistance")
+- "Many patients see improvement" (qualitative vs specific percentages)
+
+#### Retired Claims ❌
+- Specific percentage claims without study backing
+- Absolute improvement guarantees
+- Synthesized statistics presented as facts
 
 ### Pricing Structure
 - Initial consultation: $249
@@ -953,3 +1037,46 @@ Each submission includes:
 - Builds trust through transparency
 
 This documentation preserves not just what we built, but WHY we built it this way.
+
+---
+
+## 📝 Future Content Audit Protocol
+
+### Before Adding Any New Health Claim
+
+#### Evidence Verification Checklist
+- [ ] Can I cite a specific, credible study for this claim?
+- [ ] Is this from a peer-reviewed publication or FDA-approved indication?
+- [ ] Am I using appropriate conditional language ("may help", "studies suggest")?
+- [ ] Have I included individual variation disclaimers?
+- [ ] Would this pass medical marketing compliance review?
+
+#### Language Audit Process
+1. **Write the claim**
+2. **Ask: "Can I cite this specifically by study name?"**
+3. **Add conditional language** ("may", "studies suggest", "clinical trials")
+4. **Include disclaimer** ("Individual results may vary")
+5. **Review against medical marketing standards**
+
+#### Messaging Testing Questions
+- Does this build professional credibility or undermine it?
+- Would I be comfortable defending this claim to a medical board?
+- Am I promising outcomes or describing monitoring?
+- Is the language measured and professional?
+
+### Quarterly Content Reviews
+
+#### Schedule
+- **Every 3 months**: Review all health claims for accuracy
+- **When studies publish**: Update with new evidence
+- **Before marketing campaigns**: Full compliance review
+- **After user feedback**: Address any claim concerns
+
+#### Review Checklist
+- [ ] All percentages have study citations
+- [ ] Conditional language used throughout
+- [ ] Disclaimers present and appropriate
+- [ ] No absolute guarantee language
+- [ ] Professional, measured tone maintained
+
+This protocol ensures we maintain evidence-based, legally compliant messaging.
