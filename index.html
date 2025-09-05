@@ -1538,7 +1538,7 @@
             <!-- Gentle Disclaimer -->
             <div style="background: #f8f9fa; border-radius: 8px; padding: 14px 16px; margin: 24px auto 32px; max-width: 500px;">
                 <p style="font-size: 13px; color: #666; margin: 0; text-align: center; line-height: 1.5;">
-                    <span style="color: #999;">ℹ️</span> This quick assessment helps determine eligibility. Your data stays private - nothing is stored. 
+                    This quick assessment helps determine eligibility. Your data stays private - nothing is stored. 
                     A physician will conduct your actual medical evaluation.
                 </p>
             </div>
@@ -1566,11 +1566,8 @@
                     <p style="font-size: 14px; color: #666; margin-bottom: 16px;">We treat patients with BMI ≥ 30</p>
                     
                     <!-- Privacy Notice for BMI -->
-                    <div style="background: #e8f5e9; border-radius: 6px; padding: 10px 12px; margin-bottom: 24px;">
-                        <p style="font-size: 12px; color: #2e7d32; margin: 0; display: flex; align-items: center; justify-content: center; gap: 6px;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
+                    <div style="background: #f8f8f8; border-radius: 6px; padding: 10px 12px; margin-bottom: 24px;">
+                        <p style="font-size: 12px; color: #666; margin: 0; text-align: center;">
                             <strong>Privacy Protected:</strong> No data is stored during this assessment
                         </p>
                     </div>
@@ -1581,14 +1578,14 @@
                                    style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;"
                                    oninput="validateHeight()">
                             <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Height (inches)</label>
-                            <span id="height-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
+                            <span id="height-error" style="display: none; color: #666; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         <div class="form-group">
                             <input type="number" id="weight" placeholder="180" min="50" max="800" 
                                    style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;"
                                    oninput="validateWeight()">
                             <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Weight (lbs)</label>
-                            <span id="weight-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
+                            <span id="weight-error" style="display: none; color: #666; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                     </div>
                     
@@ -1684,9 +1681,9 @@
                     <p style="font-size: 14px; color: #666; margin-bottom: 16px; text-align: center;">Schedule your consultation to begin your transformation</p>
                     
                     <!-- Gentle Reminder -->
-                    <div style="background: #f0f8ff; border-radius: 6px; padding: 10px 14px; margin-bottom: 20px; text-align: center;">
-                        <p style="font-size: 12px; color: #5a6c7d; margin: 0;">
-                            🏥 Next step: A licensed physician will review your case during consultation
+                    <div style="background: #f8f8f8; border-radius: 6px; padding: 10px 14px; margin-bottom: 20px; text-align: center;">
+                        <p style="font-size: 12px; color: #666; margin: 0;">
+                            Next step: A licensed physician will review your case during consultation
                         </p>
                     </div>
                     
@@ -1698,7 +1695,7 @@
                                    title="Please enter a valid name (2-50 characters, letters only)"
                                    style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; transition: border-color 0.3s;"
                                    oninput="validateName()">
-                            <span id="name-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
+                            <span id="name-error" style="display: none; color: #666; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         
                         <div class="form-group" style="margin-bottom: 24px;">
@@ -1713,22 +1710,19 @@
                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                    style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; transition: border-color 0.3s;"
                                    oninput="validateEmail()">
-                            <span id="email-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
+                            <span id="email-error" style="display: none; color: #666; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         
                         <div class="form-group" style="margin-bottom: 24px;">
                             <input type="email" name="email-confirm" id="email-confirm" placeholder="Confirm Email Address" required 
                                    style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; transition: border-color 0.3s;"
                                    oninput="validateEmailMatch()">
-                            <span id="email-confirm-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
+                            <span id="email-confirm-error" style="display: none; color: #666; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         
                         <!-- Privacy Reassurance Box -->
-                        <div style="background: #f8f9fa; border-left: 3px solid #27ae60; padding: 12px 16px; margin-bottom: 24px; border-radius: 4px;">
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                </svg>
+                        <div style="background: #f8f8f8; border-left: 3px solid #ddd; padding: 12px 16px; margin-bottom: 24px; border-radius: 4px;">
+                            <div style="margin-bottom: 6px;">
                                 <span style="font-size: 13px; font-weight: 600; color: #2d2d2d;">Your Privacy is Protected</span>
                             </div>
                             <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">
@@ -1740,10 +1734,11 @@
                         </div>
                         
                         <button type="submit" id="submit-btn" style="width: 100%; padding: 16px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.2s;">
-                            Schedule My $249 Consultation
+                            Request Consultation
                         </button>
                         
-                        <p style="margin-top: 16px; font-size: 12px; color: #999; text-align: center;">
+                        <p style="margin-top: 16px; font-size: 12px; color: #999; text-align: center; line-height: 1.4;">
+                            Initial consultation: $249<br>
                             Includes comprehensive evaluation, treatment plan, and prescription when appropriate
                         </p>
                     </form>
@@ -1842,7 +1837,7 @@
             if (value && (value < 36 || value > 96)) {
                 error.textContent = 'Height must be between 36-96 inches (3-8 feet)';
                 error.style.display = 'block';
-                height.style.borderBottomColor = '#e74c3c';
+                height.style.borderBottomColor = '#2d2d2d';
                 return false;
             } else {
                 error.style.display = 'none';
@@ -1859,7 +1854,7 @@
             if (value && (value < 50 || value > 800)) {
                 error.textContent = 'Weight must be between 50-800 pounds';
                 error.style.display = 'block';
-                weight.style.borderBottomColor = '#e74c3c';
+                weight.style.borderBottomColor = '#2d2d2d';
                 return false;
             } else {
                 error.style.display = 'none';
@@ -1876,16 +1871,16 @@
             if (value && value.length < 2) {
                 error.textContent = 'Name must be at least 2 characters';
                 error.style.display = 'block';
-                name.style.borderBottomColor = '#e74c3c';
+                name.style.borderBottomColor = '#2d2d2d';
                 return false;
             } else if (value && !/^[A-Za-z\s]+$/.test(value)) {
                 error.textContent = 'Name should only contain letters';
                 error.style.display = 'block';
-                name.style.borderBottomColor = '#e74c3c';
+                name.style.borderBottomColor = '#2d2d2d';
                 return false;
             } else {
                 error.style.display = 'none';
-                name.style.borderBottomColor = value ? '#27ae60' : '#e5e5e5';
+                name.style.borderBottomColor = value ? '#2d2d2d' : '#e5e5e5';
                 return true;
             }
         }
@@ -1910,7 +1905,7 @@
                 if (value.includes(typo)) {
                     error.textContent = `Did you mean ${typoCheck[typo]}?`;
                     error.style.display = 'block';
-                    email.style.borderBottomColor = '#f39c12';
+                    email.style.borderBottomColor = '#666';
                     return false;
                 }
             }
@@ -1919,11 +1914,11 @@
             if (value && !emailRegex.test(value)) {
                 error.textContent = 'Please enter a valid email address';
                 error.style.display = 'block';
-                email.style.borderBottomColor = '#e74c3c';
+                email.style.borderBottomColor = '#2d2d2d';
                 return false;
             } else {
                 error.style.display = 'none';
-                email.style.borderBottomColor = value ? '#27ae60' : '#e5e5e5';
+                email.style.borderBottomColor = value ? '#2d2d2d' : '#e5e5e5';
                 validateEmailMatch(); // Check if confirmation matches
                 return true;
             }
@@ -1938,11 +1933,11 @@
             if (confirmValue && confirmValue !== email) {
                 error.textContent = 'Email addresses do not match';
                 error.style.display = 'block';
-                emailConfirm.style.borderBottomColor = '#e74c3c';
+                emailConfirm.style.borderBottomColor = '#2d2d2d';
                 return false;
             } else {
                 error.style.display = 'none';
-                emailConfirm.style.borderBottomColor = confirmValue ? '#27ae60' : '#e5e5e5';
+                emailConfirm.style.borderBottomColor = confirmValue ? '#2d2d2d' : '#e5e5e5';
                 return true;
             }
         }
@@ -1968,9 +1963,9 @@
             
             // Visual feedback
             if (value.length === 14) { // Complete phone number
-                phone.style.borderBottomColor = '#27ae60';
+                phone.style.borderBottomColor = '#2d2d2d';
             } else if (value.length > 0) {
-                phone.style.borderBottomColor = '#f39c12';
+                phone.style.borderBottomColor = '#999';
             } else {
                 phone.style.borderBottomColor = '#e5e5e5';
             }
@@ -2202,12 +2197,12 @@
             // Show success message
             const successHTML = `
                 <div style="text-align: center; padding: 48px 24px;">
-                    <div style="width: 80px; height: 80px; background: #27ae60; border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                    <div style="width: 80px; height: 80px; background: #f8f8f8; border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2d2d2d" stroke-width="2">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
                     </div>
-                    <h3 style="font-size: 32px; margin: 0 0 16px; font-weight: 300;">Thank You!</h3>
+                    <h3 style="font-size: 32px; margin: 0 0 16px; font-weight: 300;">Thank You</h3>
                     <p style="font-size: 16px; color: #666; margin-bottom: 32px; max-width: 400px; margin-left: auto; margin-right: auto;">
                         Your consultation request has been received. We'll contact you within 24 hours to schedule your appointment.
                     </p>
