@@ -1891,18 +1891,11 @@
             alert('Waitlist feature coming soon! Please check back or email us at support@cadencehealth.com');
         }
 
-        // Google Forms Configuration
-        // IMPORTANT: Replace these values with your actual Google Form IDs
-        // Follow instructions in GOOGLE_FORMS_SETUP.md
-        const GOOGLE_FORM_CONFIG = {
-            // Replace with your Google Form ID
-            formId: '1FAIpQLSf_REPLACE_WITH_YOUR_FORM_ID',
-            // Replace with your field entry IDs from pre-filled link
-            fields: {
-                name: 'entry.XXXXXX',    // Replace XXXXXX with your name field ID
-                email: 'entry.YYYYYY'    // Replace YYYYYY with your email field ID
-            }
-        };
+        // Web3Forms Configuration
+        const WEB3FORMS_ACCESS_KEY = 'f99cde71-9245-490c-af96-3dab554e8ca5';
+        
+        // Log the key to verify it's set (remove this after testing!)
+        console.log('Web3Forms Key:', WEB3FORMS_ACCESS_KEY);
 
         // Handle form submission
         document.addEventListener('DOMContentLoaded', function() {
@@ -1917,36 +1910,51 @@
                     const name = formData.get('name');
                     const email = formData.get('email');
                     
-                    // Submit to Google Forms
-                    submitToGoogleForm(name, email);
+                    // Submit to Web3Forms
+                    submitToWeb3Forms(name, email);
                 });
             }
         });
 
-        function submitToGoogleForm(name, email) {
-            // Build Google Forms URL
-            const formUrl = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_CONFIG.formId}/formResponse`;
+        function submitToWeb3Forms(name, email) {
+            // Prepare data for Web3Forms
+            const formData = {
+                access_key: WEB3FORMS_ACCESS_KEY,
+                name: name,
+                email: email,
+                subject: 'New Consultation Request - Cadence Health',
+                from_name: 'Cadence Health Website',
+                // Optional: Add more context
+                message: `New consultation request from ${name}`,
+                // Timestamp
+                timestamp: new Date().toLocaleString('en-US', { 
+                    timeZone: 'America/New_York',
+                    dateStyle: 'medium',
+                    timeStyle: 'short'
+                })
+            };
             
-            // Prepare data
-            const data = new URLSearchParams();
-            data.append(GOOGLE_FORM_CONFIG.fields.name, name);
-            data.append(GOOGLE_FORM_CONFIG.fields.email, email);
-            data.append('submit', 'Submit');
-            
-            // Submit via fetch (CORS error expected but data goes through)
-            fetch(formUrl, {
+            // Submit via fetch - Web3Forms works locally!
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                mode: 'no-cors', // This bypasses CORS but we can't read response
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: data.toString()
-            }).then(() => {
-                // Success! (even with CORS error, data is submitted)
-                showSuccessMessage();
-            }).catch(() => {
-                // Even if this catches, data usually goes through
-                showSuccessMessage();
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showSuccessMessage();
+                } else {
+                    console.error('Form submission failed:', data);
+                    alert('There was an error submitting the form. Please try again or email us at support@cadencehealth.com');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting the form. Please try again or email us at support@cadencehealth.com');
             });
         }
 

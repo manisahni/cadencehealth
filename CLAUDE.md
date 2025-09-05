@@ -705,56 +705,67 @@ netlify deploy --prod
 
 This workflow prevents deployment issues and ensures professional development practices.
 
-## Google Forms Integration
+## Form Handling with Web3Forms
 
-### 🔗 Form Submission Setup
+### 🚀 Current Form Solution: Web3Forms
 
-The website uses Google Forms for lead collection, which works both locally and in production.
+The website uses Web3Forms for lead collection - a simple, free service that works both locally and in production.
 
-#### Why Google Forms?
-- ✅ **Works locally**: No dependency on Netlify
-- ✅ **Free**: No costs for form handling
-- ✅ **Reliable**: Google's infrastructure
-- ✅ **Real-time data**: Instant Google Sheets updates
-- ✅ **No backend needed**: Pure client-side solution
+#### Why Web3Forms?
+- ✅ **Works locally**: Test on localhost immediately
+- ✅ **Free**: Unlimited form submissions  
+- ✅ **Simple setup**: 2 minutes to get running
+- ✅ **No account needed**: Just email verification
+- ✅ **Email notifications**: Direct to your inbox
+- ✅ **No CORS issues**: Works everywhere
 
 #### Configuration Location
 ```javascript
-// In index.html, around line 1897
-const GOOGLE_FORM_CONFIG = {
-    formId: 'YOUR_FORM_ID',
-    fields: {
-        name: 'entry.XXXXXX',
-        email: 'entry.YYYYYY'
-    }
-};
+// In index.html, line 1896
+const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
 ```
 
-#### Setup Instructions
-1. Create Google Form with Name and Email fields
-2. Get pre-filled link to extract field IDs
-3. Replace placeholder values in config
-4. Full guide: See `GOOGLE_FORMS_SETUP.md`
+#### Quick Setup (2 minutes)
+1. Go to https://web3forms.com
+2. Enter your email to get access key
+3. Replace `YOUR_ACCESS_KEY_HERE` in index.html
+4. Done! Test locally with `npm run dev`
+
+Full guide: See `WEB3FORMS_SETUP.md`
 
 #### How It Works
 1. User fills out form on website
-2. JavaScript intercepts submission
-3. Data sent to Google Forms via fetch (no-cors)
-4. CORS error appears in console (EXPECTED - data still goes through)
-5. Success message shown to user
-6. Data appears in Google Sheet
+2. JavaScript sends data to Web3Forms API
+3. Web3Forms sends email notification
+4. Success message shown to user
+5. You receive email with submission details
 
-#### Testing
+#### Testing Locally
 ```bash
 # Start local server
 npm run dev
 
-# Fill out form at localhost:3000
-# Check Google Sheet for submission
-# CORS error in console is normal
+# Open http://localhost:3000
+# Submit form
+# Check email for submission
 ```
 
-#### Troubleshooting
-- **No data in sheet?** Check form ID and field IDs
-- **Form not submitting?** Verify form is public
-- **Need more fields?** Add to Google Form, get new IDs, update config
+#### Data Received
+Each submission includes:
+- Name and Email
+- Timestamp (EST/EDT)
+- Subject line for easy filtering
+- Can add more fields as needed
+
+### 📋 Alternative Form Solutions
+
+#### Previous Implementation: Google Forms
+- Setup guide available in `GOOGLE_FORMS_SETUP.md`
+- More complex setup but provides Google Sheets integration
+- Requires creating Google Form and extracting field IDs
+
+#### Other Options Considered
+- **Netlify Forms**: Only works on Netlify deployment (not locally)
+- **Formspree**: Requires account, limited free tier
+- **EmailJS**: 200 emails/month limit
+- **Basin**: Requires account setup
