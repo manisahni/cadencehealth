@@ -769,3 +769,187 @@ Each submission includes:
 - **Formspree**: Requires account, limited free tier
 - **EmailJS**: 200 emails/month limit
 - **Basin**: Requires account setup
+
+---
+
+## 📚 Project Change Log & Institutional Memory
+
+### September 9, 2025: Major Messaging Overhaul
+
+#### Changes Made
+1. **Physician Messaging Refinement**
+   - Problem: Repetitive "board-certified MD" felt forced
+   - Solution: Varied terminology (physician, medical supervision, real doctors)
+   - Result: More natural, readable content
+   
+2. **Disease Prevention Focus**
+   - Added: Diabetes, prediabetes, NASH, cardiovascular, stroke, kidney, cancer risk
+   - Statistics: 68% prediabetes reversal, 20% CVD reduction, 39% NASH improvement
+   - Rationale: Specific health outcomes > generic "weight loss"
+
+3. **Pricing Corrections**
+   - Fixed: FAQ pricing ($149/$149 → $249/$199)
+   - Standardized: Zepbound pricing ($349-$549/month)
+   - Removed: Duplicate "pill mills" FAQ entry
+
+4. **Health Monitoring Reframe**
+   - Old: Generic categories (Metabolic, Cardiovascular, Safety)
+   - New: Condition-specific (Diabetes & NASH Prevention, Heart Attack & Stroke Risk)
+   - Impact: Clearer value proposition for patients
+
+#### Lessons Learned
+- **Messaging**: Natural language variation improves readability
+- **Specificity**: Name conditions explicitly (NASH, not "liver health")
+- **Statistics**: Lead with prevention percentages, not just weight loss
+- **Consistency**: Always grep for pricing across entire file
+- **Duplicates**: Check for repeated FAQ entries after edits
+
+#### Technical Notes
+- Web3Forms key: f99cde71-9245-490c-af96-3dab554e8ca5
+- All health statistics from peer-reviewed studies
+- Biomarkers emphasized: HOMA-IR, hsCRP, ApoB, eGFR
+
+---
+
+## 🎯 Content Strategy & Design Patterns
+
+### Messaging Hierarchy
+1. **Prevention First**: "Prevent diabetes" > "Treat obesity"
+2. **Specific Conditions**: "68% reverse prediabetes" > "Improve health"
+3. **Economic Value**: "$13k/year savings" validates investment
+4. **Differentiation**: "Not a pill mill" throughout
+
+### Page Section Strategy
+- **Hero**: Biggest health fear (diabetes prevention)
+- **Science**: Back up with clinical statistics
+- **Method**: Show medical rigor
+- **Pricing**: Frame as prevention investment
+- **FAQ**: Address specific health concerns
+
+### Health Claims Guidelines
+- Always cite "studies show" or "clinical trials"
+- Use ranges for statistics (15-20%, not 17.3%)
+- Include biomarkers (HOMA-IR, hsCRP)
+- Say "may reduce" not "will prevent"
+- Emphasize monitoring over guarantees
+
+### Pricing Philosophy
+- Lead with value (prevention savings)
+- Separate service fees from medication costs
+- Emphasize physician expertise
+- Compare to complication costs
+- Transparent about cash-pay model
+
+---
+
+## 🔧 Technical Quirks & Maintenance
+
+### Known Issues & Solutions
+1. **Netlify Auto-Deploy**: Sometimes fails silently
+   - Solution: `netlify deploy --prod`
+   
+2. **Form Validation**: Continue button was hidden
+   - Solution: Always visible, validate on click
+   
+3. **Pricing Consistency**: Multiple locations
+   - Check: Hero, Pricing section, FAQ, Form
+   
+4. **FAQ Duplicates**: Copy-paste errors
+   - Prevention: Search before adding new items
+
+### Regular Maintenance Tasks
+- [ ] Monthly: Verify all statistics are current
+- [ ] Weekly: Test form submission flow
+- [ ] Per Edit: Search all pricing mentions
+- [ ] Per Deploy: Curl verify changes went live
+
+### Before Major Changes
+1. Document current state in CLAUDE.md
+2. Note specific problems being solved
+3. Test locally with multiple browsers
+4. Verify mobile responsiveness
+5. Check form still submits correctly
+
+---
+
+## 🚀 Future Development Roadmap
+
+### Near-term Opportunities
+- [ ] Testimonials section with before/after stories
+- [ ] Interactive BMI/risk calculator
+- [ ] Comparison table (us vs pill mills)
+- [ ] Educational blog about biomarkers
+- [ ] Insurance navigation guide
+
+### Potential Enhancements
+- Landing pages for specific conditions (prediabetes, NASH)
+- Chat widget for immediate questions
+- Video testimonials from success stories
+- Automated email follow-up sequence
+- A/B testing different headlines
+
+### Content Expansion Ideas
+- "What is NASH?" educational content
+- "Understanding Your HOMA-IR Score"
+- "Why ApoB Matters More Than LDL"
+- "Preventing Diabetes: A Timeline"
+- Insurance appeal letter templates
+
+---
+
+## 📋 Quick Reference
+
+### Key Statistics Used
+- 68% prediabetes reversal
+- 20% cardiovascular event reduction
+- 39% liver fat reduction (NASH)
+- 52% insulin resistance improvement
+- 15-20% average weight loss
+- 85% program completion (vs 30% pill mills)
+
+### Pricing Structure
+- Initial consultation: $249
+- Follow-ups: $199
+- Essential monitoring: $99/month
+- Advanced monitoring: $149/month
+- Devices: ~$200 one-time
+
+### Important Files
+- `index.html` - Main production file
+- `CLAUDE.md` - This documentation
+- `WEB3FORMS_SETUP.md` - Form configuration
+- `.gitignore` - Deployment exclusions
+- `netlify.toml` - Deployment config
+
+### Emergency Contacts
+- Netlify site ID: 85c63b0d-534b-46db-aac2-3b0b2a8a23f7
+- GitHub repo: https://github.com/manisahni/cadencehealth.git
+- Production URL: https://cadencehealth.netlify.app
+
+---
+
+## 🎓 Institutional Knowledge
+
+### Why These Decisions Were Made
+
+**Web3Forms over alternatives**: 
+- Works locally (unlike Netlify Forms)
+- Free unlimited (unlike EmailJS)  
+- No account needed (unlike Formspree)
+
+**Physician messaging variation**:
+- SEO benefits from semantic variety
+- Reduces reader fatigue
+- Sounds more natural/conversational
+
+**Disease-specific focus**:
+- Patients search for conditions, not treatments
+- Insurance more likely to cover disease prevention
+- Creates urgency (prevention window)
+
+**Monitoring emphasis**:
+- Differentiates from pill mills
+- Justifies pricing
+- Builds trust through transparency
+
+This documentation preserves not just what we built, but WHY we built it this way.
