@@ -704,3 +704,57 @@ netlify deploy --prod
 ```
 
 This workflow prevents deployment issues and ensures professional development practices.
+
+## Google Forms Integration
+
+### 🔗 Form Submission Setup
+
+The website uses Google Forms for lead collection, which works both locally and in production.
+
+#### Why Google Forms?
+- ✅ **Works locally**: No dependency on Netlify
+- ✅ **Free**: No costs for form handling
+- ✅ **Reliable**: Google's infrastructure
+- ✅ **Real-time data**: Instant Google Sheets updates
+- ✅ **No backend needed**: Pure client-side solution
+
+#### Configuration Location
+```javascript
+// In index.html, around line 1897
+const GOOGLE_FORM_CONFIG = {
+    formId: 'YOUR_FORM_ID',
+    fields: {
+        name: 'entry.XXXXXX',
+        email: 'entry.YYYYYY'
+    }
+};
+```
+
+#### Setup Instructions
+1. Create Google Form with Name and Email fields
+2. Get pre-filled link to extract field IDs
+3. Replace placeholder values in config
+4. Full guide: See `GOOGLE_FORMS_SETUP.md`
+
+#### How It Works
+1. User fills out form on website
+2. JavaScript intercepts submission
+3. Data sent to Google Forms via fetch (no-cors)
+4. CORS error appears in console (EXPECTED - data still goes through)
+5. Success message shown to user
+6. Data appears in Google Sheet
+
+#### Testing
+```bash
+# Start local server
+npm run dev
+
+# Fill out form at localhost:3000
+# Check Google Sheet for submission
+# CORS error in console is normal
+```
+
+#### Troubleshooting
+- **No data in sheet?** Check form ID and field IDs
+- **Form not submitting?** Verify form is public
+- **Need more fields?** Add to Google Form, get new IDs, update config
