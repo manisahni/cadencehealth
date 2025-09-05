@@ -1559,12 +1559,18 @@
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
                         <div class="form-group">
-                            <input type="number" id="height" placeholder="68" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;">
+                            <input type="number" id="height" placeholder="68" min="36" max="96" 
+                                   style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;"
+                                   oninput="validateHeight()">
                             <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Height (inches)</label>
+                            <span id="height-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         <div class="form-group">
-                            <input type="number" id="weight" placeholder="180" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;">
+                            <input type="number" id="weight" placeholder="180" min="50" max="800" 
+                                   style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;"
+                                   oninput="validateWeight()">
                             <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Weight (lbs)</label>
+                            <span id="weight-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                     </div>
                     
@@ -1660,16 +1666,32 @@
                     <p style="font-size: 14px; color: #666; margin-bottom: 32px; text-align: center;">Schedule your consultation to begin your transformation</p>
                     
                     <form id="consultation-form" style="background: white; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);">
-                        <!-- Google Forms submission - no Netlify attributes needed -->
+                        <!-- Web3Forms submission -->
                         <div class="form-group" style="margin-bottom: 24px;">
-                            <input type="text" name="name" placeholder="Full Name" required style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent;">
+                            <input type="text" name="name" id="name" placeholder="Full Name" required 
+                                   pattern="[A-Za-z\s]{2,50}" 
+                                   title="Please enter a valid name (2-50 characters, letters only)"
+                                   style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; transition: border-color 0.3s;"
+                                   oninput="validateName()">
+                            <span id="name-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <input type="email" name="email" id="email" placeholder="Email Address" required 
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                   style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; transition: border-color 0.3s;"
+                                   oninput="validateEmail()">
+                            <span id="email-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         
                         <div class="form-group" style="margin-bottom: 32px;">
-                            <input type="email" name="email" placeholder="Email Address" required style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent;">
+                            <input type="email" name="email-confirm" id="email-confirm" placeholder="Confirm Email Address" required 
+                                   style="width: 100%; padding: 12px 0; font-size: 16px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; transition: border-color 0.3s;"
+                                   oninput="validateEmailMatch()">
+                            <span id="email-confirm-error" style="display: none; color: #e74c3c; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         
-                        <button type="submit" style="width: 100%; padding: 16px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.2s;">
+                        <button type="submit" id="submit-btn" style="width: 100%; padding: 16px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.2s;">
                             Schedule My $249 Consultation
                         </button>
                         
@@ -1763,12 +1785,137 @@
             }
         }
         
+        // Validation functions
+        function validateHeight() {
+            const height = document.getElementById('height');
+            const error = document.getElementById('height-error');
+            const value = parseInt(height.value);
+            
+            if (value && (value < 36 || value > 96)) {
+                error.textContent = 'Height must be between 36-96 inches (3-8 feet)';
+                error.style.display = 'block';
+                height.style.borderBottomColor = '#e74c3c';
+                return false;
+            } else {
+                error.style.display = 'none';
+                height.style.borderBottomColor = '#e5e5e5';
+                return true;
+            }
+        }
+        
+        function validateWeight() {
+            const weight = document.getElementById('weight');
+            const error = document.getElementById('weight-error');
+            const value = parseInt(weight.value);
+            
+            if (value && (value < 50 || value > 800)) {
+                error.textContent = 'Weight must be between 50-800 pounds';
+                error.style.display = 'block';
+                weight.style.borderBottomColor = '#e74c3c';
+                return false;
+            } else {
+                error.style.display = 'none';
+                weight.style.borderBottomColor = '#e5e5e5';
+                return true;
+            }
+        }
+        
+        function validateName() {
+            const name = document.getElementById('name');
+            const error = document.getElementById('name-error');
+            const value = name.value.trim();
+            
+            if (value && value.length < 2) {
+                error.textContent = 'Name must be at least 2 characters';
+                error.style.display = 'block';
+                name.style.borderBottomColor = '#e74c3c';
+                return false;
+            } else if (value && !/^[A-Za-z\s]+$/.test(value)) {
+                error.textContent = 'Name should only contain letters';
+                error.style.display = 'block';
+                name.style.borderBottomColor = '#e74c3c';
+                return false;
+            } else {
+                error.style.display = 'none';
+                name.style.borderBottomColor = value ? '#27ae60' : '#e5e5e5';
+                return true;
+            }
+        }
+        
+        function validateEmail() {
+            const email = document.getElementById('email');
+            const error = document.getElementById('email-error');
+            const value = email.value.trim().toLowerCase();
+            
+            // Check for common typos
+            const typoCheck = {
+                'gmial.com': 'gmail.com',
+                'gmai.com': 'gmail.com',
+                'gmil.com': 'gmail.com',
+                'yahooo.com': 'yahoo.com',
+                'yaho.com': 'yahoo.com',
+                'hotmial.com': 'hotmail.com',
+                'hotmil.com': 'hotmail.com'
+            };
+            
+            for (let typo in typoCheck) {
+                if (value.includes(typo)) {
+                    error.textContent = `Did you mean ${typoCheck[typo]}?`;
+                    error.style.display = 'block';
+                    email.style.borderBottomColor = '#f39c12';
+                    return false;
+                }
+            }
+            
+            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            if (value && !emailRegex.test(value)) {
+                error.textContent = 'Please enter a valid email address';
+                error.style.display = 'block';
+                email.style.borderBottomColor = '#e74c3c';
+                return false;
+            } else {
+                error.style.display = 'none';
+                email.style.borderBottomColor = value ? '#27ae60' : '#e5e5e5';
+                validateEmailMatch(); // Check if confirmation matches
+                return true;
+            }
+        }
+        
+        function validateEmailMatch() {
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const emailConfirm = document.getElementById('email-confirm');
+            const error = document.getElementById('email-confirm-error');
+            const confirmValue = emailConfirm.value.trim().toLowerCase();
+            
+            if (confirmValue && confirmValue !== email) {
+                error.textContent = 'Email addresses do not match';
+                error.style.display = 'block';
+                emailConfirm.style.borderBottomColor = '#e74c3c';
+                return false;
+            } else {
+                error.style.display = 'none';
+                emailConfirm.style.borderBottomColor = confirmValue ? '#27ae60' : '#e5e5e5';
+                return true;
+            }
+        }
+        
         function calculateBMI() {
             const height = document.getElementById('height').value;
             const weight = document.getElementById('weight').value;
             
+            // Validate inputs first
+            if (!validateHeight() || !validateWeight()) {
+                return;
+            }
+            
             if (!height || !weight) {
                 alert('Please enter both height and weight');
+                return;
+            }
+            
+            // Check ranges
+            if (height < 36 || height > 96 || weight < 50 || weight > 800) {
+                alert('Please enter realistic height and weight values');
                 return;
             }
             
@@ -1904,6 +2051,17 @@
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
+                    
+                    // Validate all fields
+                    const nameValid = validateName();
+                    const emailValid = validateEmail();
+                    const emailMatchValid = validateEmailMatch();
+                    
+                    if (!nameValid || !emailValid || !emailMatchValid) {
+                        // Show error message
+                        alert('Please correct the errors in the form before submitting');
+                        return;
+                    }
                     
                     // Get form data
                     const formData = new FormData(form);
