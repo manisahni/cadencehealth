@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Cadence Health</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif;
+            background: #ffffff;
+            color: #2d2d2d;
+            line-height: 1.8;
+            font-weight: 300;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 32px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+        }
+
+        .checkmark svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .next-steps {
+            background: #f8f8f8;
+            padding: 32px;
+            border-radius: 8px;
+            margin-top: 32px;
+            text-align: left;
+        }
+
+        .next-steps h2 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .next-steps li {
+            padding: 8px 0;
+            color: #666;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .next-steps li::before {
+            content: "→";
+            margin-right: 12px;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 32px;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark">
+            <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+        
+        <h1>Thank You!</h1>
+        <p>Your consultation request has been received. We're excited to help you begin your weight loss journey.</p>
+        
+        <div class="next-steps">
+            <h2>What Happens Next:</h2>
+            <ul>
+                <li>We'll review your information within 1 business day</li>
+                <li>You'll receive an email with scheduling options</li>
+                <li>Your initial consultation will be conducted via secure video</li>
+                <li>We'll discuss your health history and weight loss goals</li>
+                <li>If appropriate, we'll create your personalized treatment plan</li>
+            </ul>
+        </div>
+        
+        <a href="index.html" class="btn">Return to Homepage</a>
+    </div>
+</body>
+</html>
