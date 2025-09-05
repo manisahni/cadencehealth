@@ -1632,7 +1632,7 @@
                     </div>
                     
                     <div style="text-align: center; margin-top: 32px;">
-                        <button type="button" onclick="proceedToStep3()" id="continue-to-safety" style="display: none; padding: 14px 48px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+                        <button type="button" onclick="proceedToStep3()" id="continue-to-safety" style="padding: 14px 48px; background: #1a1a1a; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.2s;">
                             Continue
                         </button>
                     </div>
@@ -2032,33 +2032,45 @@
         function checkState() {
             const state = document.getElementById('state').value;
             const stateMessage = document.getElementById('state-message');
-            const continueBtn = document.getElementById('continue-to-safety');
             
             if (state === 'other') {
                 stateMessage.style.display = 'block';
-                continueBtn.style.display = 'none';
-            } else if (state === 'MN') {
-                stateMessage.style.display = 'none';
-                checkBasicInfo();
             } else {
                 stateMessage.style.display = 'none';
-                continueBtn.style.display = 'none';
             }
         }
         
         function checkBasicInfo() {
+            // Button is now always visible, validation happens on click
+            // This function can be used for real-time feedback if needed
             const age = document.getElementById('age').value;
             const state = document.getElementById('state').value;
-            const continueBtn = document.getElementById('continue-to-safety');
             
-            if (age && age >= 25 && age <= 65 && state === 'MN') {
-                continueBtn.style.display = 'inline-block';
-            } else {
-                continueBtn.style.display = 'none';
-            }
+            // Could add visual feedback here if desired
+            // For now, just checking values without hiding button
         }
         
         function proceedToStep3() {
+            const age = document.getElementById('age').value;
+            const state = document.getElementById('state').value;
+            
+            // Check if eligible
+            if (!age || !state) {
+                alert('Please enter your age and select your state');
+                return;
+            }
+            
+            if (age < 25 || age > 65) {
+                alert('We currently treat patients ages 25-65. Please join our waitlist for future availability.');
+                return;
+            }
+            
+            if (state !== 'MN') {
+                alert('We currently serve Minnesota residents only. Please join our waitlist for expansion updates.');
+                return;
+            }
+            
+            // If eligible, proceed to step 3
             document.getElementById('step2').style.display = 'none';
             document.getElementById('step3').style.display = 'block';
             
@@ -2072,15 +2084,12 @@
         function checkAge() {
             const age = document.getElementById('age').value;
             const ageMessage = document.getElementById('age-message');
-            const continueBtn = document.getElementById('continue-to-safety');
             
             if (age && (age < 25 || age > 65)) {
                 ageMessage.style.display = 'block';
-                continueBtn.style.display = 'none';
                 return false;
             } else if (age) {
                 ageMessage.style.display = 'none';
-                checkBasicInfo();
                 return true;
             }
         }
