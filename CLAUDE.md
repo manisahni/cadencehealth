@@ -1,5 +1,62 @@
 # GLP Clinic Website - Project Guidelines
 
+## Website Development Framework (Updated 2025-09-08)
+
+### 3-Phase Collaborative Review System
+
+#### PHASE 1: Section-by-Section Audit
+For each section (Hero → Science → Method → About → Pricing → FAQ → Start):
+1. **Show Strengths & Weaknesses analysis**
+2. **Provide MY suggestions** (3-4 based on analysis)
+3. **ASK USER**: "What bothers YOU about this section?"
+4. **COMBINE both perspectives**
+5. **Create prioritized action list together**
+6. Implement approved changes
+7. Test locally with `npm run dev`
+
+#### PHASE 2: Emotional Arc & Flow
+- Map journey: Hook → Agitation → Solution → Proof → Action
+- Check: Does each section lead naturally to next?
+- Ensure trust builds progressively
+- Identify drop-off points
+
+#### PHASE 3: Cohesiveness & Layout
+- Visual hierarchy check
+- Message consistency
+- Design pattern unity
+- White space optimization
+- Mobile responsiveness
+
+### Collaborative Development Workflow
+1. **Analysis**: Show strengths/weaknesses
+2. **My Suggestions**: 3-4 improvements I see
+3. **Discovery**: "What bothers YOU?" 
+4. **Combine**: Merge both perspectives
+5. **Prioritize**: Agree on order of changes
+6. **Implement**: One at a time
+7. **Preview**: `npm run dev` → approve/deny
+8. **Commit**: After 3-4 approved changes
+
+### Evaluation Criteria for Each Section
+- **Clarity**: Is the message immediately clear?
+- **Credibility**: Do we build trust?
+- **Differentiation**: What makes us unique?
+- **Emotional Connection**: Does it resonate?
+- **Action**: Is next step obvious?
+
+### Content Strategy Angles
+- **"The Insurance Fighter"** - Gets approvals when others can't
+- **"The Muscle Protector"** - Prevents GLP-1 muscle loss
+- **"The Side Effect Manager"** - Active management, not just prescribing
+- **"The Real Doctor"** - MD vs NP difference matters
+
+### Trust Accelerators
+- Authentic testimonials (genuine, not commercial)
+- "Why I started this practice" personal note
+- "What happens first visit" detailed walkthrough
+- "Red flags to avoid" education about pill mills
+- Month-by-month expectations timeline
+
 ## Design Philosophy
 Modern, minimalist, hipster-inspired aesthetic with a focus on readability and user comfort. The design prioritizes clean lines, ample whitespace, and subtle sophistication without overwhelming visual elements.
 
