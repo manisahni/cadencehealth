@@ -37,6 +37,33 @@ For each section (Hero → Science → Method → About → Pricing → FAQ → 
 7. **Preview**: `npm run dev` → approve/deny
 8. **Commit**: After 3-4 approved changes
 
+### Option Presentation Framework (SWOT Method)
+When presenting options for changes:
+
+**Current State SWOT:**
+- Strength: What works now
+- Weakness: Current limitations
+- Opportunity: Potential improvement
+- Threat: Risk of not changing
+
+**For Each Option:**
+```
+OPTION A: [Proposed text]
+✅ Strength: [Why it works]
+❌ Weakness: [Limitations]
+Best for: [Specific goal]
+Score: X/10
+
+🏆 RECOMMENDATION: [Best choice with rationale]
+EXPLORE FURTHER? [Direction to pursue]
+```
+
+### Scalability Considerations
+- Use "physicians" (plural) or "our medical team" for future growth
+- Avoid single-doctor references where possible
+- Keep messaging flexible for multiple providers
+- Use "top institutions" rather than specific names when scaling
+
 ### Evaluation Criteria for Each Section
 - **Clarity**: Is the message immediately clear?
 - **Credibility**: Do we build trust?
