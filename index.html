@@ -1462,7 +1462,7 @@
                 
                 <div style="background: #f8f8f8; padding: 16px; border-radius: 8px; text-align: center;">
                     <p style="font-size: 13px; color: #666; margin: 0;">
-                        <strong>Additional costs:</strong> Monitoring devices ($195 one-time: scale $99 + BP monitor $96, or use your existing compatible devices) • 
+                        <strong>Additional costs:</strong> Monitoring devices ($150-195 with our exclusive Withings discount) • 
                         Labs through insurance ($0-50 typical copay) • GLP-1 medication ($50-550/month depending on coverage)
                     </p>
                 </div>
@@ -1483,7 +1483,7 @@
                         <strong style="color: #000;">First 6 Months:</strong><br>
                         • Program: $299/mo × 4 months = $1,196<br>
                         • Then: $199/mo × 2 months = $398<br>
-                        • Devices: $195 one-time (or use existing)<br>
+                        • Devices: $150-195 (with Withings discount)<br>
                         • Labs: $0-50/quarter with insurance<br>
                         • Medication: $50-550/mo (we fight for coverage)<br>
                         <strong style="display: inline-block; margin-top: 8px;">Total: ~$2,000-5,000 all-in</strong>
@@ -1714,9 +1714,10 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            <strong>Recommended devices (one-time purchase $195 total):</strong><br><br>
-                            • Withings Body+ Smart Scale ($99) - tracks weight, body fat %, muscle mass<br>
-                            • Withings BPM Connect Blood Pressure Monitor ($96) - measures BP and heart rate<br><br>
+                            <strong>Recommended devices ($150-195 total with our exclusive Withings discount):</strong><br><br>
+                            • Withings Body+ Smart Scale - tracks weight, body fat %, muscle mass<br>
+                            • Withings BPM Connect Blood Pressure Monitor - measures BP and heart rate<br>
+                            • <strong style="color: #1a1a1a;">Special pricing: Save up to $45 with our exclusive patient discount code</strong><br><br>
                             <strong>Already have devices?</strong> We can work with most smart scales and BP monitors that have data export capabilities. During onboarding, we'll help you set up whatever monitoring system works best for you - whether that's Withings, your existing devices, or even manual tracking if preferred.<br><br>
                             <strong>What's included:</strong> Your monthly fee covers physician review of your health data, trend analysis, and integration with your treatment plan - regardless of which monitoring method you choose.
                         </div>
@@ -1730,7 +1731,7 @@
                     </button>
                     <div class="accordion-content">
                         <div class="accordion-body">
-                            You'll need to purchase the Withings devices directly ($195 total: scale $99 + BP monitor $96). Some insurance plans, FSA, and HSA accounts may cover these FDA-cleared medical devices with a letter of medical necessity, which we can provide. Check with your specific plan about durable medical equipment (DME) coverage for remote monitoring devices.
+                            You'll purchase Withings devices directly for approximately $150-195 total (regularly $195+) using our exclusive patient discount code provided at onboarding. Some insurance plans, FSA, and HSA accounts may cover these FDA-cleared medical devices with a letter of medical necessity, which we can provide. Check with your specific plan about durable medical equipment (DME) coverage for remote monitoring devices.
                         </div>
                     </div>
                 </div>
@@ -1975,14 +1976,14 @@
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
                         <div class="form-group">
-                            <input type="number" id="height" placeholder="68" min="36" max="96" 
+                            <input type="number" id="height" placeholder="68" min="48" max="84" 
                                    style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;"
                                    oninput="validateHeight()">
                             <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Height (inches)</label>
                             <span id="height-error" style="display: none; color: #666; font-size: 12px; margin-top: 4px;"></span>
                         </div>
                         <div class="form-group">
-                            <input type="number" id="weight" placeholder="180" min="50" max="800" 
+                            <input type="number" id="weight" placeholder="180" min="70" max="700" 
                                    style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center; transition: border-color 0.3s;"
                                    oninput="validateWeight()">
                             <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Weight (lbs)</label>
@@ -2010,7 +2011,7 @@
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
                         <div class="form-group">
-                            <input type="number" id="age" min="18" max="120" placeholder="45" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center;" onchange="checkAge()">
+                            <input type="number" id="age" min="18" max="100" placeholder="45" style="width: 100%; padding: 16px 0; font-size: 18px; border: none; border-bottom: 2px solid #e5e5e5; background: transparent; text-align: center;" onchange="checkAge()">
                             <label style="display: block; margin-top: 8px; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">Your Age</label>
                         </div>
                         
@@ -2397,13 +2398,25 @@
             }
             
             // Check ranges
-            if (height < 36 || height > 96 || weight < 50 || weight > 800) {
-                alert('Please enter realistic height and weight values');
+            if (height < 48 || height > 84) {
+                alert('Please enter a height between 48 and 84 inches (4 to 7 feet)');
+                return;
+            }
+            
+            if (weight < 70 || weight > 700) {
+                alert('Please enter a weight between 70 and 700 pounds');
                 return;
             }
             
             // BMI = (weight in pounds × 703) / (height in inches)²
             const bmi = (weight * 703) / (height * height);
+            
+            // Validate BMI is within reasonable range
+            if (bmi < 10 || bmi > 100) {
+                alert('The calculated BMI appears incorrect. Please check your height and weight values.');
+                return;
+            }
+            
             const roundedBMI = bmi.toFixed(1);
             
             const resultDiv = document.getElementById('bmi-result');
